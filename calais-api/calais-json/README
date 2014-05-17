@@ -1,0 +1,12 @@
+OpenCalais PHP Demo Package README
+
+In the package you will find the following directories:
+
+doc 		- Installation and User Guide in Microsoft Word format
+src\public 	- HTML, PHP and JavaScript files to be placed on a public directory on your Web server
+src\pear 	- the PEAR JSON package to be installed on your Web server
+LICENSE		- BSD license file
+READEM		- this file
+
+INSTALLATION:
+Please refer to the Installation document under doc

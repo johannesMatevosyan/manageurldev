@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/calais-api/1-1.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/calais-api/2-2.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/pages/edit_dbmanager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calais-api/1-1.csv" afterPath="$PROJECT_DIR$/calais-api/1-1.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/crud.php" afterPath="$PROJECT_DIR$/application/controllers/crud.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/dbmanager.php" afterPath="$PROJECT_DIR$/application/views/pages/dbmanager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/site_model.php" afterPath="$PROJECT_DIR$/application/models/site_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/style.css" afterPath="$PROJECT_DIR$/assets/styles/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manageurldev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400318459561" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400428588290" ignored="false" />
+    <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400429800790" ignored="false" />
+    <file path="/navigation.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400431742889" ignored="false" />
+    <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400440246044" ignored="false" />
+    <file path="/crud.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400439143728" ignored="false" />
+    <file path="/site_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400437370633" ignored="false" />
+    <file path="/edit_dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400443815174" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,19 +38,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="dbmanager.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/dbmanager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="42" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+            <state line="76" column="0" selection-start="2167" selection-end="2167" vertical-scroll-proportion="-6.627451">
+              <folding>
+                <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_dbmanager.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="70" selection-start="1592" selection-end="1592" vertical-scroll-proportion="-7.8461537">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <file leaf-file-name="crud.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="55" selection-start="534" selection-end="534" vertical-scroll-proportion="0.025411062">
+            <state line="100" column="4" selection-start="2340" selection-end="2340" vertical-scroll-proportion="-0.1784108">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_pages.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/edit_pages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="54" selection-start="602" selection-end="628" vertical-scroll-proportion="-9.807693">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="column_selector.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/column_selector.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="62" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-17.076923">
+              <folding>
+                <marker date="1400317866678" expanded="true" signature="1586:2278" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="1669:2278" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="1710:2017" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="2058:2278" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="2171:2278" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="2821:5442" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="2960:3089" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="3134:3960" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="3231:3613" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="4005:4748" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="4831:5055" placeholder="..." />
+                <marker date="1400317866678" expanded="false" signature="4896:4915" placeholder="..." />
+                <marker date="1400317866678" expanded="true" signature="5096:5365" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="options_view.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/options_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.846154">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="0" selection-start="2620" selection-end="2620" vertical-scroll-proportion="-4.6538463">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/site_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="5" selection-start="637" selection-end="637" vertical-scroll-proportion="-20.26923">
               <folding />
             </state>
           </provider>
@@ -66,6 +146,12 @@
       <list>
         <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/assets/styles/style.css" />
+        <option value="$PROJECT_DIR$/calais-api/navigation.php" />
+        <option value="$PROJECT_DIR$/application/models/site_model.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/dbmanager.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/edit_dbmanager.php" />
+        <option value="$PROJECT_DIR$/application/controllers/crud.php" />
       </list>
     </option>
   </component>
@@ -130,7 +216,105 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="calais-api" />
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -186,18 +370,22 @@
       <created>1400318055213</created>
       <updated>1400318055213</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".CSV file addition">
+      <created>1400318515203</created>
+      <updated>1400318515203</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26040173" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18938307" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -255,7 +443,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value=".xlsx file addition" />
+    <option name="LAST_COMMIT_MESSAGE" value=".CSV file addition" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -272,25 +460,14 @@
     <MESSAGE value="index.php" />
     <MESSAGE value="calais-json file examples" />
     <MESSAGE value=".xlsx file addition" />
+    <MESSAGE value=".CSV file addition" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="55" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="17" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0">
@@ -305,16 +482,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+        <state line="16" column="55" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+    <entry file="file://$PROJECT_DIR$/calais-api/navigation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="55" selection-start="534" selection-end="534" vertical-scroll-proportion="0.025411062">
+        <state line="54" column="40" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.7967115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/navigation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="12" selection-start="389" selection-end="401" vertical-scroll-proportion="0.33034378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="42" selection-start="211" selection-end="211" vertical-scroll-proportion="0.025914634">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="42" selection-start="1241" selection-end="1241" vertical-scroll-proportion="-8.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="0" selection-start="2620" selection-end="2620" vertical-scroll-proportion="-4.6538463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/site_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="5" selection-start="637" selection-end="637" vertical-scroll-proportion="-20.26923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/url_upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/options_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/column_selector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="62" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-17.076923">
+          <folding>
+            <marker date="1400317866678" expanded="true" signature="1586:2278" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="1669:2278" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="1710:2017" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="2058:2278" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="2171:2278" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="2821:5442" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="2960:3089" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="3134:3960" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="3231:3613" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="4005:4748" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="4831:5055" placeholder="..." />
+            <marker date="1400317866678" expanded="false" signature="4896:4915" placeholder="..." />
+            <marker date="1400317866678" expanded="true" signature="5096:5365" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="70" selection-start="1592" selection-end="1592" vertical-scroll-proportion="-7.8461537">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/dbmanager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="2167" selection-end="2167" vertical-scroll-proportion="-6.627451">
+          <folding>
+            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/edit_pages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="54" selection-start="602" selection-end="628" vertical-scroll-proportion="-9.807693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="4" selection-start="2340" selection-end="2340" vertical-scroll-proportion="-0.1784108">
           <folding />
         </state>
       </provider>

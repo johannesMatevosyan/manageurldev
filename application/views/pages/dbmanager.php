@@ -11,7 +11,7 @@
 -->
 <h2>Database Management</h2>
 
-<form id="comment" method="post">
+<form id="comment" method="post" class="db_manager">
 <table  align="center">
     <tr>
         <th>Add New Header</th>
@@ -37,7 +37,7 @@
         <td>
 			<input type="radio" name="alpha_num" id="alpha" value="alpha" checked>Alpha &nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td>
-			<input type="button" value="Edit">
+			<input type="button" class="editHeader" value="Edit">
 		</td>
     </tr>
     <tr>
@@ -48,7 +48,7 @@
         <td>
 			<input type="checkbox" name="editable_cbx" id="editable_checkbox" value="1" checked> Editable
 		</td>
-        <td><input type="button" value="Delete"></td>
+        <td><input type="button" class="deleteHeader" value="Delete"></td>
     </tr>
     <tr>
         <td><input type="button" class="sample1" value="Add New Header"></td>
@@ -56,3 +56,42 @@
     </tr>
 </table>
 </form>
+
+<script language="javascript" type="text/javascript">
+
+    $('.deleteHeader').click( function() {
+
+        var id = $('#url_db_headers').children(":selected").attr("id");
+        var delete_header = $('#url_db_headers').children(":selected").val();
+
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'crud/delete_header/' + id,
+            data:  'delete_header=' + delete_header + '&id=' + id,
+            success: function(data){
+                $('.db_header_results').html(data);
+            }
+        });
+        $('#header_title').val('');
+    });
+
+
+    $('.editHeader').click( function() {
+
+        var id = $('#url_db_headers').children(":selected").attr("id");
+        var edit_header = $('#url_db_headers').children(":selected").val();
+
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'crud/edit_headers/',
+            data:  'edit_header=' + edit_header + '&id=' + id,
+            success: function(data){
+                $('.db_manager').html(data);
+            }
+        });
+        $('#header_title').val('');
+    });
+
+
+
+</script>

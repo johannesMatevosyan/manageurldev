@@ -65,6 +65,7 @@ footer>div{
 }
 #navbar-outer{
     margin-left: 3px;
+	padding:0 0 0 2px;
 }
 #info-nav li{
     display: inline-block;
@@ -403,4 +404,11 @@ table th, td{
 
 /*
 zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
+
+@media all and (max-width: 1280px){
+    body {
+        background: #ccd;
+    }
+}
 */

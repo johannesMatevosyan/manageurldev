@@ -54,7 +54,7 @@ class Crud extends CI_Controller{
     function delete()
     {
         $this->site_model->delete_row();
-        $this->index(); // redirect user to options_view
+       // $this->index(); // redirect user to options_view
     }
 
     function response()
@@ -84,16 +84,97 @@ class Crud extends CI_Controller{
         echo '<select name="url_db_headers" id="url_db_headers" multiple >';
         foreach($headers['records'] as $key => $value)
         {
-            echo '<option value='.$value->header_title.'>'.$value->header_title.'</option>';
+            echo '<option id='.$value->id.' value='.$value->header_title.'>'.$value->header_title.'</option>';
         }
         echo '</select>';
+
     }// response
 
     /**
-     * accepts uploaded CSV file, read information and returns it
+     * accepts uploaded CSV file from URL upload, read information and returns it
      */
     function upload()
     {
         $this->load->view('pages/column_selector');
     } // upload
+
+    
+    function delete_header()
+    {
+        $headers = array();
+        $post = $_POST;
+        $id = $post['id'];
+        $this->site_model->delete_row($id);
+
+        /**
+         * read all rows from db_manager table after a single header has been deleted
+         */
+        if($query = $this->site_model->get_records())
+        {
+            $headers['records'] = $query;
+        }
+
+        /**
+         * fill the <select> tag and display it in table field which has 'db_header_results' class name
+         * after a single header has been deleted
+         */
+        echo '<select name="url_db_headers" id="url_db_headers" multiple >';
+        foreach($headers['records'] as $key => $value)
+        {
+            echo '<option id='.$value->id.' value='.$value->header_title.'>'.$value->header_title.'</option>';
+        }
+        echo '</select>';
+
+    }//delete_header
+
+    function edit_headers()
+    {
+        $data = $_POST;
+        $id = $data['id'];
+
+        if($query = $this->site_model->get_record_by_id($id))
+        {
+            $data['records'] = $query;
+        }
+        else
+        {
+            echo "<h1>no query</h1>";
+        }
+        $this->load->view('pages/edit_dbmanager', $data);
+
+/*      $headers = array();
+
+        $data = $_POST;
+        $id = $data['id'];
+
+        echo '<pre>';
+        print_r($data);
+        echo '<pre>';
+
+        $this->site_model->update_record($data, $id);
+        $this->edit($id);
+
+        /**
+         * read all rows from db_manager table after a single header has been deleted
+         */
+        /*       if($query = $this->site_model->get_records())
+               {
+                   $headers['records'] = $query;
+               }
+
+               /**
+                * fill the <select> tag and display it in table field which has 'db_header_results' class name
+                * after a single header has been updated
+                */
+        /*        echo '<select name="url_db_headers" id="url_db_headers" multiple >';
+                foreach($headers['records'] as $key => $value)
+                {
+                    echo '<option id='.$value->id.' value='.$value->header_title.'>'.$value->header_title.'</option>';
+                }
+                echo '</select>';
+        */
+    }//delete_header
+
+
+
 } // class Crud

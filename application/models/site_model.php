@@ -26,12 +26,12 @@ class Site_model extends CI_Model{
         $this->db->update('db_manager', $data);
     }
 
-    function delete_row()
+    function delete_row($id)
     {
         /** figure out deleted id,
          *  segment(3) = controller/method/id
          */
-        $this->db->where('id', $this->uri->segment(3));
+        $this->db->where('id', $id);
         $this->db->delete('db_manager');
     }
 

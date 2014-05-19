@@ -192,5 +192,8 @@ class Crud extends CI_Controller{
         }
 
     }//update_header
-
+    function get_table_datas()
+    {
+        
+    }
 } // class Crud

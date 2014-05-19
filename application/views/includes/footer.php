@@ -2,13 +2,13 @@
     <br><hr>
     <div class="copy_right">
         Copyright (C) Website.com<br/>
-        All Rights Reserved
+        All Rights Reserved kjkj
     </div>
 </footer>
 <script language="javascript" type="text/javascript">
 
     /**
-     *  File: user_management.php
+     *  Supports file: user_management.php
      * */
     $('#tree1').checkboxTree();
 
@@ -18,9 +18,13 @@
      * */
     $(document).ready(function() {
         $('#submitbtn').click(function() {
-            $(".uploadform").ajaxForm({
-                target: '#viewfile'
-            }).submit();
+
+            var options = {
+                target:        '#viewfile',   // target element(s) to be updated with server response
+                success:       default_header  // post-submit callback
+            };
+
+            $(".uploadform").ajaxForm(options).submit();
         });
 
         /*
@@ -38,7 +42,7 @@
     });
 
     /**
-     *  File: dbmanager.php
+     *  Supported file: dbmanager.php
      *  @var base_url: Returns your site base URL
      *  @var header_title: Returns value from 'header_title' input file
      *  @var alpha_num: Checks which 'alpha_nukm' radio button is checked and returns value from it
@@ -50,19 +54,22 @@
      */
     var base_url = "<?php echo base_url(); ?>";
 
-    function default_header(){
+     function default_header(){
+     $.ajax({
+         type: 'POST',
+         url: base_url + 'crud/response',
+         success: function(data){
+            $('.db_header_results').html(data);
+         }
+         });
+     }
+     default_header();
 
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/response', // crud/create
-            success: function(data){
-                $('.db_header_results').html(data);
-            }
-        });
-    }
-    default_header();
-
-    $('.addHeader').click( function() {
+    /**
+     *  Supported file: dbmanager.php
+     *  Description: Add new headers into database
+     */
+    $('.add_new_header').click( function() {
 
         var header_title = $('#header_title').val();
         var alpha_num = $('input[name=alpha_num]:checked').val();
@@ -80,28 +87,29 @@
     });
 
     /**
-     *  File: column_selector.php
+     *  Supported file: column_selector.php
      *  Description: Make comparison between headers imported from CSV file with the headers already stored in database
      */
+    /*
+     $('.sample1').click( function() {
 
-    $('.sample1').click( function() {
+     var header_title = $('#header_title').val();
+     var alpha_num = $('input[name=alpha_num]:checked').val();
+     var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
 
-        var header_title = $('#header_title').val();
-        var alpha_num = $('input[name=alpha_num]:checked').val();
-        var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
+     $.ajax({
+     type: 'POST',
+     url: base_url + 'crud/response',
+     data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
+     success: function(data){
+     $('.compare_headers').html(data);
+     }
+     });
+     });
+     */
 
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/response',
-            data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
-            success: function(data){
-                $('.compare_headers').html(data);
-            }
-        });
 
-    });
 
 </script>
 </body>
 </html>
-

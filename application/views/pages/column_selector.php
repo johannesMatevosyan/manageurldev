@@ -11,7 +11,7 @@ echo '<h2> Column Selector </h2>';
 /**
  * Read uploaded .CSV files
  */
-$file_formats = array("jpg", "png", "gif", "bmp", "csv");
+$file_formats = array("xlsx", "csv");
 
 $filepath = "assets/upload_images/";
 
@@ -48,7 +48,8 @@ if (true) {
                      *  Fill values from uploaded .CSV file into column selector
                      */
 
-                    echo '   <form id="csv_olumn_headers" action="" method="post">
+                    echo '
+                            <form id="csv_olumn_headers" action="" method="post">
                                 <table  align="center" border="1" cellpadding="0">
                                     <tr>
                                         <th>CSV Column headers</th>
@@ -68,9 +69,9 @@ if (true) {
                                         </td>
                             </form>
 
-                            <form id="url_db_headers" action="" method="post">
+                            <form id="url_upload_db_headers" action="" method="post">
                                         <!-- URL Database Headers -->
-                                        <td class="compare_headers">
+                                        <td class="db_header_results db_h_results">
                                             <!-- Display headers from database -->
                                         </td>
                                         <td>
@@ -80,18 +81,18 @@ if (true) {
                                                 <option value="opel">Opel</option>
                                                 <option value="audi">Audi</option>
                                             </select>
-                                           <input type="button" size="20" value="Add"><br/><br/>
-                                           <input type="button" size="60" value="Move Up"><br/><br/>
-                                           <input type="button" size="60" value="Move Down"><br/><br/>
+                                           <input type="button" size="20" id="add_header_from_url" value="Add"><br/><br/>
+                                           <input type="button" size="60" id="move_up" value="Move Up"><br/><br/>
+                                           <input type="button" size="60" id="move_down" value="Move Down"><br/><br/>
                                         </td>
                                         <td>
-                                           <input type="text" size="20" name="header_title" id="header_title" placeholder="Name"><br/>
+                                           <input type="text" size="20" name="header_title" id="header_url_upload" placeholder="Name"><br/>
 
-                                            <input type="radio" name="alpha_num" id="alpha" value="alpha" checked>Alpha &nbsp;&nbsp;&nbsp;&nbsp;<br/>
-                                            <input type="radio" name="alpha_num" id="numeric" value="numeric"> Numeric<br/><br/>
-                                            <input type="checkbox" name="editable_cbx" id="editable_checkbox" value="1" checked> Editable<br/>
+                                            <input type="radio" name="alpha_num" id="alpha_url_upload" value="alpha" checked>Alpha &nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                                            <input type="radio" name="alpha_num" id="numeric_url_upload" value="numeric"> Numeric<br/><br/>
+                                            <input type="checkbox" name="editable_cbx" id="checkbox_url_upload" value="1" checked> Editable<br/>
 
-                                           <input type="button" size="20" name="header_title2" id="header_title2" value="Add New Header">
+                                           <input type="button" size="20" id="add_url_upload" class="add_url_upload" value="Add New Headerasaspalspalsp">
                                         </td>
                                     </tr>
                                     <tr>
@@ -99,7 +100,7 @@ if (true) {
                                     </tr>
                                     <tr>
                                         <td></td>
-                                        <td colspan="2"><input type="submit" class="sample1 yellowButton" value="Upload"></td>
+                                        <td colspan="2"><input type="button" class="yellowButton" value="Upload"></td>
                                         <td></td>
                                     </tr>
                                 </table>
@@ -115,7 +116,7 @@ if (true) {
             }
             else
             {
-                echo "Your image size is bigger than 2MB.";
+                echo "Your file size is bigger than 2MB.";
             }
         }
         else
@@ -125,7 +126,34 @@ if (true) {
     }
     else
     {
-        echo "Please select image..!";
+        echo "Please select file..!";
     }
     //exit();
 }
+?>
+<script language="javascript" type="text/javascript">
+    /**
+     *  File: column_selector.php
+     *  Description: Manually add new headers from URL Upload page to database
+     */
+    $('#add_url_upload').click( function() {
+
+        var header_title = $('#header_url_upload').val();
+        var alpha_num = $('input[name=alpha_num]:checked').val();
+        var editable = $('#checkbox_url_upload').is(':checked') ? 1 : 0;
+
+        //alert(header_title + ' + ' + alpha_num + ' + ' + editable);
+
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'crud/response',
+            data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
+            success: function(data){
+                $('.db_h_results').html(data);
+                //$('.compare_headers').html(data);
+            }
+        });
+        $('#header_title').val('');
+    });
+
+</script>

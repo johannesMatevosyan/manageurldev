@@ -109,7 +109,7 @@ class Crud extends CI_Controller{
         /**
          * fill the <select> tag and display it in table field which has 'db_header_results' class name
          */
-        echo '<select name="url_db_headers" id="url_db_headers" multiple >';
+        echo '<select name="url_db_headers" id="url_db_headers" multiple >ajshjashjash';
         foreach($headers['records'] as $key => $value)
         {
             echo '<option id='.$value->id.' value='.$value->header_title.'>'.$value->header_title.'</option>';
@@ -125,7 +125,6 @@ class Crud extends CI_Controller{
     {
         $this->load->view('pages/column_selector');
     } // upload
-
 
     function delete_header()
     {

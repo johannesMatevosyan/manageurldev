@@ -8,7 +8,7 @@
     </tr>
     <tr>
         <td>
-			<input type="text" size="20" name="header_title_id" id="edit_header_id" value="<?php echo $row->id; ?>">
+			<div id="edit_header_id"><?php echo $row->id; ?></div>
 		</td>
     </tr>
     <tr>
@@ -73,7 +73,7 @@
      */
     $('.updateHeader').click( function() {
 
-        var id = $('#edit_header_id').val();
+        var id = $('#edit_header_id').html();
         var update_header = $('#edit_header').val();
         var alpha_num = $('input[name=alpha_num]:checked').val();
         var editable = $('input[name=editable_cbx]').is(':checked') ? 1 : 0;

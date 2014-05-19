@@ -62,13 +62,11 @@
     }
     default_header();
 
-    $('.sample1').click( function() {
+    $('.addHeader').click( function() {
 
         var header_title = $('#header_title').val();
         var alpha_num = $('input[name=alpha_num]:checked').val();
         var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
-
-        alert(header_title + ' + ' + alpha_num + ' + ' + editable);
 
         $.ajax({
             type: 'POST',

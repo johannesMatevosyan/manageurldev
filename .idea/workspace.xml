@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/crud.php" afterPath="$PROJECT_DIR$/application/controllers/crud.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/dbmanager.php" afterPath="$PROJECT_DIR$/application/views/pages/dbmanager.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/edit_dbmanager.php" afterPath="$PROJECT_DIR$/application/views/pages/edit_dbmanager.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/footer.php" afterPath="$PROJECT_DIR$/application/views/includes/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/site.php" afterPath="$PROJECT_DIR$/application/controllers/site.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manageurldev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400480937053" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400486814105" ignored="false" />
     <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400429800790" ignored="false" />
     <file path="/navigation.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400431742889" ignored="false" />
-    <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400440246044" ignored="false" />
+    <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400487320125" ignored="false" />
     <file path="/crud.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400485830693" ignored="false" />
     <file path="/site_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400437370633" ignored="false" />
-    <file path="/edit_dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400483998320" ignored="false" />
+    <file path="/edit_dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400487962366" ignored="false" />
     <file path="/a.dummy" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400484287605" ignored="false" />
     <file path="/footer.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400486574112" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,25 +40,25 @@
       <file leaf-file-name="dbmanager.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/pages/dbmanager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="16" selection-start="2295" selection-end="2295" vertical-scroll-proportion="-16.5">
+            <state line="54" column="17" selection-start="1565" selection-end="1565" vertical-scroll-proportion="-7.3461537">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_dbmanager.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="edit_dbmanager.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="16" selection-start="2114" selection-end="2114" vertical-scroll-proportion="-6.6923075">
+            <state line="82" column="16" selection-start="2532" selection-end="2532" vertical-scroll-proportion="0.7961019">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crud.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="crud.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="9" selection-start="2372" selection-end="2372" vertical-scroll-proportion="0.66866565">
+            <state line="173" column="16" selection-start="4479" selection-end="4479" vertical-scroll-proportion="-85.80769">
               <folding>
                 <marker date="1400486375263" expanded="true" signature="834:866" placeholder="..." />
               </folding>
@@ -71,7 +69,7 @@
       <file leaf-file-name="edit_pages.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/edit_pages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="6" selection-start="376" selection-end="376" vertical-scroll-proportion="-4.076923">
+            <state line="19" column="6" selection-start="376" selection-end="376" vertical-scroll-proportion="-8.5">
               <folding />
             </state>
           </provider>
@@ -80,7 +78,7 @@
       <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="67" selection-start="2309" selection-end="2309" vertical-scroll-proportion="-14.384615">
+            <state line="69" column="0" selection-start="2243" selection-end="2243" vertical-scroll-proportion="-15.692307">
               <folding />
             </state>
           </provider>
@@ -119,10 +117,10 @@
         <option value="$PROJECT_DIR$/calais-api/navigation.php" />
         <option value="$PROJECT_DIR$/application/models/site_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/site.php" />
-        <option value="$PROJECT_DIR$/application/views/pages/edit_dbmanager.php" />
-        <option value="$PROJECT_DIR$/application/views/pages/dbmanager.php" />
         <option value="$PROJECT_DIR$/application/controllers/crud.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/dbmanager.php" />
         <option value="$PROJECT_DIR$/application/views/includes/footer.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/edit_dbmanager.php" />
       </list>
     </option>
   </component>
@@ -350,13 +348,18 @@
       <created>1400444072101</created>
       <updated>1400444072101</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Edit &amp; Update single row from database">
+      <created>1400486818356</created>
+      <updated>1400486818356</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -371,7 +374,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -419,7 +421,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete single row from db_manager table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit &amp; Update single row from database" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -438,6 +440,7 @@
     <MESSAGE value=".xlsx file addition" />
     <MESSAGE value=".CSV file addition" />
     <MESSAGE value="delete single row from db_manager table" />
+    <MESSAGE value="Edit &amp; Update single row from database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -514,40 +517,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="16" selection-start="2114" selection-end="2114" vertical-scroll-proportion="-6.6923075">
-          <folding />
+        <state line="173" column="16" selection-start="4479" selection-end="4479" vertical-scroll-proportion="-85.80769">
+          <folding>
+            <marker date="1400486375263" expanded="true" signature="834:866" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/dbmanager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="16" selection-start="2295" selection-end="2295" vertical-scroll-proportion="-16.5">
+        <state line="54" column="17" selection-start="1565" selection-end="1565" vertical-scroll-proportion="-7.3461537">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="67" selection-start="2309" selection-end="2309" vertical-scroll-proportion="-14.384615">
+        <state line="69" column="0" selection-start="2243" selection-end="2243" vertical-scroll-proportion="-15.692307">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/edit_pages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="6" selection-start="376" selection-end="376" vertical-scroll-proportion="-4.076923">
+        <state line="19" column="6" selection-start="376" selection-end="376" vertical-scroll-proportion="-8.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
+    <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="9" selection-start="2372" selection-end="2372" vertical-scroll-proportion="0.66866565">
-          <folding>
-            <marker date="1400486375263" expanded="true" signature="834:866" placeholder="..." />
-          </folding>
+        <state line="82" column="16" selection-start="2532" selection-end="2532" vertical-scroll-proportion="0.7961019">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -51,7 +51,7 @@
         <td><input type="button" class="deleteHeader" value="Delete"></td>
     </tr>
     <tr>
-        <td><input type="button" class="sample1" value="Add New Header"></td>
+        <td><input type="button" class="addHeader" value="Add New Header"></td>
         <td></td>
     </tr>
 </table>

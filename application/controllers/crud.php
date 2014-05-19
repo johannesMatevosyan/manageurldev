@@ -194,6 +194,7 @@ class Crud extends CI_Controller{
     }//update_header
     function get_table_datas()
     {
+        $data = $_POST;
         $this->load->view('pages/edit_dbmanager', $data);
     }//data table
 } // class Crud

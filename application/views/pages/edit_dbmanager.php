@@ -1,11 +1,6 @@
 
 <?php if(isset($records)) : foreach($records as $row): ?>
 
-<?php
-    echo  $row->alpha_num.'<br/>';
-    echo  $row->editable_cbx.'<br/>';
-?>
-
 <form id="comment" method="post" class="db_manager">
 <table border="1" align="center">
     <tr>
@@ -13,35 +8,46 @@
     </tr>
     <tr>
         <td>
-			<input type="text" size="50" name="header_title" id="header_title" value="<?php echo $row->header_title; ?>">
+			<input type="text" size="20" name="header_title_id" id="edit_header_id" value="<?php echo $row->id; ?>">
+		</td>
+    </tr>
+    <tr>
+        <td>
+			<input type="text" size="50" name="header_title" id="edit_header" value="<?php echo $row->header_title; ?>">
 		</td>
     </tr>
     <tr>
             <?php if($row->alpha_num == 'Alpha'):?>
                 <td>
-			        <input type="radio" name="alpha_num" id="alpha" value="alpha" checked>Alpha &nbsp;&nbsp;&nbsp;&nbsp;
+			        <input type="radio" name="alpha_num" id="edit_alpha" value="alpha" checked>Alpha &nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
             <?php else : ?>
                 <td>
-                    <input type="radio" name="alpha_num" id="alpha" value="alpha">Alpha &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="alpha_num" id="edit_alpha" value="alpha">Alpha &nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
             <?php endif; ?>
     </tr>
     <tr>
         <?php if($row->alpha_num == 'Numeric'):?>
             <td>
-                <input type="radio" name="alpha_num" id="numeric" value="numeric" checked> Numeric
+                <input type="radio" name="alpha_num" id="edit_numeric" value="numeric" checked> Numeric
             </td>
         <?php else : ?>
             <td>
-                <input type="radio" name="alpha_num" id="numeric" value="numeric"> Numeric
+                <input type="radio" name="alpha_num" id="edit_numeric" value="numeric"> Numeric
             </td>
         <?php endif; ?>
     </tr>
     <tr>
+        <?php if($row->editable_cbx == 1):?>
         <td>
-			<input type="checkbox" name="editable_cbx" id="editable_checkbox" value="1" checked> Editable
+			<input type="checkbox" name="editable_cbx" id="edit_checkbox" value="1" checked> Editable
 		</td>
+        <?php else : ?>
+            <td>
+                <input type="checkbox" name="editable_cbx" id="edit_checkbox" value="0"> Editable
+            </td>
+        <?php endif; ?>
     </tr>
     <tr>
         <td>
@@ -61,17 +67,25 @@
 
 <script language="javascript" type="text/javascript">
 
+    /**
+     *  File: dbmanager.php
+     *  Description: Update selected header by id in database
+     */
     $('.updateHeader').click( function() {
 
-        var id = $('#url_db_headers').children(":selected").attr("id");
-        var delete_header = $('#url_db_headers').children(":selected").val();
+        var id = $('#edit_header_id').val();
+        var update_header = $('#edit_header').val();
+        var alpha_num = $('input[name=alpha_num]:checked').val();
+        var editable = $('input[name=editable_cbx]').is(':checked') ? 1 : 0;
+
+        alert(id + ' + ' + update_header + ' + ' + alpha_num + ' + ' + editable);
 
         $.ajax({
             type: 'POST',
-            url: base_url + 'crud/delete_header/' + id,
-            data:  'delete_header=' + delete_header + '&id=' + id,
+            url: base_url + 'crud/update_header',
+            data:  'header_title=' + update_header + '&alpha_num=' + alpha_num + '&editable_cbx=' + editable+ '&id=' + id,
             success: function(data){
-                $('.db_header_results').html(data);
+                $('.db_manager').html(data);
             }
         });
         $('#header_title').val('');

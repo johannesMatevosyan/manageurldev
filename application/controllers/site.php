@@ -9,18 +9,14 @@
 
 class Site extends CI_Controller{
 
+    /**
+     * Constructor checks if the user was authorized with the help of is_logged_in(),
+     * otherwise access is denied
+     */
     function __construct()
     {
         parent::__construct();
         $this->is_logged_in();
-    }
-
-    /**
-     * to redirect successfully registered users into members_area page
-     */
-    function members_area()
-    {
-        $this->load->view('members_area');
     }
 
     function is_logged_in()
@@ -34,10 +30,20 @@ class Site extends CI_Controller{
          */
         if(!isset($is_logged_in) || $is_logged_in != true)
         {
+            echo '<div style="width: 600px; margin: 20px auto;"> ';
             echo '<h2>You don\'t have permission to access this page</h2>';
             echo anchor('login', 'Login Now');
+            echo '</div>';
             die();
         }
+    }
+
+    /**
+     * to redirect successfully registered users into members_area page
+     */
+    function members_area()
+    {
+        $this->load->view('members_area');
     }
 
     /**

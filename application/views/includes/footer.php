@@ -8,13 +8,13 @@
 <script language="javascript" type="text/javascript">
 
     /**
-     *  Supports file: user_management.php
+     *  File: user_management.php
      * */
     $('#tree1').checkboxTree();
 
 
     /**
-     *  Supports url_upload
+     *  File: url_upload
      * */
     $(document).ready(function() {
         $('#submitbtn').click(function() {
@@ -38,7 +38,7 @@
     });
 
     /**
-     *  Supported file: dbmanager.php
+     *  File: dbmanager.php
      *  @var base_url: Returns your site base URL
      *  @var header_title: Returns value from 'header_title' input file
      *  @var alpha_num: Checks which 'alpha_nukm' radio button is checked and returns value from it
@@ -68,6 +68,8 @@
         var alpha_num = $('input[name=alpha_num]:checked').val();
         var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
 
+        alert(header_title + ' + ' + alpha_num + ' + ' + editable);
+
         $.ajax({
             type: 'POST',
             url: base_url + 'crud/response',
@@ -80,7 +82,7 @@
     });
 
     /**
-     *  Supported file: column_selector.php
+     *  File: column_selector.php
      *  Description: Make comparison between headers imported from CSV file with the headers already stored in database
      */
 

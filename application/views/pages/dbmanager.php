@@ -59,6 +59,10 @@
 
 <script language="javascript" type="text/javascript">
 
+    /**
+     *  File: dbmanager.php
+     *  Description: Delete selected header from database
+     */
     $('.deleteHeader').click( function() {
 
         var id = $('#url_db_headers').children(":selected").attr("id");
@@ -76,6 +80,10 @@
     });
 
 
+    /**
+     *  File: dbmanager.php
+     *  Description: Edit selected header by id in database
+     */
     $('.editHeader').click( function() {
 
         var id = $('#url_db_headers').children(":selected").attr("id");
@@ -91,7 +99,5 @@
         });
         $('#header_title').val('');
     });
-
-
 
 </script>

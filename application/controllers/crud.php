@@ -109,7 +109,7 @@ class Crud extends CI_Controller{
         /**
          * fill the <select> tag and display it in table field which has 'db_header_results' class name
          */
-        echo '<select name="url_db_headers" id="url_db_headers" multiple >ajshjashjash';
+        echo '<select name="url_db_headers" id="url_db_headers" multiple >';
         foreach($headers['records'] as $key => $value)
         {
             echo '<option id='.$value->id.' value='.$value->header_title.'>'.$value->header_title.'</option>';
@@ -195,10 +195,6 @@ class Crud extends CI_Controller{
     {
         $data = $_POST;
         
-        
-        
-        
-        
-        $this->load->view('pages/data_table', $data);
+        $this->load->view('pages/edit_dbmanager', $data);
     }//data table
 } // class Crud

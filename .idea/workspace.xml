@@ -45,12 +45,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/column_selector.php" afterPath="$PROJECT_DIR$/application/views/pages/column_selector.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/crud.php" afterPath="$PROJECT_DIR$/application/controllers/crud.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/footer.php" afterPath="$PROJECT_DIR$/application/views/includes/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/url_upload.php" afterPath="$PROJECT_DIR$/application/views/pages/url_upload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manageurldev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400508304629" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400519961247" ignored="false" />
     <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400429800790" ignored="false" />
     <file path="/navigation.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400431742889" ignored="false" />
     <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400499718311" ignored="false" />
@@ -59,7 +58,7 @@
     <file path="/edit_dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400487962366" ignored="false" />
     <file path="/a.dummy" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400505670830" ignored="false" />
     <file path="/footer.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400506172441" ignored="false" />
-    <file path="/column_selector.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400505968863" ignored="false" />
+    <file path="/column_selector.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400510611589" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,16 @@
       <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="0" selection-start="3563" selection-end="3563" vertical-scroll-proportion="-18.038462">
+            <state line="108" column="7" selection-start="3561" selection-end="3561" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="7" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,7 +99,7 @@
       <file leaf-file-name="url_upload.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/pages/url_upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="55" selection-start="293" selection-end="293" vertical-scroll-proportion="-3.2692308">
+            <state line="5" column="60" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,7 +108,18 @@
       <file leaf-file-name="crud.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="11" selection-start="3869" selection-end="3869" vertical-scroll-proportion="0.0">
+            <state line="195" column="23" selection-start="4954" selection-end="4954" vertical-scroll-proportion="-26.384615">
+              <folding>
+                <marker date="1400519956716" expanded="false" signature="834:866" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_dbmanager.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="0" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -109,22 +128,21 @@
       <file leaf-file-name="column_selector.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/pages/column_selector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="2" selection-start="6014" selection-end="6014" vertical-scroll-proportion="0.17073171">
+            <state line="136" column="7" selection-start="6185" selection-end="6185" vertical-scroll-proportion="-0.19207317">
               <folding>
-                <element signature="e#6#164#0" expanded="true" />
-                <marker date="1400508243811" expanded="true" signature="1592:2284" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="1675:2284" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="1716:2023" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="2064:2284" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="2177:2284" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="2834:5560" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="2988:3117" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="3162:4041" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="3259:3641" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="4086:4874" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="4957:5181" placeholder="..." />
-                <marker date="1400508243811" expanded="false" signature="5022:5041" placeholder="..." />
-                <marker date="1400508243811" expanded="true" signature="5222:5483" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="1621:2313" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="1704:2313" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="1745:2052" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="2093:2313" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="2206:2313" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="2863:5584" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="3017:3146" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="3191:4078" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="3288:3670" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="4123:4898" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="4981:5205" placeholder="..." />
+                <marker date="1400520060480" expanded="false" signature="5046:5065" placeholder="..." />
+                <marker date="1400520060480" expanded="true" signature="5246:5507" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -159,9 +177,9 @@
         <option value="$PROJECT_DIR$/../manageurls.com/application/views/pages/dbmanager.php" />
         <option value="$PROJECT_DIR$/../manageurls.com/application/views/pages/column_selector.php" />
         <option value="$PROJECT_DIR$/../manageurls.com/application/views/includes/footer.php" />
-        <option value="$PROJECT_DIR$/application/controllers/crud.php" />
         <option value="$PROJECT_DIR$/application/views/pages/url_upload.php" />
         <option value="$PROJECT_DIR$/application/views/includes/footer.php" />
+        <option value="$PROJECT_DIR$/application/controllers/crud.php" />
         <option value="$PROJECT_DIR$/application/views/pages/column_selector.php" />
       </list>
     </option>
@@ -286,6 +304,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -358,7 +398,11 @@
       <created>1400488067509</created>
       <updated>1400488067509</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="URL upload (Part 1)">
+      <created>1400508360528</created>
+      <updated>1400508360528</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -369,7 +413,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.7093185" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17862266" sideWeight="0.7093185" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -427,7 +471,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit &amp; Update single row from database (remainder)" />
+    <option name="LAST_COMMIT_MESSAGE" value="URL upload (Part 1)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -448,6 +492,7 @@
     <MESSAGE value="delete single row from db_manager table" />
     <MESSAGE value="Edit &amp; Update single row from database" />
     <MESSAGE value="Edit &amp; Update single row from database (remainder)" />
+    <MESSAGE value="URL upload (Part 1)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -455,11 +500,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="211" selection-end="211" vertical-scroll-proportion="0.025914634" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/styles/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="81" column="42" selection-start="1241" selection-end="1241" vertical-scroll-proportion="-8.16" />
@@ -510,50 +550,60 @@
         <state line="34" column="9" selection-start="879" selection-end="879" vertical-scroll-proportion="1.5291005" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
+    <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.23512748" />
+        <state line="108" column="7" selection-start="3561" selection-end="3561" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
+    <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="11" selection-start="3869" selection-end="3869" vertical-scroll-proportion="0.0">
+        <state line="66" column="0" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/url_upload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="55" selection-start="293" selection-end="293" vertical-scroll-proportion="-3.2692308">
+        <state line="5" column="60" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
+    <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="3563" selection-end="3563" vertical-scroll-proportion="-18.038462">
+        <state line="27" column="7" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="23" selection-start="4954" selection-end="4954" vertical-scroll-proportion="-26.384615">
+          <folding>
+            <marker date="1400519956716" expanded="false" signature="834:866" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/column_selector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="2" selection-start="6014" selection-end="6014" vertical-scroll-proportion="0.17073171">
+        <state line="136" column="7" selection-start="6185" selection-end="6185" vertical-scroll-proportion="-0.19207317">
           <folding>
-            <element signature="e#6#164#0" expanded="true" />
-            <marker date="1400508243811" expanded="true" signature="1592:2284" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="1675:2284" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="1716:2023" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="2064:2284" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="2177:2284" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="2834:5560" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="2988:3117" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="3162:4041" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="3259:3641" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="4086:4874" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="4957:5181" placeholder="..." />
-            <marker date="1400508243811" expanded="false" signature="5022:5041" placeholder="..." />
-            <marker date="1400508243811" expanded="true" signature="5222:5483" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="1621:2313" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="1704:2313" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="1745:2052" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="2093:2313" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="2206:2313" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="2863:5584" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="3017:3146" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="3191:4078" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="3288:3670" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="4123:4898" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="4981:5205" placeholder="..." />
+            <marker date="1400520060480" expanded="false" signature="5046:5065" placeholder="..." />
+            <marker date="1400520060480" expanded="true" signature="5246:5507" placeholder="..." />
           </folding>
         </state>
       </provider>

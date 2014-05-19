@@ -199,6 +199,6 @@ class Crud extends CI_Controller{
         
         
         
-        $this->load->view('pages/edit_dbmanager', $data);
+        $this->load->view('pages/data_table', $data);
     }//data table
 } // class Crud

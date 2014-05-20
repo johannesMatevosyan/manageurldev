@@ -69,7 +69,7 @@
      *  Supported file: dbmanager.php
      *  Description: Add new headers into database
      */
-    $('.add_new_header').click( function() {
+    $('.addHeader').click( function() {
 
         var header_title = $('#header_title').val();
         var alpha_num = $('input[name=alpha_num]:checked').val();

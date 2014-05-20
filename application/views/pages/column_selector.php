@@ -132,7 +132,6 @@ if (true) {
     //exit();
 }
 ?>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
 <script language="javascript" type="text/javascript">
     /**
      *  File: column_selector.php

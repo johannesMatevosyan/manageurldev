@@ -8,7 +8,7 @@
 <script language="javascript" type="text/javascript">
 
     /**
-     *  Supports file: user_management.php
+     *  File: user_management.php
      * */
     $('#tree1').checkboxTree();
 
@@ -21,9 +21,8 @@
 
             var options = {
                 target:        '#viewfile',   // target element(s) to be updated with server response
-                success:       default_header  // post-submit callback
+                success:       call_defaults  // post-submit callback
             };
-
             $(".uploadform").ajaxForm(options).submit();
         });
 
@@ -54,8 +53,55 @@
      */
     var base_url = "<?php echo base_url(); ?>";
 
+    function call_defaults(){
+
+        default_header();
+
+        /**
+         *  File: column_selector.php
+         *  Description: Manually add new headers from URL Upload page to database
+         */
+        $('#add_url_upload').click( function() {
+
+            var header_title = $('#header_url_upload').val();
+            var alpha_num = $('input[name=alpha_num]:checked').val();
+            var editable = $('#checkbox_url_upload').is(':checked') ? 1 : 0;
+
+            //alert(header_title + ' + ' + alpha_num + ' + ' + editable);
+
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'crud/response',
+                data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
+                success: function(data){
+                    $('.db_header_results').html(data);
+                }
+            });
+            $('#header_url_upload').val('');
+        });
+
+        /**
+         *  File: column_selector.php
+         *  Description: Manually move items up and down inside select tag u.sing button
+         */
+        $('#wrap').on('click', '.move_item', function() {
+
+            var $op = $('#wrap').find('#url_db_headers').children('option:selected');
+
+            $this = $(this);
+
+            if($op.length){
+                ($this.val() == 'Up') ?
+                    $op.first().prev().before($op) :
+                    $op.last().next().after($op);
+            }
+        });
+
+    }//call_defaults
+
      function default_header(){
      $.ajax({
+         async: false,
          type: 'POST',
          url: base_url + 'crud/response',
          success: function(data){
@@ -64,6 +110,7 @@
          });
      }
      default_header();
+
 
     /**
      *  Supported file: dbmanager.php

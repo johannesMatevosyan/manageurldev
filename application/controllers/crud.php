@@ -112,7 +112,7 @@ class Crud extends CI_Controller{
         echo '<select name="url_db_headers" id="url_db_headers" multiple >';
         foreach($headers['records'] as $key => $value)
         {
-            echo '<option id='.$value->id.' value='.$value->header_title.'>'.$value->header_title.'</option>';
+            echo '<option class="zazaa" id='.$value->id.' value='.$value->header_title.' >'.$value->header_title.'</option>';
         }
         echo '</select>';
 

@@ -14,15 +14,17 @@ $(document).ready(function(){
           window.location.href = "?current=" + cuurent_id;
 
       }
-
+      else{
     /*********************************************/
 
-    event.preventDefault();  // prevent default error situation if something happened
-    $('#info>div').hide();
-    $('#info-nav .current').removeClass("current");
-    $(this).addClass('current');
+        event.preventDefault();  // prevent default error situation if something happened
+        $('#info>div').hide();
+        $('#info-nav .current').removeClass("current");
+        $(this).addClass('current');
 
-    $('#info ' + clicked).fadeIn('fast');
+        $('#info ' + clicked).fadeIn('fast');
+
+      }
 
   }).eq(0).addClass('current');
 

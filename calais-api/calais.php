@@ -46,7 +46,7 @@
 $apiKey = "mzcxpd66uyevcektzdpuruqv";
 
 // Content and input/output formats
-$content = "Microsoft has made several bids to purchase Yahoo!";
+$content = "Microsoft has made several bids to purchase Ford!";
 $contentType = "text/txt"; // simple text - try also text/html
 $outputFormat = "text/simple"; // simple output format - try also xml/rdf and text/microformats
 

@@ -26,6 +26,7 @@
 
 
 </head>
+<?php set_time_limit(100); ?>
 <body>
 <header>
     <a href="<?php echo base_url(); ?>">

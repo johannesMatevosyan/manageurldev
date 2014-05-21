@@ -191,10 +191,31 @@ class Crud extends CI_Controller{
         }
 
     }//update_header
+
+    function send_csv_data(){
+        $file_name = $_GET['file_name'];
+        $path = "assets/upload/".$file_name;
+
+        $read_csv_file = (fopen($path, "r")); // to read only first line of a .CSV file
+
+        while(!feof($read_csv_file)){
+
+            $line_of_text = fgetcsv($read_csv_file);
+            echo "<pre>";
+            print_r($line_of_text);
+            echo "</pre>";
+            echo "<hr/>";
+        }
+
+    }
+
     function get_table_datas()
     {
         $data = $_POST;
         
         $this->load->view('pages/edit_dbmanager', $data);
     }//data table
+
+
+
 } // class Crud

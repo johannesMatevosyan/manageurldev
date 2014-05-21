@@ -21,7 +21,6 @@
     /**
      *  File: url_upload
      * */
-    $(document).ready(function() {
         $('#submitbtn').click(function() {
 
             var options = {
@@ -31,7 +30,6 @@
             $(".uploadform").ajaxForm(options).submit();
         });
 
-    });
 
     /**
      *  File: dbmanager.php
@@ -88,6 +86,29 @@
             }
         });
 
+
+        /**
+         *  File: column_selector.php
+         *  Description: Manually add new headers in Column Selector page from select tag to database.
+         *              Values in select tag are collected from .CSV fikle
+         */
+        $('#add_header_from_url').click( function() {
+
+            var header_title = $('#select_header option:selected').val();
+
+            alert(header_title);
+
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'crud/response',
+                data:  'header_title=' + header_title,
+                success: function(data){
+                    $('.db_header_results').html(data);
+                }
+            });
+        });
+
+
     }//call_defaults
 
      function default_header(){
@@ -125,7 +146,7 @@
     });
 
     /**
-     *  Supported file: column_selector.php
+     *  File: column_selector.php
      *  Description: Make comparison between headers imported from CSV file with the headers already stored in database
      */
     /*

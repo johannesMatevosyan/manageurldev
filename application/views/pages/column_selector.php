@@ -13,7 +13,7 @@ echo '';
  */
 $file_formats = array("xlsx", "csv");
 
-$filepath = "assets/upload_images/";
+$filepath = "assets/upload/";
 
 if (true) {
 
@@ -38,12 +38,12 @@ if (true) {
                     $path = $filepath."/". $imagename;
 
                     $file = fopen($path,"r");
+
                     $first_line = (fgets($file)); // to read only first line of a .CSV file
 
                     $number_of_csv_words = str_word_count($first_line);
 
                     $first_line_array = explode(",", $first_line);
-
                     /**
                      *  Fill values from uploaded .CSV file into column selector
                      */
@@ -76,19 +76,21 @@ if (true) {
 
                                             <!-- Display headers from database -->
 
-
                                         </td>
-
                                         <td>
-                                            <select name="url_db_headers3" id="url_db_headers3">
-                                                <option value="PR">PR</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="opel">Opel</option>
-                                                <option value="audi">Audi</option>
-                                            </select>
-                                           <input type="button" size="20" id="add_header_from_url" value="Add"><br/><br/>
-                                           <input type="button" size="60" class="move_item" id="move_up" value="Up"><br/><br/>
-                                           <input type="button" size="60" class="move_item" id="move_down" value="Down"><br/><br/>
+                                            <!--<select name="url_db_headers3" id="url_db_headers3">-->
+                                            <!-- Select Header -->
+                                            <select name="select_header" id="select_header" style="max-width:120px;">';
+                                                for($i = 0; $i < $number_of_csv_words; $i++)
+                                                {
+                                                    echo '<option value="'.$first_line_array[$i].'">'.$first_line_array[$i].'</option>';
+                                                }
+                                                echo '</select>
+                                            <br/><br/>
+                                           <input type="button" style="width:90px;" id="add_header_from_url" value="Add"><br/><br/>
+                                           <input type="button" style="width:90px;" class="move_item" id="move_up" value="Up"><br/><br/>
+                                           <input type="button" style="width:90px;" class="move_item" id="move_down" value="Down"><br/><br/>
+                                        <!--<input type="button" size="60" class="move_item" id="add_header_from_url" value="Down"><br/>-->
                                         </td>
                                         <td>
                                            <input type="text" size="20" name="header_title" id="header_url_upload" placeholder="Name"><br/>
@@ -105,7 +107,7 @@ if (true) {
                                     </tr>
                                     <tr>
                                         <td></td>
-                                        <td colspan="2"><input type="button" class="yellowButton" value="Upload"></td>
+                                        <td colspan="2"><input type="button" class="yellowButton upload_file" value="Upload"></td>
                                         <td></td>
                                     </tr>
                                 </table>
@@ -136,7 +138,3 @@ if (true) {
     //exit();
 }
 ?>
-
-<script language="javascript" type="text/javascript">
-
-</script>

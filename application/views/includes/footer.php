@@ -2,16 +2,21 @@
     <br><hr>
     <div class="copy_right">
         Copyright (C) Website.com<br/>
-        All Rights Reserved kjkj
+        All Rights Reserved
     </div>
 </footer>
 <script language="javascript" type="text/javascript">
+
+    <?php
+        if(!empty($current)){
+            echo 'var current = "'.$current.'";';
+        }
+    ?>
 
     /**
      *  File: user_management.php
      * */
     $('#tree1').checkboxTree();
-
 
     /**
      *  File: url_upload
@@ -26,22 +31,10 @@
             $(".uploadform").ajaxForm(options).submit();
         });
 
-        /*
-         $("a[href$='#url_upload']").click(function() {
-
-         var url_upl = "<?php //echo base_url().'crud/upload'; ?>";
-         var url_upl_form = "<h2>URL Upload!</h2><p>Tips and Notes</p><form class='uploadform' method='post' enctype='multipart/form-data' action='<?php echo base_url().'crud/upload'; ?>'>
-         <label for='file'>Filename:</label>
-         <input type='file' name='imagefile' id='file' /><br>
-         <input type='submit' value='Submit' name='submitbtn' id='submitbtn'>
-         </form>";
-
-         $("#viewfile").html(url_upl_form);
-         });*/
     });
 
     /**
-     *  Supported file: dbmanager.php
+     *  File: dbmanager.php
      *  @var base_url: Returns your site base URL
      *  @var header_title: Returns value from 'header_title' input file
      *  @var alpha_num: Checks which 'alpha_nukm' radio button is checked and returns value from it
@@ -66,8 +59,6 @@
             var header_title = $('#header_url_upload').val();
             var alpha_num = $('input[name=alpha_num]:checked').val();
             var editable = $('#checkbox_url_upload').is(':checked') ? 1 : 0;
-
-            //alert(header_title + ' + ' + alpha_num + ' + ' + editable);
 
             $.ajax({
                 type: 'POST',

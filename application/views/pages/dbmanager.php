@@ -96,7 +96,7 @@
             url: base_url + 'crud/edit_headers/',
             data:  'edit_header=' + edit_header + '&id=' + id,
             success: function(data){
-                $('.db_manager').html(data);
+                $('#info .db_manager').html(data);
             }
         });
         $('#header_title').val('');

@@ -52,6 +52,7 @@ class Site extends CI_Controller{
     function statistics()
     {
         $data['main_content'] = 'pages/content';
+        if(!empty($_GET['current'])) $data['current'] = $_GET['current'];
         $this->load->view('includes/template', $data);
        // $this->load->view('statistics');
     }

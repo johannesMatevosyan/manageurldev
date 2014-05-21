@@ -194,7 +194,8 @@ class Crud extends CI_Controller{
     function get_table_datas()
     {
         $data = $_POST;
-        
-        $this->load->view('pages/edit_dbmanager', $data);
+        $query = $this->site_model->get_records();
+        print_r($query);
+        $this->load->view('pages/data_table', $data);
     }//data table
 } // class Crud

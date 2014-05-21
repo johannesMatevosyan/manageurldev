@@ -193,19 +193,29 @@ class Crud extends CI_Controller{
     }//update_header
 
     function send_csv_data(){
-        $file_name = $_GET['file_name'];
-        $path = "assets/upload/".$file_name;
 
-        $read_csv_file = (fopen($path, "r")); // to read only first line of a .CSV file
+        $file_name = $_POST['file_name'];
 
-        while(!feof($read_csv_file)){
+        /**
+         * to check if $_POST array is not empty, if so then new entry cannot be added to database
+         */
+        if(!empty($file_name))
+        {
+            $path = "assets/upload/".$file_name;
 
-            $line_of_text = fgetcsv($read_csv_file);
-            echo "<pre>";
-            print_r($line_of_text);
-            echo "</pre>";
-            echo "<hr/>";
-        }
+            $read_csv_file = (fopen($path, "r")); // to read only first line of a .CSV file
+
+            while(!feof($read_csv_file)){
+
+                $line_of_text = fgetcsv($read_csv_file);
+                echo "<pre>";
+                print_r($line_of_text);
+                echo "</pre>";
+                echo "<hr/>";
+            }
+
+            $this->create();
+        }else{ echo "Empty!!"; }
 
     }
 

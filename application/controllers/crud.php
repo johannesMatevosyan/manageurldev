@@ -95,7 +95,14 @@ class Crud extends CI_Controller{
          */
         if(!empty($post))
         {
-            $this->create();
+            if(!$this->site_model->get_record_by_header($post['header_title']))
+            {
+                $this->create();
+            }
+            else
+            {
+                echo "<script>alert('Header with the same name already exists. Please choose another name...');</script>";
+            }
         }
 
         /**
@@ -191,33 +198,6 @@ class Crud extends CI_Controller{
         }
 
     }//update_header
-
-    function send_csv_data(){
-
-        $file_name = $_POST['file_name'];
-
-        /**
-         * to check if $_POST array is not empty, if so then new entry cannot be added to database
-         */
-        if(!empty($file_name))
-        {
-            $path = "assets/upload/".$file_name;
-
-            $read_csv_file = (fopen($path, "r")); // to read only first line of a .CSV file
-
-            while(!feof($read_csv_file)){
-
-                $line_of_text = fgetcsv($read_csv_file);
-                echo "<pre>";
-                print_r($line_of_text);
-                echo "</pre>";
-                echo "<hr/>";
-            }
-
-            $this->create();
-        }else{ echo "Empty!!"; }
-
-    }
 
     function get_table_datas()
     {

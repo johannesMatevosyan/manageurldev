@@ -138,3 +138,17 @@ if (true) {
     //exit();
 }
 ?>
+<script language="javascript" type="text/javascript">
+
+    /**
+     *  Supported file:
+     *  Description: Add new headers into database (data table)
+     */
+    $('.upload_file').click( function() {
+        var csf_file_name = "<?php echo $imagename; ?>";
+
+        $.ajax({
+            url: base_url + 'file/send_csv_data?file=' + csf_file_name,
+        });
+    });
+</script>

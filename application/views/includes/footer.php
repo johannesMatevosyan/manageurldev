@@ -96,8 +96,6 @@
 
             var header_title = $('#select_header option:selected').val();
 
-            alert(header_title);
-
             $.ajax({
                 type: 'POST',
                 url: base_url + 'crud/response',
@@ -144,6 +142,8 @@
         });
         $('#header_title').val('');
     });
+
+
 
     /**
      *  File: column_selector.php

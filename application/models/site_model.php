@@ -35,4 +35,10 @@ class Site_model extends CI_Model{
         $this->db->delete('db_manager');
     }
 
+    function get_record_by_header($id)
+    {
+        $query = $this->db->get_where('db_manager', array('header_title' => $id));
+        return $query->result();
+    }
+
 }

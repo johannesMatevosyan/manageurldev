@@ -39,7 +39,7 @@
 */
 
 //$route['default_controller'] = "login";
-$route['default_controller'] = "crud";
+$route['default_controller'] = "site/statistics";
 $route['404_override'] = '';
 
 

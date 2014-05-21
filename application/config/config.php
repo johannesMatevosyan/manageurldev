@@ -26,7 +26,7 @@ $config['base_url']	= 'http://localhost/manageurldev/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'site/statistics';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

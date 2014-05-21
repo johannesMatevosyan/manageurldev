@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/file.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/file_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/autoload.php" afterPath="$PROJECT_DIR$/application/config/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/column_selector.php" afterPath="$PROJECT_DIR$/application/views/pages/column_selector.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/crud.php" afterPath="$PROJECT_DIR$/application/controllers/crud.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/footer.php" afterPath="$PROJECT_DIR$/application/views/includes/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/site_model.php" afterPath="$PROJECT_DIR$/application/models/site_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manageurldev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400683410237" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400697243535" ignored="false" />
     <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400429800790" ignored="false" />
     <file path="/navigation.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400660177514" ignored="false" />
     <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400662395784" ignored="false" />
@@ -62,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="site.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="23" selection-start="1328" selection-end="1339" vertical-scroll-proportion="1.0263158">
+            <state line="51" column="23" selection-start="1328" selection-end="1339" vertical-scroll-proportion="-25.5">
               <folding>
                 <marker date="1400696679224" expanded="false" signature="834:866" placeholder="..." />
               </folding>
@@ -76,7 +70,16 @@
       <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="30" selection-start="922" selection-end="922" vertical-scroll-proportion="-18.307692">
+            <state line="344" column="0" selection-start="12303" selection-end="12303" vertical-scroll-proportion="-9.153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="49" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.7105263">
               <folding />
             </state>
           </provider>
@@ -117,15 +120,6 @@
                 <marker date="1400695599859" expanded="true" signature="5687:5960" placeholder="..." />
                 <marker date="1400695599859" expanded="true" signature="5687:5790" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="6" selection-start="1713" selection-end="1713" vertical-scroll-proportion="-15.846154">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -200,7 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/pages/url_download.php" />
         <option value="$PROJECT_DIR$/application/views/includes/navigation.php" />
         <option value="$PROJECT_DIR$/application/views/pages/dbmanager.php" />
         <option value="$PROJECT_DIR$/application/views/pages/edit_dbmanager.php" />
@@ -216,6 +209,7 @@
         <option value="$PROJECT_DIR$/application/views/includes/footer.php" />
         <option value="$PROJECT_DIR$/application/controllers/site.php" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
       </list>
     </option>
   </component>
@@ -482,7 +476,11 @@
       <created>1400683412873</created>
       <updated>1400683412873</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="URL Upload final (send headers &amp; CSV file contents)">
+      <created>1400697251046</created>
+      <updated>1400697251046</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -551,7 +549,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="URL Upload final (send headers 2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="URL Upload final (send headers &amp; CSV file contents)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -580,6 +578,7 @@
     <MESSAGE value="Redirect between tabs with AJAX part2" />
     <MESSAGE value="URL Upload final (send headers)" />
     <MESSAGE value="URL Upload final (send headers 2)" />
+    <MESSAGE value="URL Upload final (send headers &amp; CSV file contents)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -587,11 +586,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/pages/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="363" selection-end="363" vertical-scroll-proportion="-8.5" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/edit_dbmanager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="16" selection-start="2449" selection-end="2449" vertical-scroll-proportion="0.6315789" />
@@ -714,19 +708,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="23" selection-start="1328" selection-end="1339" vertical-scroll-proportion="-25.5">
+          <folding>
+            <marker date="1400696679224" expanded="false" signature="834:866" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="30" selection-start="922" selection-end="922" vertical-scroll-proportion="-18.307692">
+        <state line="344" column="0" selection-start="12303" selection-end="12303" vertical-scroll-proportion="-9.153846">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="23" selection-start="1328" selection-end="1339" vertical-scroll-proportion="1.0263158">
-          <folding>
-            <marker date="1400696679224" expanded="false" signature="834:866" placeholder="..." />
-          </folding>
+        <state line="41" column="49" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.7105263">
+          <folding />
         </state>
       </provider>
     </entry>

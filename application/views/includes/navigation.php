@@ -12,12 +12,12 @@
 -->
 <div id="info-nav">
     <ul id="navbar-outer">
-        <li><a href="#statistics" title="Statistics">Statistics</a></li>
-        <li><a href="#db_manager" title="DB Manager">DB Manager</a></li>
-        <li><a href="#url_upload" title="URL Upload">URL Upload</a></li>
-        <li><a href="#url_preview" title="URL Preview">URL Preview</a></li>
-        <li><a href="#url_download" title="URL Download">URL Download</a></li>
-        <li><a href="#user_management" title="User Management">User Management</a></li>
+        <li class="statistics"><a href="#statistics" title="Statistics">Statistics</a></li>
+        <li class="db_manager"><a href="#db_manager" title="DB Manager">DB Manager</a></li>
+        <li class="url_upload"><a href="#url_upload" title="URL Upload">URL Upload</a></li>
+        <li class="url_preview"><a href="#url_preview" title="URL Preview">URL Preview</a></li>
+        <li class="url_download"><a href="#url_download" title="URL Download">URL Download</a></li>
+        <li class="user_management"><a href="#user_management" title="User Management">User Management</a></li>
     </ul>
     <div id="blue_line"></div>
 </div>

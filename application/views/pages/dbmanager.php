@@ -29,8 +29,10 @@
 		</td>
         <td>
         </td>
-        <td rowspan="5" class="db_header_results">
+        <td rowspan="5">
+            <select name="url_db_headers" id="url_db_headers" class="db_header_results" multiple >
           <!-- Display headers from database -->
+            </select>
         </td>
     </tr>
     <tr>
@@ -94,7 +96,7 @@
             url: base_url + 'crud/edit_headers/',
             data:  'edit_header=' + edit_header + '&id=' + id,
             success: function(data){
-                $('.db_manager').html(data);
+                $('#info .db_manager').html(data);
             }
         });
         $('#header_title').val('');

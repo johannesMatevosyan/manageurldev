@@ -58,7 +58,7 @@ if (true) {
                                         <th>Select Header</th>
                                         <th>Add New Header</th>
                                     </tr>
-                                    <tr>
+                                    <tr id="wrap">
                                         <!-- CSV Column headers -->
                                         <td>
                                             <select name="url_db_headers1" id="url_db_headers1" multiple >';
@@ -72,9 +72,13 @@ if (true) {
 
                             <form id="url_upload_db_headers" action="" method="post">
                                         <!-- URL Database Headers -->
-                                        <td class="db_header_results db_h_results">
+                                        <td class="db_header_results">
+
                                             <!-- Display headers from database -->
+
+
                                         </td>
+
                                         <td>
                                             <select name="url_db_headers3" id="url_db_headers3">
                                                 <option value="PR">PR</option>
@@ -84,7 +88,7 @@ if (true) {
                                             </select>
                                            <input type="button" size="20" id="add_header_from_url" value="Add"><br/><br/>
                                            <input type="button" size="60" class="move_item" id="move_up" value="Up"><br/><br/>
-                                           <input type="button" size="60" id="move_down" value="Down"><br/><br/>
+                                           <input type="button" size="60" class="move_item" id="move_down" value="Down"><br/><br/>
                                         </td>
                                         <td>
                                            <input type="text" size="20" name="header_title" id="header_url_upload" placeholder="Name"><br/>
@@ -132,47 +136,7 @@ if (true) {
     //exit();
 }
 ?>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+
 <script language="javascript" type="text/javascript">
-    /**
-     *  File: column_selector.php
-     *  Description: Manually add new headers from URL Upload page to database
-     */
-    $('#add_url_upload').click( function() {
-
-        var header_title = $('#header_url_upload').val();
-        var alpha_num = $('input[name=alpha_num]:checked').val();
-        var editable = $('#checkbox_url_upload').is(':checked') ? 1 : 0;
-
-        //alert(header_title + ' + ' + alpha_num + ' + ' + editable);
-
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/response',
-            data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
-            success: function(data){
-                $('.db_h_results').html(data);
-                //$('.compare_headers').html(data);
-            }
-        });
-        $('#header_title').val('');
-    });
-
-    /**
-     *  File: column_selector.php
-     *  Description: Move item up and down in select tag using button
-     */
-    $(document).ready(function(){
-        $('input[type="button"]').click(function(){
-           // alert(22233);
-            var $op = $('#url_db_headers option:selected'),
-                $this = $(this);
-            if($op.length){
-                ($this.val() == 'Up') ?
-                    $op.first().prev().before($op) :
-                    $op.last().next().after($op);
-            }
-        });
-    });
 
 </script>

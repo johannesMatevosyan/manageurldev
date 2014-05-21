@@ -7,7 +7,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-//echo "<h2>URL Preview!</h2> This service is not intended for those"  asasassa dfdf;
 ?>
 
 <div class="url_preview_heading">

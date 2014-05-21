@@ -9,7 +9,6 @@
 *************************************************
 */
 -->
-
 <div class="wrapper">
     <div id="info">
         <div id="statistics" class="pages">

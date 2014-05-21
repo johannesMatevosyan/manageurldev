@@ -23,6 +23,7 @@
     <!-- include jquery files to read uploaded .CSV files-->
     <!--  <script type="text/javascript" src="<?php //echo base_url(); ?>assets/js/jquery.min.js"></script>-->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.form.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.finderselect/0.6.0/jquery.finderselect.min.js"></script>
 
 
 </head>

@@ -17,24 +17,11 @@ body {
     color: grey;
     margin-right: 5px;
 }
-#right_menu {
-    float: right;
-}
 a {
     text-decoration: none;
 }
 #header{
 
-}
-header img{
-
-}
-header #head1{
-    margin-top: 5px;
-    margin-right: 65%;
-    font-size: 28px;
-    font-weight: 600;
-    float: right;
 }
 #info h2{
     text-align: center;
@@ -43,6 +30,27 @@ header #head1{
 #login_form{
     text-align: center;
 }
+
+/* header */
+#head {
+    width: 100%;
+    height: 65px;
+}
+#one {
+    float: left;
+    width: 200px;
+}
+#two {
+    float: left;
+    width: 350px;
+}
+#three {
+    float: right;
+    width: 200px;
+}
+/* header */
+
+/* footer */
 .wrapper:after {
     content: "";
     display: block;
@@ -55,14 +63,14 @@ header #head1{
     position: relative;
 }
 footer>div{
-    border-style:solid;
-    border-width: 1px;
+    border-top: 1px #000 solid;
     bottom: 0;
     position: absolute;
     width: 100%;
     height: 140px;
     padding: 60px 0 0 0;
 }
+/* footer */
 
 /*Navigation*/
 /*
@@ -127,6 +135,7 @@ footer>div{
 #info-nav {
     position: relative;
     height: 25px;
+    margin: 0 0 0 -30px;
 }
 #navbar-outer {
     list-style-type: none !important;
@@ -192,6 +201,7 @@ select[multiple]{
     width: 100%;
     height: 100%;
 }
+/* end of Navigation */
 
 /* Page content */
 .pages{
@@ -281,7 +291,7 @@ table th, td{
 }
 #table-scroll {
     background:yellow;
-    height:440px;
+    height:380px;
     overflow:auto;
     margin:20px auto;
     width:700px;

@@ -15,7 +15,14 @@
 </head>
 <body>
 <header>
-    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="Logo" /></a>
-    <span id="head1">Web Site Header</span>
-    <br/><br/><br/>
-    <div id="blue_line"></div>
+    <div id="head">
+        <div id="one">
+            <a href="<?php echo base_url(); ?>">
+                <img src="<?php echo base_url(); ?>assets/img/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <div id="two">
+            <h2>Web Site Header</h2>
+        </div>
+        <div id="three"></div>
+    </div><!--#head-->

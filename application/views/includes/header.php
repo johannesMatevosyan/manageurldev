@@ -24,14 +24,22 @@
     <!--  <script type="text/javascript" src="<?php //echo base_url(); ?>assets/js/jquery.min.js"></script>-->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.form.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.finderselect/0.6.0/jquery.finderselect.min.js"></script>
+    <style type="text/css">
 
+    </style>
 
 </head>
 <?php set_time_limit(100); ?>
 <body>
 <header>
-    <a href="<?php echo base_url(); ?>">
-        <img src="<?php echo base_url(); ?>assets/img/logo.png" alt="Logo" />
-    </a>
-    <span id="right_menu"><a href="<?php echo base_url()."login/logout"; ?>">Log Out</a> | <a href="">Contact Us</a></span>
-    <span id="head1">Web Site Header</span>
+    <div id="head">
+        <div id="one">
+            <a href="<?php echo base_url(); ?>">
+                <img src="<?php echo base_url(); ?>assets/img/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <div id="two">
+            <h2>Web Site Header</h2>
+        </div>
+        <div id="three"><a href="<?php echo base_url()."login/logout"; ?>">Log Out</a> | <a href="#">Contact Us</a></div>
+    </div><!--#head-->

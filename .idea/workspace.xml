@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/footer.php" afterPath="$PROJECT_DIR$/application/views/includes/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login_form.php" afterPath="$PROJECT_DIR$/application/views/login_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/navigation.php" afterPath="$PROJECT_DIR$/application/views/includes/navigation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/header.php" afterPath="$PROJECT_DIR$/application/views/includes/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/login-header.php" afterPath="$PROJECT_DIR$/application/views/includes/login-header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/style.css" afterPath="$PROJECT_DIR$/assets/styles/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/url_upload.php" afterPath="$PROJECT_DIR$/application/views/pages/url_upload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manageurldev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400743000620" ignored="false" />
-    <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400748513725" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400748580038" ignored="false" />
+    <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400750694839" ignored="false" />
     <file path="/navigation.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400745682796" ignored="false" />
     <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400662395784" ignored="false" />
     <file path="/crud.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400696489243" ignored="false" />
@@ -22,7 +20,7 @@
     <file path="/footer.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400746565280" ignored="false" />
     <file path="/column_selector.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400695568946" ignored="false" />
     <file path="/url_upload.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400747998783" ignored="false" />
-    <file path="/header.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400675221491" ignored="false" />
+    <file path="/header.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400750778939" ignored="false" />
     <file path="/site.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400696604178" ignored="false" />
     <file path="/content.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400596123520" ignored="false" />
     <file path="/template.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400596285082" ignored="false" />
@@ -50,30 +48,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="4" selection-start="33" selection-end="33" vertical-scroll-proportion="-0.65384614">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="site.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="54" selection-start="1712" selection-end="1712" vertical-scroll-proportion="-22.038462">
-              <folding>
-                <marker date="1400696679224" expanded="false" signature="834:866" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/styles/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="232" column="32" selection-start="4168" selection-end="4168" vertical-scroll-proportion="0.71257484">
+            <state line="136" column="17" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -83,11 +61,25 @@
         <entry file="file://$PROJECT_DIR$/application/views/includes/navigation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="33" column="10" selection-start="1711" selection-end="1711" vertical-scroll-proportion="-21.076923">
-              <folding>
-                <marker date="1400745924445" expanded="true" signature="4:353" placeholder="..." />
-                <marker date="1400745924445" expanded="true" signature="375:1699" placeholder="..." />
-                <marker date="1400745924445" expanded="true" signature="1062:1656" placeholder="..." />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="22" selection-start="2231" selection-end="2231" vertical-scroll-proportion="-21.73077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login-header.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/includes/login-header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="24" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.66266865">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,8 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/includes/header.php" />
-        <option value="$PROJECT_DIR$/application/controllers/File.php" />
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/application/models/file_model.php" />
         <option value="$PROJECT_DIR$/application/models/site_model.php" />
@@ -201,6 +191,8 @@
         <option value="$PROJECT_DIR$/application/views/includes/footer.php" />
         <option value="$PROJECT_DIR$/application/views/pages/url_upload.php" />
         <option value="$PROJECT_DIR$/assets/styles/style.css" />
+        <option value="$PROJECT_DIR$/application/views/includes/header.php" />
+        <option value="$PROJECT_DIR$/application/views/includes/login-header.php" />
       </list>
     </option>
   </component>
@@ -501,13 +493,18 @@
       <created>1400697592702</created>
       <updated>1400697592702</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="CSS changes">
+      <created>1400748585397</created>
+      <updated>1400748585397</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -522,7 +519,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5465925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -570,7 +566,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS changes" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -601,6 +597,7 @@
     <MESSAGE value="URL Upload final (send headers 2)" />
     <MESSAGE value="URL Upload final (send headers &amp; CSV file contents)" />
     <MESSAGE value="Default Controller" />
+    <MESSAGE value="CSS changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -662,7 +659,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="54" selection-start="1712" selection-end="1712" vertical-scroll-proportion="-22.038462">
           <folding>
-            <marker date="1400696679224" expanded="false" signature="834:866" placeholder="..." />
+            <marker date="1400696679224" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -670,20 +667,6 @@
     <entry file="file://$PROJECT_DIR$/application/views/login_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="6" selection-start="519" selection-end="519" vertical-scroll-proportion="0.34210527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="6" selection-start="1713" selection-end="1713" vertical-scroll-proportion="0.61769116">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/includes/login-header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.5097451">
           <folding />
         </state>
       </provider>
@@ -720,17 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/includes/navigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="10" selection-start="1711" selection-end="1711" vertical-scroll-proportion="-21.076923">
-          <folding>
-            <marker date="1400745924445" expanded="true" signature="4:353" placeholder="..." />
-            <marker date="1400745924445" expanded="true" signature="375:1699" placeholder="..." />
-            <marker date="1400745924445" expanded="true" signature="1062:1656" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="4" selection-start="33" selection-end="33" vertical-scroll-proportion="-0.65384614">
@@ -745,9 +717,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/navigation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="10" selection-start="1711" selection-end="1711" vertical-scroll-proportion="-21.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/styles/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="32" selection-start="4168" selection-end="4168" vertical-scroll-proportion="0.71257484">
+        <state line="136" column="17" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="22" selection-start="2231" selection-end="2231" vertical-scroll-proportion="-21.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/login-header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="24" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.66266865">
           <folding />
         </state>
       </provider>

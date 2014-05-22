@@ -1,5 +1,5 @@
-<footer>
-    <br><hr>
+<footer class="site_footer">
+    <hr>
     <div class="copy_right">
         Copyright (C) Website.com<br/>
         All Rights Reserved

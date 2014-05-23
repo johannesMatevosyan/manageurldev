@@ -46,29 +46,64 @@
                 <b>User Permissions</b><br/><br/>
                 <div  class="scrolldiv">
                     <ul id="tree1">
-                        <li><input type="checkbox"><label>Node 1</label>
+                        <li><input type="checkbox"><label>URL CRM Pages</label></li>
                             <ul>
-                                <li><input type="checkbox"><label>Node 1.1</label>
+                                <li>
+                                    <input type="checkbox"><label>Statistics</label>
+                                </li>
                                     <ul>
-                                        <li><input type="checkbox"><label>Node 1.1.1</label>
+                                        <li><input type="checkbox"><label>View</label></li>
+                                        <li><input type="checkbox"><label>Edit</label></li>
                                     </ul>
                             </ul>
                             <ul>
-                                <li><input type="checkbox"><label>Node 1.2</label>
+                                <li>
+                                    <input type="checkbox"><label>Database Manager</label>
+                                </li>
                                     <ul>
-                                        <li><input type="checkbox"><label>Node 1.2.1</label>
-                                        <li><input type="checkbox"><label>Node 1.2.2</label>
-                                        <li><input type="checkbox"><label>Node 1.2.3</label>
-                                            <ul>
-                                                <li><input type="checkbox"><label>Node 1.2.3.1</label>
-                                                <li><input type="checkbox"><label>Node 1.2.3.2</label>
-                                            </ul>
-                                        <li><input type="checkbox"><label>Node 1.2.4</label>
-                                        <li><input type="checkbox"><label>Node 1.2.5</label>
-                                        <li><input type="checkbox"><label>Node 1.2.6</label>
+                                        <li><input type="checkbox"><label>View</label></li>
+                                        <li><input type="checkbox"><label>Edit</label></li>
                                     </ul>
                             </ul>
-                        <li><input type="checkbox"><label>Node 2</label>
+                            <ul>
+                                <li>
+                                    <input type="checkbox"><label>URL Preview</label>
+                                </li>
+                                    <ul>
+                                        <li><input type="checkbox"><label>View</label></li>
+                                        <li><input type="checkbox"><label>Edit</label></li>
+                                    </ul>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <input type="checkbox"><label>URL Upload</label>
+                                </li>
+                                    <ul>
+                                        <li><input type="checkbox"><label>View</label></li>
+                                        <li><input type="checkbox"><label>Edit</label></li>
+                                    </ul>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <input type="checkbox"><label>URL Download</label>
+                                </li>
+                                    <ul>
+                                        <li><input type="checkbox"><label>View</label></li>
+                                        <li><input type="checkbox"><label>Edit</label></li>
+                                    </ul>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <input type="checkbox"><label>User management</label>
+                                </li>
+                                    <ul>
+                                        <li><input type="checkbox"><label>View</label></li>
+                                        <li><input type="checkbox"><label>Edit</label></li>
+                                    </ul>
+                            </ul>
+
+
+                    <!--    <li><input type="checkbox"><label>Node 2</label>
                             <ul>
                                 <li><input type="checkbox"><label>Node 2.1</label>
                                     <ul>
@@ -88,7 +123,7 @@
                                         <li><input type="checkbox"><label>Node 2.2.6</label>
                                     </ul>
                             </ul>
-                    </ul>
+                    </ul> -->
 
                 </div>
             </td>

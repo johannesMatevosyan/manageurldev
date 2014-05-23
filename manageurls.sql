@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2014 at 06:34 PM
+-- Generation Time: May 23, 2014 at 01:45 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.3.13
 
@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data`
+--
+
+CREATE TABLE IF NOT EXISTS `data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(255) DEFAULT NULL,
+  `header_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `db_manager`
 --
 
@@ -33,20 +46,7 @@ CREATE TABLE IF NOT EXISTS `db_manager` (
   `alpha_num` enum('Alpha','Numeric') NOT NULL,
   `editable_cbx` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `db_manager`
---
-
-INSERT INTO `db_manager` (`id`, `header_title`, `content`, `alpha_num`, `editable_cbx`) VALUES
-(1, 'DR', NULL, 'Alpha', 1),
-(2, 'Likes', NULL, 'Alpha', 1),
-(3, 'Shares', NULL, 'Alpha', 1),
-(4, 'HH', NULL, 'Numeric', 0),
-(5, 'ttttwww www', NULL, 'Alpha', 1),
-(6, 'write something', NULL, 'Numeric', 1),
-(7, 'adadad', NULL, 'Alpha', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `membership` (
   `password` varchar(32) NOT NULL,
   `email_address` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Store registered users info' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Store registered users info' AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `membership`
@@ -70,7 +70,8 @@ CREATE TABLE IF NOT EXISTS `membership` (
 
 INSERT INTO `membership` (`id`, `first_name`, `last_name`, `username`, `password`, `email_address`) VALUES
 (1, 'Hovhannes', 'Matevosyan', 'johan', '81dc9bdb52d04dc20036dbd8313ed055', 'h.matevosyan@yahoo.com'),
-(2, 'David', 'Hamman', 'davehmn', '81dc9bdb52d04dc20036dbd8313ed055', 'grabdavid@gmail.com');
+(2, 'David', 'Hamman', 'davehmn', '81dc9bdb52d04dc20036dbd8313ed055', 'grabdavid@gmail.com'),
+(3, 'David', 'Francis', 'davef', '81dc9bdb52d04dc20036dbd8313ed055', 'hovmatevosyan@gmail.com');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

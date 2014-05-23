@@ -460,7 +460,15 @@ table th, td{
 .scrolldiv{
     overflow:   scroll;
     height: 200px;
+    width: 250px;
 }
+.scrolldiv ul{
+    padding: 1px 5px 1px 30px;
+}
+.scrolldiv li{
+    padding: 1px 2px 1px 5px;
+}
+
 /* end of User Management */
 
 /*  yellow button   */

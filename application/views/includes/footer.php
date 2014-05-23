@@ -144,29 +144,6 @@
     });
 
 
-
-    /**
-     *  File: column_selector.php
-     *  Description: Make comparison between headers imported from CSV file with the headers already stored in database
-     */
-    /*
-     $('.sample1').click( function() {
-
-     var header_title = $('#header_title').val();
-     var alpha_num = $('input[name=alpha_num]:checked').val();
-     var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
-
-     $.ajax({
-     type: 'POST',
-     url: base_url + 'crud/response',
-     data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
-     success: function(data){
-     $('.compare_headers').html(data);
-     }
-     });
-     });
-     */
-
 </script>
 </body>
 </html>

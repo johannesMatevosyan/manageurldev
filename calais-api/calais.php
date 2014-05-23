@@ -89,15 +89,6 @@ http://news.yahoo.com/ , http://www.eurosport.ru/football/    sdsdsd 137148 9171
 				$content .= $calais_text;
 				
 				$sum = count($data); 
-				/*echo " ".$line.": ";
-
-				for($k = 0; $k < 1; $k++){
-					for($j = 0; $j < $sum; $j++){
-						print $data[$j]." ";
-					}
-					echo "<hr>";	
-				}	
-*/
                 $line++;
             }
 

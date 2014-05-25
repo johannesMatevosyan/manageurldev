@@ -23,7 +23,7 @@
         <th>
             Select data:
             <select>
-                <option value="volvo">Contnt Analysis</option>
+                <option value="volvo">Content Analysis</option>
                 <option value="saab">Saab</option>
                 <option value="mercedes">Mercedes</option>
                 <option value="audi">Audi</option>
@@ -46,18 +46,20 @@
             </div>-->
 
             <div id="time_indication">
-                <p>2600 news domains added - 4:44 PM 30.04.2014<br>
-                ----------------------------------------------------</p>
-                <p>1500 news domains added - 4:44 PM 30.04.2014<br>
-                   2600 news domains added - 4:44 PM 30.04.2014<br>
-        ----------------------------------------------------------------------------</p>
-                2600 news domains added<br>
-                ....................................<br>
-                2600 news domains added<br>
-                ....................................<br>
-                2600 news domains added<br>
-                ....................................<br>
-                2600 news domains added<br>
+                <p>2600 news domains added - 4:32 PM 30.04.2014<br>
+                ------------------------------------------------------------------</p>
+                <p>1500 news domains added - 5:41 PM 30.04.2014<br>
+                   2600 news domains added - 3:34 PM 29.04.2014<br>
+                ------------------------------------------------------------------</p>
+                <p>1500 news domains added - 1:22 PM 28.04.2014<br>
+                    2600 news domains added - 4:51 PM 30.04.2014<br>
+                    ------------------------------------------------------------------</p>
+                <p>1500 news domains added - 3:42 PM 15.04.2014<br>
+                    2600 news domains added - 4:31 PM 12.04.2014<br>
+                    ------------------------------------------------------------------</p>
+                <p>1500 news domains added - 1:25 PM 27.04.2014<br>
+                    2600 news domains added - 2:17 PM 10.04.2014<br>
+                    ------------------------------------------------------------------</p>
             </div>
         </th>
         <th>

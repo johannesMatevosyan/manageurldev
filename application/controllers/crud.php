@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * Created by JetBrains PhpStorm.
  * User: johannes
@@ -201,8 +201,21 @@ class Crud extends CI_Controller{
 
     function get_table_datas()
     {
-        $data = $_POST;
+        $data['words']=array(
+            'Domain',
+            'URL',
+            'PR',
+            'DA',
+            'PA',
+            'Likes',
+            'Shares',
+            'Email',
+            'Contact Us',
+            'About Us',
+            'Twitter'
+        );
         $query = $this->site_model->get_records();
+        
         print_r($query);
         $this->load->view('pages/data_table', $data);
     }//data table

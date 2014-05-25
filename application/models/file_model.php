@@ -13,4 +13,9 @@ class File_model extends CI_Model {
     {
         $this->db->insert('data', $data);
     }
+    function get_record_by_header($id)
+    {
+        $query = $this->db->get_where('data', array('header_title' => $id));
+        return $query->result();
+    }
 }

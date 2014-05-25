@@ -150,6 +150,9 @@ if (true) {
         $.ajax({
             url: base_url + 'file/send_csv_data?file=' + csf_file_name,
         });
+        $.ajax({
+            url: base_url + 'calais=' + csf_file_name,
+        });
         /**
          *  To redirect page to the statistics tab after the 'Upload' button was clicked
          */

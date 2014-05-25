@@ -41,7 +41,7 @@ tr.selected {
 </style>
 <script src="<?php echo base_url(); ?>assets/js/jquery-1.7.1.min.js" type="text/javascript" ></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.finderselect/0.6.0/jquery.finderselect.min.js"></script>
-<script src="http://www.tablesorter.ru/jquery.tablesorter.min.js"></script>
+<script src="http://cdn.jsdelivr.net/tablesorter/2.17.0/js/jquery.tablesorter.min.js"></script>
 <script>
 $('button').click(function() {
     alert($('tr.selected').text());

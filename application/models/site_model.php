@@ -10,7 +10,7 @@ class Site_model extends CI_Model{
 
     function get_record_by_id($id)
     {
-        $query = $this->db->get_where('db_manager', array('id' => $id));
+        $query = $this->db->get_where('membership', array('id' => $id));
         return $query->result();
     }
 

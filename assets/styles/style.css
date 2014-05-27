@@ -460,13 +460,32 @@ table th, td{
 .scrolldiv{
     overflow:   scroll;
     height: 200px;
-    width: 250px;
+    width: 230px;
+    border: 1px solid darkgray;
 }
 .scrolldiv ul{
-    padding: 1px 5px 1px 30px;
+    padding: 1px 5px 1px 20px;
 }
 .scrolldiv li{
-    padding: 1px 2px 1px 5px;
+    padding: 1px 2px 1px 1px;
+}
+.ui-widget-content{
+    border: none !important;
+}
+.addNewUser{
+    text-align: left; padding-left: 10px;
+}
+#addUserName{
+    margin-left: 48px;
+}
+#addUserEmail{
+    margin-left: 50px;
+}
+#addUserPass{
+    margin-left: 26px;
+}
+#saveUser{
+    margin: 10px;
 }
 
 /* end of User Management */

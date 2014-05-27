@@ -2,22 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/libraries/acl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calais-api/calais.php" afterPath="$PROJECT_DIR$/calais-api/calais.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/statistics.php" afterPath="$PROJECT_DIR$/application/views/pages/statistics.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/pages/users_management.php" />
+      <change type="DELETED" beforePath="Z:\home\localhost\www\manageurldev\application\views\pages\user_management.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/content.php" afterPath="$PROJECT_DIR$/application/views/pages/content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/style.css" afterPath="$PROJECT_DIR$/assets/styles/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manageurldev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400997097137" ignored="false" />
-    <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400835621867" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401198890614" ignored="false" />
+    <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401200090218" ignored="false" />
     <file path="/navigation.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400745682796" ignored="false" />
     <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400662395784" ignored="false" />
     <file path="/crud.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400696489243" ignored="false" />
-    <file path="/site_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400693772387" ignored="false" />
+    <file path="/site_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401180405058" ignored="false" />
     <file path="/edit_dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400487962366" ignored="false" />
-    <file path="/a.dummy" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400677356664" ignored="false" />
-    <file path="/footer.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400746565280" ignored="false" />
+    <file path="/a.dummy" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401199325875" ignored="false" />
+    <file path="/footer.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401133366208" ignored="false" />
     <file path="/column_selector.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400830268624" ignored="false" />
     <file path="/url_upload.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400747998783" ignored="false" />
     <file path="/header.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400750778939" ignored="false" />
@@ -29,8 +30,15 @@
     <file path="/File.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400684195035" ignored="false" />
     <file path="/file_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400685076175" ignored="false" />
     <file path="/file.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400694691571" ignored="false" />
-    <file path="/user_management.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400835667487" ignored="false" />
-    <file path="/acl.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400997729850" ignored="false" />
+    <file path="/user_management.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401199189304" ignored="false" />
+    <file path="/acl.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401032282651" ignored="false" />
+    <file path="/cricket.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401029014876" ignored="false" />
+    <file path="/login.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401088562599" ignored="false" />
+    <file path="/Simple_User_Login.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401088202248" ignored="false" />
+    <file path="/.htaccess" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401087864567" ignored="false" />
+    <file path="/members.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401194486897" ignored="false" />
+    <file path="/members_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401185866991" ignored="false" />
+    <file path="/users_management.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401199690360" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,61 +58,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="acl.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/acl.php">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/styles/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="24" selection-start="224" selection-end="224" vertical-scroll-proportion="-7.1923075">
-              <folding>
-                <element signature="e#6#164#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="acl.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/libraries/acl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="2" selection-start="1031" selection-end="1031" vertical-scroll-proportion="-22.23077">
-              <folding>
-                <element signature="e#6#164#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="statistics.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/statistics.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="8" selection-start="850" selection-end="850" vertical-scroll-proportion="0.6431784">
+            <state line="472" column="28" selection-start="8257" selection-end="8257" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login_form.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/login_form.php">
+      <file leaf-file-name="column_selector.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/column_selector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="100" column="0" selection-start="5153" selection-end="5153" vertical-scroll-proportion="-26.846153">
               <folding>
-                <marker date="1400744023345" expanded="true" signature="31:518" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="1614:2316" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="1697:2316" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="1738:2045" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="2096:2316" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="2209:2316" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="2866:3472" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="3007:3138" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="3183:3472" placeholder="..." />
+                <marker date="1401035093491" expanded="false" signature="3455:3471" placeholder="..." />
+                <marker date="1401035093491" expanded="false" signature="3996:4007" placeholder="..." />
+                <marker date="1401035093491" expanded="false" signature="4128:4139" placeholder="..." />
+                <marker date="1401035093491" expanded="false" signature="4265:4276" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="4564:5339" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="5422:5646" placeholder="..." />
+                <marker date="1401035093491" expanded="false" signature="5487:5506" placeholder="..." />
+                <marker date="1401035093491" expanded="true" signature="5687:5960" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+      <file leaf-file-name="users_management.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/users_management.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.9615384">
+            <state line="51" column="0" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.33133432">
+              <folding>
+                <element signature="e#6#164#0" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/content.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="37" selection-start="1526" selection-end="1526" vertical-scroll-proportion="-21.076923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="membership_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/membership_model.php">
+      <file leaf-file-name="url_upload.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/url_upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.423077">
+            <state line="11" column="22" selection-start="525" selection-end="525" vertical-scroll-proportion="-7.1923075">
               <folding />
             </state>
           </provider>
@@ -128,22 +143,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/site.php" />
-        <option value="$PROJECT_DIR$/application/config/config.php" />
-        <option value="$PROJECT_DIR$/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/application/views/login_form.php" />
-        <option value="$PROJECT_DIR$/application/views/includes/navigation.php" />
-        <option value="$PROJECT_DIR$/application/views/pages/url_upload.php" />
-        <option value="$PROJECT_DIR$/application/views/includes/header.php" />
-        <option value="$PROJECT_DIR$/application/views/includes/login-header.php" />
+        <option value="$PROJECT_DIR$/calais-api/acl/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/calais-api/acl/application/controllers/crud.php" />
+        <option value="$PROJECT_DIR$/calais-api/acl/application/libraries/Simple_User_Login.php" />
+        <option value="$PROJECT_DIR$/calais-api/acl/application/libraries/simple_user_login.php" />
+        <option value="$PROJECT_DIR$/calais-api/acl/application/config/autoload.php" />
+        <option value="$PROJECT_DIR$/calais-api/acl/application/controllers/login.php" />
         <option value="$PROJECT_DIR$/application/views/includes/footer.php" />
-        <option value="$PROJECT_DIR$/application/views/pages/column_selector.php" />
+        <option value="$PROJECT_DIR$/application/models/members_model.php" />
+        <option value="$PROJECT_DIR$/application/config/autoload.php" />
+        <option value="$PROJECT_DIR$/application/models/site_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/members.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/duser_management2.php" />
         <option value="$PROJECT_DIR$/application/views/pages/user_management.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/content.php" />
         <option value="$PROJECT_DIR$/assets/styles/style.css" />
-        <option value="$PROJECT_DIR$/calais-api/acl/application/libraries/acl.php" />
-        <option value="$PROJECT_DIR$/application/config/acl.php" />
-        <option value="$PROJECT_DIR$/application/libraries/acl.php" />
-        <option value="$PROJECT_DIR$/application/views/pages/statistics.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/users_management.php" />
       </list>
     </option>
   </component>
@@ -180,6 +195,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,7 +224,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="calais-api" />
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -280,57 +314,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manageurldev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manageurldev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manageurldev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manageurldev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manageurldev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\home\localhost\www\manageurldev\application\models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.user_management.php">
+    <configuration default="false" name="user_management.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/application/views/pages/user_management.php">
+      <RunnerSettings RunnerId="PhpScriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="PhpScriptDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -338,7 +368,14 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="PHP Script.user_management.php" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.user_management.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -464,28 +501,40 @@
       <created>1400955438065</created>
       <updated>1400955438065</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Statistics: front end changes">
+      <created>1401013150179</created>
+      <updated>1401013150179</updated>
+    </task>
+    <task id="LOCAL-00027" summary="May 27">
+      <created>1401198655890</created>
+      <updated>1401198655890</updated>
+    </task>
+    <task id="LOCAL-00028" summary="May 27">
+      <created>1401198895606</created>
+      <updated>1401198895606</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54520166" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11477762" sideWeight="0.4534075" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16499282" sideWeight="0.45479834" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5465925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -533,7 +582,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="May 27" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -570,6 +619,8 @@
     <MESSAGE value="CALAIS API integration (Part 2)" />
     <MESSAGE value="MySQL database: last version" />
     <MESSAGE value="Upload folder" />
+    <MESSAGE value="Statistics: front end changes" />
+    <MESSAGE value="May 27" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,105 +628,135 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/styles/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="470" column="0" selection-start="8177" selection-end="8177" vertical-scroll-proportion="0.7849928" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="0" selection-start="4444" selection-end="4444" vertical-scroll-proportion="0.7196402" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/column_selector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="0" selection-start="7033" selection-end="7033" vertical-scroll-proportion="0.9021407" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/user_management.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="24" selection-start="4612" selection-end="4612" vertical-scroll-proportion="0.3898051" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="105" selection-start="2611" selection-end="2611" vertical-scroll-proportion="0.025487257" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/url_upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="29" selection-start="49" selection-end="49" vertical-scroll-proportion="0.025487257" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/file.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="12" selection-start="2527" selection-end="2527" vertical-scroll-proportion="0.66866565" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calais-api/acl/application/config/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0967742" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calais-api/acl/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="2" selection-start="923" selection-end="923" vertical-scroll-proportion="0.23943663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calais-api/acl/application/libraries/acl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="25" selection-start="5174" selection-end="5174" vertical-scroll-proportion="1.9514867">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/login_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1400744023345" expanded="true" signature="31:518" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.9615384">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/url_preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3119266" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/dbmanager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="21" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/membership_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.423077">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/acl.php">
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="24" selection-start="224" selection-end="224" vertical-scroll-proportion="-7.1923075">
-          <folding>
-            <element signature="e#6#164#0" expanded="true" />
-          </folding>
+        <state line="111" column="72" selection-start="3082" selection-end="3082" vertical-scroll-proportion="1.4459877">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/libraries/acl.php">
+    <entry file="file://$PROJECT_DIR$/application/models/members_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="2" selection-start="1031" selection-end="1031" vertical-scroll-proportion="-22.23077">
-          <folding>
-            <element signature="e#6#164#0" expanded="true" />
-          </folding>
+        <state line="5" column="5" selection-start="78" selection-end="78" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="29" selection-start="1425" selection-end="1425" vertical-scroll-proportion="-11.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/members.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="1770" selection-end="1770" vertical-scroll-proportion="-1.5384616">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/statistics.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="8" selection-start="850" selection-end="850" vertical-scroll-proportion="0.6431784">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/crud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.025487257">
+          <folding>
+            <marker date="1401035093486" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/site_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="5" selection-start="203" selection-end="203" vertical-scroll-proportion="0.031484257">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/url_upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="525" selection-end="525" vertical-scroll-proportion="-7.1923075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/column_selector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="0" selection-start="5153" selection-end="5153" vertical-scroll-proportion="-26.846153">
+          <folding>
+            <marker date="1401035093491" expanded="true" signature="1614:2316" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="1697:2316" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="1738:2045" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="2096:2316" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="2209:2316" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="2866:3472" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="3007:3138" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="3183:3472" placeholder="..." />
+            <marker date="1401035093491" expanded="false" signature="3455:3471" placeholder="..." />
+            <marker date="1401035093491" expanded="false" signature="3996:4007" placeholder="..." />
+            <marker date="1401035093491" expanded="false" signature="4128:4139" placeholder="..." />
+            <marker date="1401035093491" expanded="false" signature="4265:4276" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="4564:5339" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="5422:5646" placeholder="..." />
+            <marker date="1401035093491" expanded="false" signature="5487:5506" placeholder="..." />
+            <marker date="1401035093491" expanded="true" signature="5687:5960" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="37" selection-start="1526" selection-end="1526" vertical-scroll-proportion="-21.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="472" column="28" selection-start="8257" selection-end="8257" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/users_management.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.33133432">
+          <folding>
+            <element signature="e#6#164#0" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

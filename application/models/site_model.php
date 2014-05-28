@@ -1,12 +1,14 @@
 <?php
 
 class Site_model extends CI_Model{
+
     function __construct()
     {
         // Call the Model constructor
         parent::__construct();
         $this->load->dbforge();
     }
+
     function add_column($name)
     {  
         $fields = array(
@@ -20,7 +22,7 @@ class Site_model extends CI_Model{
     }
     function delete_column($name)
     {
-     $this->dbforge->drop_column('excel', $name);
+        $this->dbforge->drop_column('excel', $name);
     }
     function get_record_by_id($id)
     {
@@ -35,7 +37,8 @@ class Site_model extends CI_Model{
                        );
        $this->dbforge->modify_column('excel', $fields);
     }
-                function add_record($data)
+
+    function add_record($data)
     {
         $this->db->insert('db_manager', $data);
     }
@@ -68,11 +71,11 @@ class Site_model extends CI_Model{
     }
     function db_manager_joined_with_data()
     {
-    $this->db->select('*');
-    //$this->db->from('db_manager')->where('header_title', "URL");
-    $this->db->from('db_manager');
-    $this->db->join('data', 'db_manager.id = data.header_id');
-    return $this->db->get();     
+        $this->db->select('*');
+        //$this->db->from('db_manager')->where('header_title', "URL");
+        $this->db->from('db_manager');
+        $this->db->join('data', 'db_manager.id = data.header_id');
+        return $this->db->get();
     }
 
 }

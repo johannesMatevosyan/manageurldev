@@ -30,9 +30,14 @@ class Login extends CI_Controller{
          */
         if($query)
         {
+            $row[0] = array();
+
+            $row = $this->membership_model->get_row($this->input->post('username'));
+
             $data = array(
                 'username' => $this->input->post('username'),
                 'is_logged_in' => true,
+                'type' => $row[0]->type,
             );
 
             /**

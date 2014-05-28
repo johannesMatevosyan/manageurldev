@@ -1,4 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Crud extends CI_Controller{
 
     function __construct()
@@ -6,6 +7,7 @@ class Crud extends CI_Controller{
         parent::__construct();
         $this->is_logged_in();
     }
+
     function is_logged_in()
     {
         $is_logged_in = $this->session->userdata('is_logged_in');
@@ -23,6 +25,7 @@ class Crud extends CI_Controller{
             die();
         }
     }
+
     function index()
     {
         $data = array();
@@ -32,15 +35,21 @@ class Crud extends CI_Controller{
         }
         $this->load->view('options_view', $data);
     }
+
     function edit($id = null)
     {
+        if($this->session->userdata('type') == 'viewer')
+        {
+            redirect('block');
+        }
+
         if($query = $this->site_model->get_record_by_id($id))
         {
             $data['records'] = $query;
         }
         else
         {
-            echo "<h1>no query</h1>";
+            echo "<h1>No query</h1>";
         }
         $this->load->view('edit_pages', $data);
     }
@@ -99,6 +108,7 @@ class Crud extends CI_Controller{
             }
         }        
     }// response
+
     /**
      * accepts uploaded CSV file from URL upload, read information and returns it
      */
@@ -116,8 +126,15 @@ class Crud extends CI_Controller{
             $this->site_model->delete_row_by_header_title($post['delete_header']);
         }
     }
+
     function ajax_edit_headers()
     {
+
+        if($this->session->userdata('type') == 'viewer')
+        {
+            echo "<script>alert('Sorry, you have no permission for this action...');</script>";
+            exit;
+        }
         $data = $_POST;
         if(!empty($data))
         {
@@ -133,6 +150,7 @@ class Crud extends CI_Controller{
             $this->load->view('pages/edit_dbmanager', $d);
         }
     }//edit_headers
+
     function update_header()
     {
         $data = $_POST;
@@ -145,6 +163,7 @@ class Crud extends CI_Controller{
             $this->ajax_edit_headers($id);
         }
     }//update_header
+
     function get_table_datas()
     {
         $data = array();
@@ -153,20 +172,7 @@ class Crud extends CI_Controller{
             $data['records'] = $query;
         }
 
-        /*$data['words']=array(
-            'Domain',
-            'URL',
-            'PR',
-            'DA',
-            'PA',
-            'Likes',
-            'Shares',
-            'Email',
-            'Contact Us',
-            'About Us',
-            'Twitter'
-        );
-       */
        $this->load->view('pages/data_table',$data);
     }//data table
+
 } // class Crud

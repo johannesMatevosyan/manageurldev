@@ -44,4 +44,12 @@ class Membership_model extends CI_Model{
         return $insert;
     }
 
+    function get_row($name)
+    {
+        $this->db->where('username', $name);
+        $query = $this->db->get('membership');
+
+        return $query->result();
+    }
+
 }

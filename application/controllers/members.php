@@ -47,9 +47,6 @@ class Members extends CI_Controller{
         if($query = $this->members_model->get_members())
         {
             $data['records'] = $query;
-            echo '<pre>';
-            //print_r($data['records']);
-            echo '</pre>';
 
             echo '<select name="manageUsers" id="manageUsers" multiple>';
             foreach($data['records'] as $key => $value)

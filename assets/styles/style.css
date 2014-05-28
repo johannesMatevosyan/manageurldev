@@ -72,66 +72,6 @@ footer>div{
 }
 /* footer */
 
-/*Navigation*/
-/*
-#info{
-
-}
-#info p {
-    background-color: inherit;
-}
-#info-nav{
-
-}
-#navbar-outer{
-    margin-left: 3px;
-	padding:0 0 0 2px;
-}
-#info-nav li{
-    display: inline-block;
-    background: #bbddff;
-    border: 1px solid #888;
-    border-bottom: 0;
-    border-bottom: 1px #5eaafb solid;
-    padding: 2px 1px;
-    width: 125px;
-    margin-right: -5px;
-    text-align: center;
-    cursor: pointer;
-    -webkit-border-top-left-radius: 10px;
-    -webkit-border-top-right-radius: 10px;
-    -moz-border-radius-topleft: 10px;
-    -moz-border-radius-topright: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-#info-nav li a:hover{
-    color:#d15600;
-}
-#info-nav li a{
-    color: black;
-    font-size: 12px;
-}
-#info-nav li.current{
-    background: #0080ff;
-    color: #fff;
-    border-bottom: 1px #0080ff solid;
-    height: 25px;
-}
-#info-nav li.current a{
-    color: #fff;
-}
-
-#celebs {
-    clear: both;
-}
-#blue_line{
-    height: 16px;
-    background-image: url('../../assets/img/nav_menu_bottom.png');
-    background-repeat: repeat-x;
-    margin-top: -18px;
-}
-*/
 #info-nav {
     position: relative;
     height: 25px;
@@ -515,14 +455,12 @@ table th, td{
 }
 /*  end of yellow button   */
 
-
-/*
-zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-
-
-@media all and (max-width: 1280px){
-    body {
-        background: #ccd;
-    }
+/* Access denied page */
+.acceess_denied{
+    width: 700px;
+    height: 150px;
+    margin: 10% auto 70px auto;
+    border: 1px solid graytext;
+    text-align: center;
+    color: red;
 }
-*/

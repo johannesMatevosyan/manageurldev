@@ -38,9 +38,11 @@ class Crud extends CI_Controller{
 
     function edit($id = null)
     {
+
         if($this->session->userdata('type') == 'viewer')
         {
-            redirect('block');
+            echo "<script> document.location.href = '".base_url()."block'; </script>";
+            exit;
         }
 
         if($query = $this->site_model->get_record_by_id($id))
@@ -55,6 +57,13 @@ class Crud extends CI_Controller{
     }
     function create()
     {
+
+        if($this->session->userdata('type') == 'viewer')
+        {
+            echo "<script> document.location.href = '".base_url()."block'; </script>";
+            exit;
+        }
+
         $post = $_POST;
         foreach($post as $key => $value){
             $data[$key] =  $value;
@@ -64,12 +73,26 @@ class Crud extends CI_Controller{
     }
     function update($id)
     {
+
+        if($this->session->userdata('type') == 'viewer')
+        {
+            echo "<script> document.location.href = '".base_url()."block'; </script>";
+            exit;
+        }
+
         $data = $_POST;
         $this->site_model->update_record($data, $id);
         $this->edit($id);
     }
     function delete()
     {
+
+        if($this->session->userdata('type') == 'viewer')
+        {
+            echo "<script> document.location.href = '".base_url()."block'; </script>";
+            exit;
+        }
+
         $this->site_model->delete_row();
     }
     function ajax_get_headers()
@@ -88,6 +111,7 @@ class Crud extends CI_Controller{
         //echo '</select>';
 
     }// response
+
     function ajax_set_headers()
     {
         $headers = array();
@@ -97,10 +121,13 @@ class Crud extends CI_Controller{
          */
         if(!empty($post))
         {
-            if (in_array($post['header_title'], $this->site_model->get_columns()))  
+
+            if($this->session->userdata('type') == 'viewer')
             {
-                echo "<script>alert('Header with the same name already exists. Please choose another name...');</script>";    
+                echo "<script> document.location.href = '".base_url()."block'; </script>";
+                exit;
             }
+
             else
             {
                $this->site_model->add_column($post['header_title']);
@@ -119,6 +146,13 @@ class Crud extends CI_Controller{
 
     function delete_header()
     {
+
+        if($this->session->userdata('type') == 'viewer')
+        {
+            echo "<script> document.location.href = '".base_url()."block'; </script>";
+            exit;
+        }
+
         $post = $_POST;
         if(!empty($post))
         {
@@ -132,9 +166,10 @@ class Crud extends CI_Controller{
 
         if($this->session->userdata('type') == 'viewer')
         {
-            echo "<script>alert('Sorry, you have no permission for this action...');</script>";
+            echo "<script> document.location.href = '".base_url()."block'; </script>";
             exit;
         }
+
         $data = $_POST;
         if(!empty($data))
         {
@@ -153,6 +188,12 @@ class Crud extends CI_Controller{
 
     function update_header()
     {
+        if($this->session->userdata('type') == 'viewer')
+        {
+            echo "<script> document.location.href = '".base_url()."block'; </script>";
+            exit;
+        }
+
         $data = $_POST;
         $id = $data['id'];
         if(!empty($data))

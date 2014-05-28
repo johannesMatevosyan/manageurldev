@@ -147,12 +147,22 @@ select[multiple]{
 .pages{
     margin: 0 auto;
     width: 700px;
-/*   background: yellow; */
 }
+.button{
+    width: 80px;
+    border-radius:5px;
+}
+.statistics_title{
+    margin: 0 auto;
+    width: 700px;
+    text-align: center;
+}
+/* end of Page content */
 
 /* Statistics */
 #domains{
-    margin: 0 15%;
+    margin: 0 25px 0 50px;
+    width: 250px;
 }
 #time_indication{
     overflow: scroll;
@@ -416,13 +426,13 @@ table th, td{
     text-align: left; padding-left: 10px;
 }
 #addUserName{
-    margin-left: 48px;
+    margin: 0 0 5px 48px;
 }
 #addUserEmail{
-    margin-left: 50px;
+    margin: 0 0 5px 50px;
 }
 #addUserPass{
-    margin-left: 26px;
+    margin: 0 0 5px 26px;
 }
 #saveUser{
     margin: 10px;

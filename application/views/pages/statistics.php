@@ -10,10 +10,12 @@
 ?>
 <h2>Statistics</h2>
 <br>
+<div class="statistics_title">
 <b>Logs</b><button id="domains">Total Unique Domains 156.000</button><b>URL Database Stats</b>
+</div>
 <br>
 <br>
-<table align="center" width="98%" border="1" >
+<table align="center" width="98%" border="0" >
     <tr>
         <th align="left">
             <button>Clear Logs</button>
@@ -63,7 +65,7 @@
             </div>
         </th>
         <th>
-            <table id="child_table" border="1" width="100%">
+            <table id="child_table" border="0" width="100%">
                 <tr>
                     <th>data point</th>
                     <th>value</th>

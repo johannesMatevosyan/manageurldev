@@ -17,7 +17,7 @@
         <button class="url_preview_buttons" id="download_csv_btn"> Download CSV</button>
     </div>
     <h2>URL Preview</h2>
-        <button class="url_preview_edit"> Edit Cell</button>
+        <button class="url_preview_edit button"> Edit Cell</button>
     <p>URL's Per Page</p>
     <select name="urls_per_page" id="urls_per_page" class="url_preview_edit">
         <option value="">250</option>
@@ -262,9 +262,3 @@
         $("#download_csv_dialog").hide();
     });
 </script>
-<!--
-<button class="url_preview_buttons" id="search_filter_btn"> Search + Filter</button>
-</div>
-<div class="url_preview_button">
-    <button class="url_preview_buttons" id="download_csv_btn"
-    -->

@@ -42,7 +42,6 @@ class Members extends CI_Controller{
     function index()
     {
         $data = array();
-        //$query = $this->members_model->get_members();
 
         if($query = $this->members_model->get_members())
         {
@@ -90,7 +89,7 @@ class Members extends CI_Controller{
         /**
          * fill the <select> tag and display it in table field which has 'db_header_results' class name
          */
-        echo '<select name="manageUsers" id="manageUsers" multiple>';
+        echo '<select name="manageUsers" id="manageUsers" multiple> dfddfdf';
         foreach($headers['records'] as $key => $value)
         {
             echo '<option class="selectUser" id='.$value->id.' value='.$value->first_name.' >'.$value->first_name.'</option>';

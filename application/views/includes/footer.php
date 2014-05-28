@@ -12,6 +12,12 @@
             echo 'var current = "'.$current.'";';
         }
     ?>
+
+    /**
+     *  receive registered user type from database
+     */
+    var user_type = "<?php $this->session->userdata('type'); ?>";
+
    function default_header(){
      $.ajax({
          async: false,
@@ -22,6 +28,7 @@
             }
          });
      }
+
     var base_url = "<?php echo base_url(); ?>";
 
     function call_defaults(){
@@ -33,6 +40,10 @@
          *  Description: Manually add new headers from URL Upload page to database
          */
         $('#add_url_upload').click( function() {
+            if(user_type = 'viewer')
+            {
+                document.location.href = base_url + 'block';
+            }
 
             var header_title = $('#header_url_upload').val();
             var alpha_num = $('input[name=alpha_num]:checked').val();
@@ -71,6 +82,11 @@
          *              Values in select tag are collected from .CSV fikle
          */
         $('#add_header_from_url').click( function() {
+            if(user_type = 'viewer')
+            {
+                document.location.href = base_url + 'block';
+            }
+
             var header_title = $('#select_header option:selected').val();
             $.ajax({
                 type: 'POST',
@@ -84,7 +100,7 @@
 
     /**
      *  File: url_upload
-     * */
+     */
         $('#submitbtn').click(function() {
 
             var options = {
@@ -111,22 +127,34 @@
      *  Description: Add new headers into database
      */
     $('.addHeader').click( function() {
-        var header_title = $('#header_title').val();
-        var alpha_num = $('input[name=alpha_num]:checked').val();
-        var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/ajax_set_headers',
-            data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
-            success: default_header
-        });
-        $('#header_title').val('');
+        if(user_type = 'viewer')
+        {
+            document.location.href = base_url + 'block';
+        }
+
+            var header_title = $('#header_title').val();
+            var alpha_num = $('input[name=alpha_num]:checked').val();
+            var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'crud/ajax_set_headers',
+                data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
+                success: default_header
+            });
+            $('#header_title').val('');
+
     });
-    /*
+
+    /**
      * delete and edite
      *  File: dbmanager.php
      */
     $('.deleteHeader').click( function() {
+        if(user_type = 'viewer')
+        {
+            document.location.href = base_url + 'block';
+        }
+
         var delete_header = $('#url_db_headers').children(":selected").val();
         $.ajax({
             type: 'POST',
@@ -155,6 +183,32 @@
         $('#header_title').val('');
     });
 
+    /**
+     *  File: users_management.php
+     *  Description: Add new users to database
+     */
+    $('#saveUser').click( function() {
+        if(user_type = 'viewer')
+        {
+        //    document.location.href = base_url + 'block';
+        }
+
+        var newUserName = $('#addUserName').val();
+        var newUserName = $('#addUserEmail').val();
+        var newUserPass = $('#addUserPass').val();
+        var checkboxes = $('input[type=checkbox]:checked').val();
+
+        alert(newUserName + ' - ' + newUserName + ' - ' + newUserPass + ' - ' + checkboxes);
+
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'crud/ajax_set_headers',
+           // data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
+           // success: default_header
+        });
+        $('#header_title').val('');
+
+    });
 
 </script>
 </body>

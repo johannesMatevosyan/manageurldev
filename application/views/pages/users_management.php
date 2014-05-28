@@ -20,8 +20,8 @@
         <th></th>
     </tr>
     <tr>
-        <td class="addNewUser">Name <input type="text" id="addUserName" size="15"></td>
-        <td><input type="button" class="editNewUser" value="Edite User"></td>
+        <td class="addNewUser">Name <input type="text" name="newUserName" id="addUserName" size="15"></td>
+        <td><input type="button" class="editNewUser button" value="Edite User"></td>
         <td rowspan="3" class="manageUsers">
 
             <select name="manageUsers" id="manageUsers" multiple>
@@ -31,12 +31,12 @@
         </td>
     </tr>
     <tr>
-        <td class="addNewUser">Email <input type="text" id="addUserEmail" size="15"></td>
+        <td class="addNewUser">Email <input type="text" name="newUserEmail" id="addUserEmail" size="15"></td>
         <td></td>
 
     </tr>
     <tr>
-        <td class="addNewUser">Password <input type="text" id="addUserPass" size="15"></td>
+        <td class="addNewUser">Password <input type="text" name="newUserPass" id="addUserPass" size="15"></td>
         <td></td>
 
     </tr>
@@ -51,8 +51,8 @@
                             <input type="checkbox"><label>Statistics</label>
 
                         <ul>
-                            <li><input type="checkbox"><label>View</label>
-                            <li><input type="checkbox"><label>Edit</label>
+                            <li><input name="statistics_perm" type="checkbox"><label>View</label>
+                            <li><input name="statistics_perm" type="checkbox"><label>Edit</label>
                         </ul>
                     </ul>
                     <ul>
@@ -60,8 +60,8 @@
                             <input type="checkbox"><label>Database Manager</label>
 
                         <ul>
-                            <li><input type="checkbox"><label>View</label>
-                            <li><input type="checkbox"><label>Edit</label>
+                            <li><input name="dbanager_perm" type="checkbox"><label>View</label>
+                            <li><input name="dbanager_perm" type="checkbox"><label>Edit</label>
                         </ul>
                     </ul>
                     <ul>
@@ -69,8 +69,8 @@
                             <input type="checkbox"><label>URL Preview</label>
 
                         <ul>
-                            <li><input type="checkbox"><label>View</label>
-                            <li><input type="checkbox"><label>Edit</label>
+                            <li><input name="url_preview_perm" type="checkbox"><label>View</label>
+                            <li><input name="url_preview_perm" type="checkbox"><label>Edit</label>
                         </ul>
                     </ul>
                     <ul>
@@ -78,8 +78,8 @@
                             <input type="checkbox"><label>URL Upload</label>
 
                         <ul>
-                            <li><input type="checkbox"><label>View</label>
-                            <li><input type="checkbox"><label>Edit</label>
+                            <li><input name="url_upload_perm" type="checkbox"><label>View</label>
+                            <li><input name="url_upload_perm" type="checkbox"><label>Edit</label>
                         </ul>
                     </ul>
                     <ul>
@@ -87,8 +87,8 @@
                             <input type="checkbox"><label>URL Download</label>
 
                         <ul>
-                            <li><input type="checkbox"><label>View</label>
-                            <li><input type="checkbox"><label>Edit</label>
+                            <li><input name="url_download_perm" type="checkbox"><label>View</label>
+                            <li><input name="url_download_perm" type="checkbox"><label>Edit</label>
                         </ul>
                     </ul>
                     <ul>
@@ -96,8 +96,8 @@
                             <input type="checkbox"><label>User management</label>
 
                         <ul>
-                            <li><input type="checkbox"><label>View</label>
-                            <li><input type="checkbox"><label>Edit</label>
+                            <li><input name="user management_perm" type="checkbox"><label>View</label>
+                            <li><input name="user management_perm" type="checkbox"><label>Edit</label>
                         </ul>
                     </ul>
             </div>
@@ -105,7 +105,7 @@
         <td></td>
     </tr>
     <tr>
-        <td><input type="button" class="saveUser" id="saveUser" value="Save User"></td>
+        <td><input type="button" class="saveUser button" id="saveUser" value="Save User"></td>
         <td></td>
     </tr>
 </table>

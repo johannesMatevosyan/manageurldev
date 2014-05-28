@@ -116,18 +116,19 @@ class Crud extends CI_Controller{
     {
         $headers = array();
         $post = $_POST;
+
+        if($this->session->userdata('type') == 'viewer') exit;
+
         /**
          * to check if $_POST array is not empty, if so then new entry cannot be added to database
          */
         if(!empty($post))
         {
 
-            if($this->session->userdata('type') == 'viewer')
+            if (in_array($post['header_title'], $this->site_model->get_columns()))
             {
-                echo "<script> document.location.href = '".base_url()."block'; </script>";
-                exit;
+                echo "<script>alert('Header with the same name already exists. Please choose another name...');</script>";
             }
-
             else
             {
                $this->site_model->add_column($post['header_title']);
@@ -147,11 +148,7 @@ class Crud extends CI_Controller{
     function delete_header()
     {
 
-        if($this->session->userdata('type') == 'viewer')
-        {
-            echo "<script> document.location.href = '".base_url()."block'; </script>";
-            exit;
-        }
+        if($this->session->userdata('type') == 'viewer') exit;
 
         $post = $_POST;
         if(!empty($post))

@@ -21,7 +21,7 @@
         </tr>
         <tr>
             <td style="text-align: right;">Name <input type="text" size="15"></td>
-            <td><input type="button" value="Edite User"></td>
+            <td><input type="button" class="button" value="Edite User"></td>
             <td rowspan="3">
                 <select multiple >
                     <option value="volvo">Volvo</option>
@@ -131,7 +131,7 @@
 
         </tr>
         <tr>
-            <td><input type="button" value="Save User"></td>
+            <td><input type="button" class="button" value="Save User"></td>
             <td></td>
         </tr>
     </table>

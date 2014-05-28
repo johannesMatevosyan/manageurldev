@@ -39,7 +39,7 @@
         <td>
 			<input type="radio" name="alpha_num" id="alpha" value="alpha" checked>Alpha &nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td>
-			<input type="button" class="editHeader" value="Edit">
+			<input type="button" class="editHeader button" value="Edit">
 		</td>
     </tr>
     <tr>
@@ -50,7 +50,7 @@
         <td>
 			<input type="checkbox" name="editable_cbx" id="editable_checkbox" value="1" checked> Editable
 		</td>
-        <td><input type="button" class="deleteHeader" value="Delete"></td>
+        <td><input type="button" class="deleteHeader button" value="Delete"></td>
     </tr>
     <tr>
         <td><input type="button" class="addHeader" value="Add New Header"></td>

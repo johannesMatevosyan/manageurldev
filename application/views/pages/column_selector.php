@@ -50,7 +50,7 @@ if (true) {
                     echo '
                             <h2> Column Selector </h2>
                             <form id="csv_olumn_headers" action="" method="post">
-                                <table  align="center" border="1" cellpadding="0">
+                                <table  align="center" border="0" cellpadding="0">
                                     <tr>
                                         <th>CSV Column headers</th>
                                         <th>URL Database Headers</th>
@@ -84,10 +84,9 @@ if (true) {
                                                 }
                                                 echo '</select>
                                             <br/><br/>
-                                           <input type="button" style="width:90px;" id="add_header_from_url" value="Add"><br/><br/>
-                                           <input type="button" style="width:90px;" class="move_item" id="move_up" value="Up"><br/><br/>
-                                           <input type="button" style="width:90px;" class="move_item" id="move_down" value="Down"><br/><br/>
-                                        <!--<input type="button" size="60" class="move_item" id="add_header_from_url" value="Down"><br/>-->
+                                           <input type="button" class="button" style="width:90px;" id="add_header_from_url" value="Add"><br/><br/>
+                                           <input type="button" class="button" style="width:90px;" class="move_item" id="move_up" value="Up"><br/><br/>
+                                           <input type="button" class="button" style="width:90px;" class="move_item" id="move_down" value="Down"><br/><br/>
                                         </td>
                                         <td>
                                            <input type="text" size="20" name="header_title" id="header_url_upload" placeholder="Name"><br/>
@@ -96,7 +95,7 @@ if (true) {
                                             <input type="radio" name="alpha_num" id="numeric_url_upload" value="numeric"> Numeric<br/><br/>
                                             <input type="checkbox" name="editable_cbx" id="checkbox_url_upload" value="1" checked> Editable<br/>
 
-                                           <input type="button" size="20" id="add_url_upload" class="add_url_upload" value="Add New Header">
+                                           <input type="button" size="20" id="add_url_upload" class="add_url_upload button" value="Add New Header">
                                         </td>
                                     </tr>
                                     <tr>
@@ -104,7 +103,7 @@ if (true) {
                                     </tr>
                                     <tr>
                                         <td></td>
-                                        <td colspan="2"><input type="button" class="yellowButton upload_file" value="Upload"></td>
+                                        <td colspan="2"><input type="button" class="yellowButton upload_file button" value="Upload"></td>
                                         <td></td>
                                     </tr>
                                 </table>

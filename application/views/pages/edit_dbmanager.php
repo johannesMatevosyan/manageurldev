@@ -2,7 +2,7 @@
 <?php if(isset($records)) : foreach($records as $row): ?>
 
 <form id="comment" method="post" class="db_manager">
-<table border="1" align="center">
+<table border="0" align="center">
     <tr>
         <th><h3>Edit URL Database Headers</h3></th>
     </tr>
@@ -51,8 +51,8 @@
     </tr>
     <tr>
         <td>
-            <input type="button" class="updateHeader" value="Update">&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" class="backTodbmanager" value="Back">
+            <input type="button" class="updateHeader button" value="Update">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" class="backTodbmanager button" value="Back">
         </td>
     </tr>
 </table>

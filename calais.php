@@ -1,9 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
- set_time_limit (500);
-class Calais extends CI_Controller {
-
-	public function index()
- 	{
+<?php
 function simple_start($parser, $element_name, $element_atts) {
 	
 	global $simple_level;
@@ -130,7 +125,7 @@ function simple_stop($parser, $element_name) {
 		{
 			echo "Found element of type ".$element["type"];
 			echo " with name ".$element["name"];
-			echo " repeated ".$element["repeat"]." times\n<br>\n";
+			echo " repeated ".$element["repeat"]." times\n<br>\n"; 	
 		} 
 	}
 
@@ -158,13 +153,14 @@ function simple_char($parser, $data) {
 	}
 
 }
+$apiKey = "mzcxpd66uyevcektzdpuruqv";
+$content = file_get_contents("http://www.ok.com");
+echo $content; exit;
+
+
 
 /*************************** My Code *********************************/
 
-
-// content to calais site
-function tocalaissite($content) {
-$apiKey = "mzcxpd66uyevcektzdpuruqv";
 $contentType = "text/txt"; // simple text - try also text/html
 $outputFormat = "text/simple"; // simple output format - try also xml/rdf and text/microformatas
 
@@ -179,7 +175,8 @@ $paramsXML = "<c:params xmlns:c=\"http://s.opencalais.com/1/pred/\" " .
 			"c:submitter=\"Calais REST Sample\"></c:userDirectives> " .
 			"<c:externalMetadata><c:Caller>Calais REST Sample</c:Caller>" .
 			"</c:externalMetadata></c:params>";
-   // Construct the POST data string
+
+// Construct the POST data string
 $data = "licenseID=".urlencode($apiKey);
 $data .= "&paramsXML=".urlencode($paramsXML);
 $data .= "&content=".urlencode($content); 
@@ -220,31 +217,9 @@ if (xml_parse($xmlp, $response, 1) == 0)
 {
 	echo "Parse error";
 }
-xml_parser_free($xmlp); 
-}
+xml_parser_free($xmlp);
 
-if($query = $this->file_model->get_records())
-{   
-            foreach($query as $v){
-               
-               $domain= parse_url($v->URL);
-               if (isset($domain['host'])) {                   
-                $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
-                $content = strip_tags(file_get_contents('http://'.$domain['host']));
-                tocalaissite($content);
-                echo $domain['host'],"<hr>";
-               }                                  
-               }
-          
 
-}
-/*
-$content = strip_tags(file_get_contents("http://www.ok.com"));
-tocalaissite($content);
-echo '<hr>';
-$content = strip_tags(file_get_contents("http://device.am"));
-tocalaissite($content);
- * 
- */	
-}
-}
+
+
+?>

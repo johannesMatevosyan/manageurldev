@@ -23,13 +23,9 @@
     <!-- include jquery files to read uploaded .CSV files-->
     <!--  <script type="text/javascript" src="<?php //echo base_url(); ?>assets/js/jquery.min.js"></script>-->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.form.js"></script>
+    <script src="http://cdn.jsdelivr.net/tablesorter/2.17.0/js/jquery.tablesorter.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.finderselect/0.6.0/jquery.finderselect.min.js"></script>
-    <style type="text/css">
-
-    </style>
-
-</head>
-<?php set_time_limit(100); ?>
+ </head>
 <body>
 <header>
     <div id="head">

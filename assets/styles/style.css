@@ -199,7 +199,7 @@ footer>div{
 }
 select[multiple]{
     width: 100%;
-    height: 100%;
+    height: 100% !important;
 }
 /* end of Navigation */
 
@@ -315,11 +315,11 @@ table th, td{
     margin:0 auto;
 }
 .url_preview_heading h2{
-    margin:0 14px;
+    margin:0 7px;
     display:inline;
 }
 .url_preview_heading p{
-    margin:0 5px;
+    margin:0 1px;
     display:inline;
 }
 .url_preview_title{
@@ -460,32 +460,13 @@ table th, td{
 .scrolldiv{
     overflow:   scroll;
     height: 200px;
-    width: 230px;
-    border: 1px solid darkgray;
+    width: 250px;
 }
 .scrolldiv ul{
-    padding: 1px 5px 1px 20px;
+    padding: 1px 5px 1px 30px;
 }
 .scrolldiv li{
-    padding: 1px 2px 1px 1px;
-}
-.ui-widget-content{
-    border: none !important;
-}
-.addNewUser{
-    text-align: left; padding-left: 10px;
-}
-#addUserName{
-    margin-left: 48px;
-}
-#addUserEmail{
-    margin-left: 50px;
-}
-#addUserPass{
-    margin-left: 26px;
-}
-#saveUser{
-    margin: 10px;
+    padding: 1px 2px 1px 5px;
 }
 
 /* end of User Management */

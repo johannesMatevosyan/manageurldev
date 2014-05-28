@@ -23,11 +23,11 @@
             <td style="text-align: right;">Name <input type="text" size="15"></td>
             <td><input type="button" value="Edite User"></td>
             <td rowspan="3">
-                <!-- display registered members-->
-                <select name="manageUsers" id="manageUsers" multiple >
-                    <option value="johan">johan</option>
-                    <option value="davehmn">davehmn</option>
-                    <option value="davef">davef</option>
+                <select multiple >
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
                 </select>
             </td>
         </tr>
@@ -101,50 +101,37 @@
                                         <li><input type="checkbox"><label>Edit</label></li>
                                     </ul>
                             </ul>
+
+
+                    <!--    <li><input type="checkbox"><label>Node 2</label>
+                            <ul>
+                                <li><input type="checkbox"><label>Node 2.1</label>
+                                    <ul>
+                                        <li><input type="checkbox"><label>Node 2.1.1</label>
+                                    </ul>
+                                <li><input type="checkbox"><label>Node 2.2</label>
+                                    <ul>
+                                        <li><input type="checkbox"><label>Node 2.2.1</label>
+                                        <li><input type="checkbox"><label>Node 2.2.2</label>
+                                        <li><input type="checkbox"><label>Node 2.2.3</label>
+                                            <ul>
+                                                <li><input type="checkbox"><label>Node 2.2.3.1</label>
+                                                <li><input type="checkbox"><label>Node 2.2.3.2</label>
+                                            </ul>
+                                        <li><input type="checkbox"><label>Node 2.2.4</label>
+                                        <li><input type="checkbox"><label>Node 2.2.5</label>
+                                        <li><input type="checkbox"><label>Node 2.2.6</label>
+                                    </ul>
+                            </ul>
+                    </ul> -->
+
                 </div>
             </td>
             <td></td>
+
         </tr>
         <tr>
-            <td><input type="button" class="editUser" value="Save User"></td>
+            <td><input type="button" value="Save User"></td>
             <td></td>
         </tr>
     </table>
-
-
-<script language="javascript" type="text/javascript">
-
-    function show_members(){
-
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'members/response_members/',
-            data: '';
-            success: function(data){
-                $('.manageUsers').html(data);
-            }
-        });
-    }
-    show_members();
-
-    /**
-     *  File: user_management.php
-     *  Description: Edit selected header by id in database
-     */
-    $('.editUser').click( function() {
-
-        var id = $('#manageUsers').children(":selected").attr("id");
-        var edit_header = $('#manageUsers').children(":selected").val();
-
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/edit_headers/',
-            data:  'edit_header=' + edit_header + '&id=' + id,
-            success: function(data){
-                $('#info .db_manager').html(data);
-            }
-        });
-        $('#header_title').val('');
-    });
-
-</script>

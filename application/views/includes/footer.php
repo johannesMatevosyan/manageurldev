@@ -12,36 +12,16 @@
             echo 'var current = "'.$current.'";';
         }
     ?>
-
-    /**
-     *  File: user_management.php
-     * */
-    $('#tree1').checkboxTree();
-
-    /**
-     *  File: url_upload
-     * */
-        $('#submitbtn').click(function() {
-
-            var options = {
-                target:        '#viewfile',   // target element(s) to be updated with server response
-                success:       call_defaults  // post-submit callback
-            };
-            $(".uploadform").ajaxForm(options).submit();
-        });
-
-
-    /**
-     *  File: dbmanager.php
-     *  @var base_url: Returns your site base URL
-     *  @var header_title: Returns value from 'header_title' input file
-     *  @var alpha_num: Checks which 'alpha_nukm' radio button is checked and returns value from it
-     *  @var editable: Checks if 'editable' checkbox is checked and returns value from it
-     *
-     *  default_header(): prevents form from sending undefined values to the database,
-     *                    after the page was re-loaded.
-     *  @link URL: refers to 'crud' controller's response method
-     */
+   function default_header(){
+     $.ajax({
+         async: false,
+         type: 'POST',
+         url: base_url + 'crud/ajax_get_headers',
+         success: function(data){
+            $('.db_header_results').html(data);
+            }
+         });
+     }
     var base_url = "<?php echo base_url(); ?>";
 
     function call_defaults(){
@@ -60,11 +40,9 @@
 
             $.ajax({
                 type: 'POST',
-                url: base_url + 'crud/response',
+                url: base_url + 'crud/ajax_set_headers',
                 data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
-                success: function(data){
-                    $('.db_header_results').html(data);
-                }
+                success: default_header
             });
             $('#header_url_upload').val('');
         });
@@ -93,32 +71,38 @@
          *              Values in select tag are collected from .CSV fikle
          */
         $('#add_header_from_url').click( function() {
-
             var header_title = $('#select_header option:selected').val();
-
             $.ajax({
                 type: 'POST',
-                url: base_url + 'crud/response',
+                url: base_url + 'crud/ajax_set_headers',
                 data:  'header_title=' + header_title,
-                success: function(data){
-                    $('.db_header_results').html(data);
-                }
+                success: default_header
             });
         });
-
-
     }//call_defaults
+    $('#tree1').checkboxTree();
 
-     function default_header(){
+    /**
+     *  File: url_upload
+     * */
+        $('#submitbtn').click(function() {
+
+            var options = {
+                target:        '#viewfile',   // target element(s) to be updated with server response
+                success:       call_defaults  // post-submit callback
+            };
+            $(".uploadform").ajaxForm(options).submit();
+        });
+    function get_table_datas(){
      $.ajax({
-         async: false,
          type: 'POST',
-         url: base_url + 'crud/response',
+         url: base_url + 'crud/get_table_datas',
          success: function(data){
-            $('.db_header_results').html(data);
+            $('#table-scroll').html(data);
          }
          });
      }
+     get_table_datas();
      default_header();
 
 
@@ -127,17 +111,45 @@
      *  Description: Add new headers into database
      */
     $('.addHeader').click( function() {
-
         var header_title = $('#header_title').val();
         var alpha_num = $('input[name=alpha_num]:checked').val();
         var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
-
         $.ajax({
             type: 'POST',
-            url: base_url + 'crud/response',
+            url: base_url + 'crud/ajax_set_headers',
             data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
+            success: default_header
+        });
+        $('#header_title').val('');
+    });
+    /*
+     * delete and edite
+     *  File: dbmanager.php
+     */
+    $('.deleteHeader').click( function() {
+        var delete_header = $('#url_db_headers').children(":selected").val();
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'crud/delete_header',
+            data:  'delete_header=' + delete_header,
+            success: default_header
+        });
+        $('#header_title').val('');
+    });
+
+
+    /**
+     *  File: dbmanager.php
+     *  Description: Edit selected header by id in database
+     */
+    $('.editHeader').click( function() {
+        var edit_header = $('#url_db_headers').children(":selected").val();
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'crud/ajax_edit_headers/',
+            data:  'header_title=' + edit_header,
             success: function(data){
-                $('.db_header_results').html(data);
+                $('#info .db_manager').html(data);
             }
         });
         $('#header_title').val('');

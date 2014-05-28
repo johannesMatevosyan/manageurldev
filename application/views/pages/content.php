@@ -38,8 +38,7 @@
         </div><!--#url_download-->
         <div id="user_management" class="pages">
             <?php
-                //include 'user_management.php';  /** load URL Upload page */
-                include 'users_management.php';  /** load URL Upload page */
+                include 'user_management.php';  /** load URL Upload page */
             ?>
         </div><!--#user_management-->
     </div><!--#info-->

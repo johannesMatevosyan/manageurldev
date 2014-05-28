@@ -61,29 +61,25 @@ class File extends CI_Controller {
                 if($line == 0)
                 {
                     foreach($data as $value){
-
-                        if($query = $this->site_model->get_record_by_header($value))
-                        {
-                            $d[] = $query[0]->id;
-                        }
-                        else
-                        {
+                        if(in_array($value, $this->site_model->get_columns()))
+                        {               
                             $d[] = $value;
+                        }else{
+                            $d[] = false;
                         }
                     }
-                    echo '<hr/>';
                 }
                 else
                 {
                     $i = 0;
                     foreach($data as $key => $value){
-
-                        $csv_array['header_id'] = $d[$i];
-                        $csv_array['text'] = $value;
-
-                        $this->file_model->add_record($csv_array);
+                        if($d[$i])
+                        {
+                        $csv_array[$d[$i]] = $value;                           
+                        }
                         $i++;
                     }
+                    $this->file_model->add_record($csv_array);
                 }
 
                  $line++;

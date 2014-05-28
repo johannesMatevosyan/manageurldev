@@ -72,21 +72,18 @@
      *  Description: Update selected header by id in database
      */
     $('.updateHeader').click( function() {
-
         var id = $('#edit_header_id').html();
         var update_header = $('#edit_header').val();
         var alpha_num = $('input[name=alpha_num]:checked').val();
         var editable = $('input[name=editable_cbx]').is(':checked') ? 1 : 0;
-
         $.ajax({
             type: 'POST',
             url: base_url + 'crud/update_header',
-            data:  'header_title=' + update_header + '&alpha_num=' + alpha_num + '&editable_cbx=' + editable+ '&id=' + id,
-            success: function(data){
-                $('#info .db_manager').html(data);
+            data:  'header_title=' + update_header + '&alpha_num=' + alpha_num + '&editable_cbx=' + editable  + '&id=' + id + '&old_header=<?php echo $row->header_title; ?>',
+            success: function(){
+                window.location.href = "<?php echo base_url(); ?>site/statistics?current=db_manager";
             }
         });
         $('#header_title').val('');
     });
-
 </script>

@@ -35,7 +35,6 @@ $(document).ready(function(){
         $('.' + current).addClass('current');
         $('#info>div').hide();
         $('#info #' + current).fadeIn('fast');
-
     }
     /************************************************************/
 

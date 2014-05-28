@@ -1,27 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Created by JetBrains PhpStorm.
- * User: johannes
- * Date: 5/6/14
- * Time: 2:39 PM
- * To change this template use File | Settings | File Templates.
- */
-
 class Crud extends CI_Controller{
 
-    /**
-     * Constructor checks if the user was authorized with the help of is_logged_in(),
-     * otherwise access is denied
-     */
     function __construct()
     {
         parent::__construct();
         $this->is_logged_in();
     }
-
     function is_logged_in()
     {
-        // to have access, user should have a session
         $is_logged_in = $this->session->userdata('is_logged_in');
 
         /**
@@ -37,19 +23,15 @@ class Crud extends CI_Controller{
             die();
         }
     }
-
     function index()
     {
         $data = array();
-
         if($query = $this->site_model->get_records())
         {
             $data['records'] = $query;
         }
-
         $this->load->view('options_view', $data);
     }
-
     function edit($id = null)
     {
         if($query = $this->site_model->get_record_by_id($id))
@@ -62,7 +44,6 @@ class Crud extends CI_Controller{
         }
         $this->load->view('edit_pages', $data);
     }
-
     function create()
     {
         $post = $_POST;
@@ -72,21 +53,33 @@ class Crud extends CI_Controller{
         $this->site_model->add_record($data);
         //$this->index(); // redirect user to options_view
     }
-
     function update($id)
     {
         $data = $_POST;
         $this->site_model->update_record($data, $id);
         $this->edit($id);
     }
-
     function delete()
     {
         $this->site_model->delete_row();
-       // $this->index(); // redirect user to options_view
     }
+    function ajax_get_headers()
+    {
+        $headers = array();
+        $headers['records'] = $this->site_model->get_columns();
+            
+        /**
+         * fill the <select> tag and display it in table field which has 'db_header_results' class name
+         */
+        //echo '<select name="url_db_headers" id="url_db_headers" multiple >';
+        foreach($headers['records'] as $value)
+        {
+            echo '<option class="zazaa" value='.$value.' >'.$value.'</option>';
+        }
+        //echo '</select>';
 
-    function response()
+    }// response
+    function ajax_set_headers()
     {
         $headers = array();
         $post = $_POST;
@@ -95,36 +88,17 @@ class Crud extends CI_Controller{
          */
         if(!empty($post))
         {
-            if(!$this->site_model->get_record_by_header($post['header_title']))
+            if (in_array($post['header_title'], $this->site_model->get_columns()))  
             {
-                $this->create();
+                echo "<script>alert('Header with the same name already exists. Please choose another name...');</script>";    
             }
             else
             {
-                echo "<script>alert('Header with the same name already exists. Please choose another name...');</script>";
+               $this->site_model->add_column($post['header_title']);
+               $this->create();
             }
-        }
-
-        /**
-         * read all rows from db_manager table
-         */
-        if($query = $this->site_model->get_records())
-        {
-            $headers['records'] = $query;
-        }
-
-        /**
-         * fill the <select> tag and display it in table field which has 'db_header_results' class name
-         */
-        echo '<select name="url_db_headers" id="url_db_headers" multiple >';
-        foreach($headers['records'] as $key => $value)
-        {
-            echo '<option class="zazaa" id='.$value->id.' value='.$value->header_title.' >'.$value->header_title.'</option>';
-        }
-        echo '</select>';
-
+        }        
     }// response
-
     /**
      * accepts uploaded CSV file from URL upload, read information and returns it
      */
@@ -135,73 +109,51 @@ class Crud extends CI_Controller{
 
     function delete_header()
     {
-        $headers = array();
         $post = $_POST;
-
         if(!empty($post))
         {
-            $id = $post['id'];
-            $this->site_model->delete_row($id);
-
-            /**
-             * read all rows from db_manager table after a single header has been deleted
-             */
-            if($query = $this->site_model->get_records())
-            {
-                $headers['records'] = $query;
-            }
-
-            /**
-             * fill the <select> tag and display it in table field which has 'db_header_results' class name
-             * after a single header has been deleted
-             */
-            echo '<select name="url_db_headers" id="url_db_headers" multiple >';
-            foreach($headers['records'] as $key => $value)
-            {
-                echo '<option id='.$value->id.' value='.$value->header_title.'>'.$value->header_title.'</option>';
-            }
-            echo '</select>';
+            $this->site_model->delete_column($post['delete_header']);
+            $this->site_model->delete_row_by_header_title($post['delete_header']);
         }
-
-    }//delete_header
-
-    function edit_headers($id = null)
+    }
+    function ajax_edit_headers()
     {
         $data = $_POST;
-        $id = $data['id'];
-
         if(!empty($data))
         {
-
-            if($query = $this->site_model->get_record_by_id($id))
+            if($query = $this->site_model->get_record_by_header($data['header_title']))
             {
-                $data['records'] = $query;
+                $d = array();
+                $d['records'] = $query;
             }
             else
             {
                 echo "<h1>no query</h1>";
             }
-            $this->load->view('pages/edit_dbmanager', $data);
+            $this->load->view('pages/edit_dbmanager', $d);
         }
-
     }//edit_headers
-
     function update_header()
     {
         $data = $_POST;
         $id = $data['id'];
-
         if(!empty($data))
         {
+            $this->site_model->edite_column($data);
+            unset($data['old_header']);
             $this->site_model->update_record($data, $id);
-            $this->edit_headers($id);
+            $this->ajax_edit_headers($id);
         }
-
     }//update_header
-
     function get_table_datas()
     {
-        $data['words']=array(
+        $data = array();
+        if($query = $this->file_model->get_records())
+        {
+            $data['records'] = $query;
+        }
+
+        /*$data['words']=array(
             'Domain',
             'URL',
             'PR',
@@ -214,12 +166,7 @@ class Crud extends CI_Controller{
             'About Us',
             'Twitter'
         );
-        $query = $this->site_model->get_records();
-        
-        print_r($query);
-        $this->load->view('pages/data_table', $data);
+       */
+       $this->load->view('pages/data_table',$data);
     }//data table
-
-
-
 } // class Crud

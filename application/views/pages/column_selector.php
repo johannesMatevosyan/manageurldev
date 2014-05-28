@@ -6,7 +6,6 @@
  * Time: 2:47 PM
  * To change this template use File | Settings | File Templates.
  */
-echo '';
 
 /**
  * Read uploaded .CSV files
@@ -72,10 +71,8 @@ if (true) {
 
                             <form id="url_upload_db_headers" action="" method="post">
                                         <!-- URL Database Headers -->
-                                        <td class="db_header_results">
-
-                                            <!-- Display headers from database -->
-
+                                        <td >
+                                        <select name="url_db_headers" id="url_db_headers" class="db_header_results" multiple=""></select>
                                         </td>
                                         <td>
                                             <!--<select name="url_db_headers3" id="url_db_headers3">-->
@@ -150,12 +147,12 @@ if (true) {
         $.ajax({
             url: base_url + 'file/send_csv_data?file=' + csf_file_name,
         });
-        $.ajax({
-            url: base_url + 'calais=' + csf_file_name,
-        });
+        //$.ajax({
+         //   url: base_url + 'calais=' + csf_file_name,
+        //});
         /**
          *  To redirect page to the statistics tab after the 'Upload' button was clicked
          */
-        window.location.href = "site/statistics";
+        window.location.href = "statistics";
     });
 </script>

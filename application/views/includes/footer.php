@@ -183,8 +183,6 @@
         $('#header_title').val('');
     });
 
-
-
 </script>
 </body>
 </html>

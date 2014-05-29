@@ -16,19 +16,23 @@ class Site_model extends CI_Model{
                         );
         $this->dbforge->add_column('excel', $fields);
     }
+
     function get_columns()
     {
         return $this->db->list_fields('excel');
     }
+
     function delete_column($name)
     {
         $this->dbforge->drop_column('excel', $name);
     }
+
     function get_record_by_id($id)
     {
         $query = $this->db->get_where('db_manager', array('id' => $id));
         return $query->result();
     }
+
     function edite_column($data)
     {
         $fields = array(
@@ -48,6 +52,7 @@ class Site_model extends CI_Model{
         $this->db->where('id', $id);
         $this->db->update('db_manager', $data);
     }
+
     function delete_row($id)
     {
         /** figure out deleted id,
@@ -56,6 +61,7 @@ class Site_model extends CI_Model{
         $this->db->where('id', $id);
         $this->db->delete('db_manager');
     }
+
     function delete_row_by_header_title($name)
     {
         /** figure out deleted id,
@@ -64,11 +70,13 @@ class Site_model extends CI_Model{
         $this->db->where('header_title', $name);
         $this->db->delete('db_manager');
     }
+
     function get_record_by_header($id)
     {
         $query = $this->db->get_where('db_manager', array('header_title' => $id));
         return $query->result();
     }
+
     function db_manager_joined_with_data()
     {
         $this->db->select('*');

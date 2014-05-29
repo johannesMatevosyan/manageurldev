@@ -112,4 +112,27 @@ class Members extends CI_Controller{
 
     }// response
 
+    function ajax_edit_permissions()
+    {
+        $user = $_POST;
+
+        if(!empty($user))
+        {
+            if($query = $this->pages_model->get_users_by_name($user['id']))
+            {
+              //  print_r($query);
+                $user_records = array();
+                $user_records['records'] = $query;
+               // echo "Records ";
+               // print_r($user_records['records']);
+            }
+            else
+            {
+                echo "<h1>no query</h1>";
+            }
+            $this->load->view('pages/edit_permissions', $user_records);
+        }
+
+    }//edit_headers
+
 }

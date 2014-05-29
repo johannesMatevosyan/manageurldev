@@ -8,6 +8,7 @@
  */
 ?>
 <h2>User Management</h2>
+<form id="editUserRoles" method="post" class="editUserRoles">
 <table  align="center">
     <tr>
         <th style="max-width:100px;">Add New User</th>
@@ -100,6 +101,7 @@
         <td></td>
     </tr>
 </table>
+</form>
 
 <script language="javascript" type="text/javascript">
 
@@ -116,7 +118,13 @@
     /**
      *  File: user_management.php
      *  Description: Add new user into database
+     *  var statistics_perm: get value 'statistics_perm' input field and assign role to the user;
+     *  var dbmanager_perm: get value 'dbmanager_perm' input field and assign role to the user ;
+     *  var url_preview_perm: get value 'url_preview_perm' input field and assign role to the user ;
+     *  var url_upload_perm: get value 'url_upload_perm' input field and assign role to the user;
+     *  var url_download_perm: get value 'url_download_perm' input field and assign role to the user;
      */
+
     $('#saveUser').click( function() {
 
         var new_user_name = $('#addUserName').val();
@@ -131,7 +139,7 @@
         $.ajax({
             type: 'POST',
             url: base_url + 'members/set_permission/',
-            data:  'username=' + new_user_name + '&email_address=' + new_user_email + '&password=' + new_user_pass + '&statistics=' + statistics_perm + '&dbmanager=' + dbmanager_perm + '&url_preview=' + url_preview_perm + '&url_upload=' + url_upload_perm + '&url_download=' + url_download_perm,
+            data: 'username=' + new_user_name + '&email_address=' + new_user_email + '&password=' + new_user_pass + '&statistics=' + statistics_perm + '&dbmanager=' + dbmanager_perm + '&url_preview=' + url_preview_perm + '&url_upload=' + url_upload_perm + '&url_download=' + url_download_perm,
             success: function(data){
                 alert(data);
             }
@@ -143,21 +151,23 @@
      *  File: user_management.php
      *  Description: Edit selected user by id in database
      */
-    $('.editUser').click( function() {
+    $('.editNewUser').click( function() {
 
-        var id = $('#manageUsers').children(":selected").attr("id");
-        var edit_header = $('#manageUsers').children(":selected").val();
+        var id = $('#manageUsers').children(":selected").attr('id');
+        var user_name = $('#manageUsers').children(":selected").val();
+    //    alert(id);
+     //   alert(user_name);
 
         $.ajax({
             type: 'POST',
-            url: base_url + 'crud/edit_headers/',
-            data:  'edit_header=' + edit_header + '&id=' + id,
+            url: base_url + 'members/ajax_edit_permissions/',
+            data: 'username=' + user_name + '&id=' + id,
             success: function(data){
-                $('#info .db_manager').html(data);
+                //alert(data);
+                $('#info .editUserRoles').html(data);
             }
         });
-        $('#header_title').val('');
+       // $('#header_title').val('');
     });
-
 
 </script>

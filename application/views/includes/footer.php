@@ -183,32 +183,7 @@
         $('#header_title').val('');
     });
 
-    /**
-     *  File: users_management.php
-     *  Description: Add new users to database
-     */
-    $('#saveUser').click( function() {
-        if(user_type = 'viewer')
-        {
-        //    document.location.href = base_url + 'block';
-        }
 
-        var newUserName = $('#addUserName').val();
-        var newUserName = $('#addUserEmail').val();
-        var newUserPass = $('#addUserPass').val();
-        var checkboxes = $('input[type=checkbox]:checked').val();
-
-        alert(newUserName + ' - ' + newUserName + ' - ' + newUserPass + ' - ' + checkboxes);
-
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/ajax_set_headers',
-           // data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
-           // success: default_header
-        });
-        $('#header_title').val('');
-
-    });
 
 </script>
 </body>

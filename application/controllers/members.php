@@ -58,43 +58,30 @@ class Members extends CI_Controller{
     }
 
 
-    function response_members()
+    function set_permission()
     {
-        $headers = array();
-        $post = $_POST;
         /**
          * to check if $_POST array is not empty, if so then new entry cannot be added to database
          */
-        if(!empty($post))
+        if(!empty($_POST))
         {
-            if(!$this->members_model->get_members($post['first_name']))
-            {
-                $this->create();
-            }
-            else
-            {
-                echo "<script>alert('Header with the same name already exists. Please choose another name...');</script>";
-            }
-        }
+            $user_data = array();
+            $user_data['username'] = $_POST['username'];
+            $user_data['email_address'] = $_POST['email_address'];
+            $user_data['password'] = $_POST['password'];
 
-        /**
-         * read all rows from db_manager table
-         */
-        if($query = $this->members_model->get_members())
-        {
-            print_r($query);
-            $headers['records'] = $query;
-        }
+            $this->members_model->members_model->add_member($user_data);
 
-        /**
-         * fill the <select> tag and display it in table field which has 'db_header_results' class name
-         */
-        echo '<select name="manageUsers" id="manageUsers" multiple> dfddfdf';
-        foreach($headers['records'] as $key => $value)
-        {
-            echo '<option class="selectUser" id='.$value->id.' value='.$value->first_name.' >'.$value->first_name.'</option>';
+            $page_data = array();
+            $page_data['statistics'] = $_POST['statistics'];
+            $page_data['dbmanager'] = $_POST['dbmanager'];
+            $page_data['url_preview'] = $_POST['url_preview'];
+            $page_data['url_upload'] = $_POST['url_upload'];
+            $page_data['url_download'] = $_POST['url_download'];
+
+            $this->members_model->pages_model->add_page($page_data);
+
         }
-        echo '</select>';
 
     }// response
 

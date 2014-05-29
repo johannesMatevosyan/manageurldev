@@ -95,7 +95,7 @@ if (true) {
                                             <input type="radio" name="alpha_num" id="numeric_url_upload" value="numeric"> Numeric<br/><br/>
                                             <input type="checkbox" name="editable_cbx" id="checkbox_url_upload" value="1" checked> Editable<br/>
 
-                                           <input type="button" size="20" id="add_url_upload" class="add_url_upload button" value="Add New Header">
+                                           <input type="button" size="20" id="add_url_upload" class="add_url_upload" value="Add New Header">
                                         </td>
                                     </tr>
                                     <tr>

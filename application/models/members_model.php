@@ -14,11 +14,12 @@ class Members_model extends CI_Model{
         return $query->result();
     }
 
-    function add_record($data)
+    function add_member($data)
     {
-        $this->db->insert('db_manager', $data);
+        $this->db->insert('membership', $data);
         return;
     }
+
 
     function update_record($data, $id)
     {

@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/pages_model.php" />
-      <change type="DELETED" beforePath="Z:\home\localhost\www\manageurldev\manageurls.sql" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/column_selector.php" afterPath="$PROJECT_DIR$/application/views/pages/column_selector.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/footer.php" afterPath="$PROJECT_DIR$/application/views/includes/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/autoload.php" afterPath="$PROJECT_DIR$/application/config/autoload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/members.php" afterPath="$PROJECT_DIR$/application/controllers/members.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/members_model.php" afterPath="$PROJECT_DIR$/application/models/members_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pages/users_management.php" afterPath="$PROJECT_DIR$/application/views/pages/users_management.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manageurldev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401348286707" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401358700110" ignored="false" />
     <file path="/style.css" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401298321427" ignored="false" />
     <file path="/navigation.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401269892739" ignored="false" />
     <file path="/dbmanager.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1400662395784" ignored="false" />
@@ -39,9 +35,9 @@
     <file path="/login.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401269449167" ignored="false" />
     <file path="/Simple_User_Login.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401088202248" ignored="false" />
     <file path="/.htaccess" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401087864567" ignored="false" />
-    <file path="/members.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401358554991" ignored="false" />
+    <file path="/members.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401359823719" ignored="false" />
     <file path="/members_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401358659398" ignored="false" />
-    <file path="/users_management.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401356610359" ignored="false" />
+    <file path="/users_management.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401360781449" ignored="false" />
     <file path="/membership_model.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401269196145" ignored="false" />
     <file path="/block.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401271874426" ignored="false" />
     <file path="/block_user.php" changelist="bcaa4fad-7275-4a6b-9e3a-f199543e43b1" time="1401272725964" ignored="false" />
@@ -65,10 +61,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users_management.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="users_management.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/pages/users_management.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="259" selection-start="6031" selection-end="6043" vertical-scroll-proportion="-7.7058825">
+            <state line="129" column="0" selection-start="5564" selection-end="5564" vertical-scroll-proportion="0.64638156">
               <folding>
                 <element signature="e#6#164#0" expanded="true" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
@@ -82,18 +78,18 @@
       <file leaf-file-name="members.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/members.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="0" selection-start="2539" selection-end="2539" vertical-scroll-proportion="-19.038462">
+            <state line="70" column="41" selection-start="2024" selection-end="2024" vertical-scroll-proportion="-2.6153846">
               <folding>
-                <marker date="1401358589687" expanded="false" signature="906:938" placeholder="..." />
+                <marker date="1401359827525" expanded="false" signature="906:938" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="members_model.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="members_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/members_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="5" selection-start="564" selection-end="564" vertical-scroll-proportion="0.55401236">
+            <state line="35" column="36" selection-start="763" selection-end="763" vertical-scroll-proportion="-15.038462">
               <folding />
             </state>
           </provider>
@@ -162,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/crud.php" />
         <option value="$PROJECT_DIR$/application/controllers/login.php" />
         <option value="$PROJECT_DIR$/application/views/includes/navigation.php" />
         <option value="$PROJECT_DIR$/application/views/pages/content.php" />
@@ -174,10 +169,11 @@
         <option value="$PROJECT_DIR$/application/views/pages/statistics.php" />
         <option value="$PROJECT_DIR$/application/views/pages/column_selector.php" />
         <option value="$PROJECT_DIR$/application/views/includes/footer.php" />
-        <option value="$PROJECT_DIR$/application/views/pages/users_management.php" />
-        <option value="$PROJECT_DIR$/application/controllers/members.php" />
         <option value="$PROJECT_DIR$/application/models/pages_model.php" />
         <option value="$PROJECT_DIR$/application/models/members_model.php" />
+        <option value="$PROJECT_DIR$/application/config/autoload.php" />
+        <option value="$PROJECT_DIR$/application/controllers/members.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/users_management.php" />
       </list>
     </option>
   </component>
@@ -373,7 +369,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -570,13 +566,18 @@
       <created>1401298568752</created>
       <updated>1401298568752</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="User Management &amp; page restriction (part 3)">
+      <created>1401358706753</created>
+      <updated>1401358706753</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5339806" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -591,7 +592,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -639,7 +639,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Management &amp; page restriction (part 3)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -653,7 +653,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Edit &amp; Update single row from database" />
     <MESSAGE value="URL upload (Part 1)" />
     <MESSAGE value="Edit &amp; Update single row from database (remainder)" />
     <MESSAGE value="URL Upload (part 2)" />
@@ -678,6 +677,7 @@
     <MESSAGE value="User Management &amp; page restriction (part 1)" />
     <MESSAGE value="User Management &amp; page restriction (part 2)" />
     <MESSAGE value="CSS improvements" />
+    <MESSAGE value="User Management &amp; page restriction (part 3)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -685,13 +685,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/pages/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="18" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/includes/navigation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="6" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.0">
@@ -786,24 +779,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/users_management.php">
+    <entry file="file://$PROJECT_DIR$/application/models/members_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="259" selection-start="6031" selection-end="6043" vertical-scroll-proportion="-7.7058825">
-          <folding>
-            <element signature="e#6#164#0" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="35" column="36" selection-start="763" selection-end="763" vertical-scroll-proportion="-15.038462">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/members.php">
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="0" selection-start="2539" selection-end="2539" vertical-scroll-proportion="-19.038462">
-          <folding>
-            <marker date="1401358589687" expanded="false" signature="906:938" placeholder="..." />
-          </folding>
+        <state line="100" column="0" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.5">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -814,10 +800,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/members_model.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/members.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="5" selection-start="564" selection-end="564" vertical-scroll-proportion="0.55401236">
-          <folding />
+        <state line="70" column="41" selection-start="2024" selection-end="2024" vertical-scroll-proportion="-2.6153846">
+          <folding>
+            <marker date="1401359827525" expanded="false" signature="906:938" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/users_management.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="0" selection-start="5564" selection-end="5564" vertical-scroll-proportion="0.64638156">
+          <folding>
+            <element signature="e#6#164#0" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -51,8 +51,8 @@
                         <input type="checkbox"><label>Statistics</label>
 
                     <ul>
-                        <li><input name="statistics_perm" id="statistics_view" type="checkbox" onclick="if(this.checked) {$('#statistics_edit').prop('checked', false)}"><label>View</label>
-                        <li><input name="statistics_perm" id="statistics_edit" type="checkbox" onclick="if(this.checked) {$('#statistics_view').prop('checked', false)}"><label>Edit</label>
+                        <li><input name="statistics_perm" id="statistics_view" type="checkbox" onclick="if(this.checked) {$('#statistics_edit').prop('checked', false)}" value="viewer"><label>View</label>
+                        <li><input name="statistics_perm" id="statistics_edit" type="checkbox" onclick="if(this.checked) {$('#statistics_view').prop('checked', false)}" value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -60,8 +60,8 @@
                         <input type="checkbox"><label>Database Manager</label>
 
                     <ul>
-                        <li><input name="dbmanager_perm" id="dbanager_view" type="checkbox" onclick="if(this.checked) {$('#dbanager_edit').prop('checked', false)}"><label>View</label>
-                        <li><input name="dbmanager_perm" id="dbanager_edit" type="checkbox" onclick="if(this.checked) {$('#dbanager_view').prop('checked', false)}"><label>Edit</label>
+                        <li><input name="dbmanager_perm" id="dbanager_view" type="checkbox" onclick="if(this.checked) {$('#dbanager_edit').prop('checked', false)}" value="viewer"><label>View</label>
+                        <li><input name="dbmanager_perm" id="dbanager_edit" type="checkbox" onclick="if(this.checked) {$('#dbanager_view').prop('checked', false)}" value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -69,8 +69,8 @@
                         <input type="checkbox"><label>URL Preview</label>
 
                     <ul>
-                        <li><input name="url_preview_perm" id="url_preview_view" type="checkbox" onclick="if(this.checked) {$('#url_preview_edit').prop('checked', false)}"><label>View</label>
-                        <li><input name="url_preview_perm" id="url_preview_edit" type="checkbox" onclick="if(this.checked) {$('#url_preview_view').prop('checked', false)}"><label>Edit</label>
+                        <li><input name="url_preview_perm" id="url_preview_view" type="checkbox" onclick="if(this.checked) {$('#url_preview_edit').prop('checked', false)}" value="viewer"><label>View</label>
+                        <li><input name="url_preview_perm" id="url_preview_edit" type="checkbox" onclick="if(this.checked) {$('#url_preview_view').prop('checked', false)}" value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -78,8 +78,8 @@
                         <input type="checkbox"><label>URL Upload</label>
 
                     <ul>
-                        <li><input name="url_upload_perm" id="url_upload_view" type="checkbox" onclick="if(this.checked) {$('#url_upload_edit').prop('checked', false)}"><label>View</label>
-                        <li><input name="url_upload_perm" id="url_upload_edit" type="checkbox" onclick="if(this.checked) {$('#url_upload_view').prop('checked', false)}"><label>Edit</label>
+                        <li><input name="url_upload_perm" id="url_upload_view" type="checkbox" onclick="if(this.checked) {$('#url_upload_edit').prop('checked', false)}" value="viewer"><label>View</label>
+                        <li><input name="url_upload_perm" id="url_upload_edit" type="checkbox" onclick="if(this.checked) {$('#url_upload_view').prop('checked', false)}" value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -87,8 +87,8 @@
                         <input type="checkbox"><label>URL Download</label>
 
                     <ul>
-                        <li><input name="url_download_perm" id="url_download_view" type="checkbox" onclick="if(this.checked) {$('#url_download_edit').prop('checked', false)}"><label>View</label>
-                        <li><input name="url_download_perm" id="url_download_edit" type="checkbox" onclick="if(this.checked) {$('#url_download_view').prop('checked', false)}"><label>Edit</label>
+                        <li><input name="url_download_perm" id="url_download_view" type="checkbox" onclick="if(this.checked) {$('#url_download_edit').prop('checked', false)}" value="viewer"><label>View</label>
+                        <li><input name="url_download_perm" id="url_download_edit" type="checkbox" onclick="if(this.checked) {$('#url_download_view').prop('checked', false)}" value="editor"><label>Edit</label>
                     </ul>
                 </ul>
             </div><!--.scrolldiv-->
@@ -122,14 +122,11 @@
         var new_user_name = $('#addUserName').val();
         var new_user_email = $('#addUserEmail').val();
         var new_user_pass = $('#addUserPass').val();
-        var statistics_perm = $('input[name=statistics_perm]').is(':checked') ? 1 : 0;
-        var dbmanager_perm = $('input[name=dbmanager_perm]').is(':checked') ? 1 : 0;
-        var url_preview_perm = $('input[name=url_preview_perm]').is(':checked') ? 1 : 0;
-        var url_upload_perm = $('input[name=url_upload_perm]').is(':checked') ? 1 : 0;
-        var url_download_perm = $('input[name=url_download_perm]').is(':checked') ? 1 : 0;
-
-
-        //alert(new_user_name + ' - ' + new_user_email + ' - ' + new_user_pass + ' - ' + statistics_perm + ' - ' + dbanager_perm + ' - ' + url_preview_perm + ' - ' + url_upload_perm + ' - ' + url_download_perm);
+        var statistics_perm = $('input[name=statistics_perm]:checked').val();
+        var dbmanager_perm = $('input[name=dbmanager_perm]:checked').val();
+        var url_preview_perm = $('input[name=url_preview_perm]:checked').val();
+        var url_upload_perm = $('input[name=url_upload_perm]:checked').val();
+        var url_download_perm = $('input[name=url_download_perm]:checked').val();
 
         $.ajax({
             type: 'POST',

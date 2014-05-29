@@ -68,16 +68,43 @@ class Members extends CI_Controller{
             $user_data = array();
             $user_data['username'] = $_POST['username'];
             $user_data['email_address'] = $_POST['email_address'];
-            $user_data['password'] = $_POST['password'];
+            $user_data['password'] = md5($_POST['password']);
 
             $this->members_model->members_model->add_member($user_data);
 
+
             $page_data = array();
-            $page_data['statistics'] = $_POST['statistics'];
-            $page_data['dbmanager'] = $_POST['dbmanager'];
-            $page_data['url_preview'] = $_POST['url_preview'];
-            $page_data['url_upload'] = $_POST['url_upload'];
-            $page_data['url_download'] = $_POST['url_download'];
+            $page_data['username'] = $_POST['username'];
+            $page_data['pagename'] = 'statistics';
+            $page_data['type'] = $_POST['statistics'];
+
+            $this->members_model->pages_model->add_page($page_data);
+
+
+            $page_data['username'] = $_POST['username'];
+            $page_data['pagename'] = 'dbmanager';
+            $page_data['type'] = $_POST['dbmanager'];
+
+            $this->members_model->pages_model->add_page($page_data);
+
+
+            $page_data['username'] = $_POST['username'];
+            $page_data['pagename'] = 'url_preview';
+            $page_data['type'] = $_POST['url_preview'];
+
+            $this->members_model->pages_model->add_page($page_data);
+
+
+            $page_data['username'] = $_POST['username'];
+            $page_data['pagename'] = 'url_upload';
+            $page_data['type'] = $_POST['url_upload'];
+
+            $this->members_model->pages_model->add_page($page_data);
+
+
+            $page_data['username'] = $_POST['username'];
+            $page_data['pagename'] = 'url_download';
+            $page_data['type'] = $_POST['url_download'];
 
             $this->members_model->pages_model->add_page($page_data);
 

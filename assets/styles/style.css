@@ -439,6 +439,16 @@ table th, td{
 }
 /* end of User Management */
 
+/* Edit Permissions */
+.updateUser{
+    float: right;
+    margin: 5px 0;
+}
+.user_perm{
+    width: 50px;
+}
+/* end of Edit Permissions */
+
 /*  yellow button   */
 .yellowButton {
     background-color:#ffaa00;

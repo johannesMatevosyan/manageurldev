@@ -1,54 +1,83 @@
 <?php
-
-if(isset($records)) : foreach($records as $row): ?>
+    //echo $records[0]->username."itititititii<br/>";
+?>
 
     <form id="editUserRoles" method="post" class="editUserRoles">
-        <table border="0" align="center">
+        <table border="1" align="center">
             <tr>
-                <th><h3>Edit User Permissions</h3></th>
-            </tr>
-            <tr>
-                <td>
-                    <div id="edit_header_id"><?php echo $row->id; ?></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" size="40" name="header_title" id="edit_header" value="<?php echo $row->username; ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" size="40" name="header_title" id="edit_header" value="<?php echo $row->pagename; ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" size="40" name="header_title" id="edit_header" value="<?php echo $row->type; ?>">
-                </td>
+                <th colspan="5"><h3>Edit User Permissions</h3></th>
             </tr>
 
             <tr>
-                <?php echo "1"; //if($row->editable_cbx == 1):?>
-                    <td>
-                        <!--<input type="checkbox" name="editable_cbx" id="edit_checkbox" value="1" checked> Editable-->
-                    </td>
-                <?php echo "2";  //else : ?>
-                    <td>
-                    <!--    <input type="checkbox" name="editable_cbx" id="edit_checkbox" value="0"> Editable-->
-                    </td>
-                <?php echo "3";  //endif; ?>
+                <td>
+                    User Id
+                </td>
+                <td>
+                    User name
+                </td>
+                <td>
+                    Page name
+                </td>
+                <td colspan="2">
+                    User's status per page
+                </td>
             </tr>
             <tr>
                 <td>
+                    <div id="edit_user_id"><?php echo $records[0]->id; ?></div>
+                </td>
+
+                <td>
+                    <input type="text" size="25" name="" id="" value="<?php echo $records[0]->username;?>">
+                </td>
+                <td>
+
+                </td>
+                <td colspan="2">
+
+                </td>
+            </tr>
+            <?php if(isset($records)) : foreach($records as $row): ?>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <input type="text" size="30" name="header_title" id="edit_header" value="<?php echo $row->pagename; ?>">
+                </td>
+                <td>
+                    <?php if($row->type == 'editor'){ ?>
+                        <label class="user_perm"> editor</label>
+                        <input type="radio" size="30" name="" id="" value="" checked>
+                    <?php } else { ?>
+                        <label class="user_perm"> editor</label>
+                        <input type="radio" size="30" name="" id="" value="">
+                    <?php } ?>
+                </td>
+                <td>
+                    <?php if($row->type == 'viewer'){ ?>
+                        <label class="user_perm"> viewer</label>
+                        <input type="radio" size="30" name="" id="" value="" checked>
+                    <?php } else { ?>
+                        <label class="user_perm">viewer</label>
+                        <input type="radio" size="30" name="" id="" value="">
+                    <?php } ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+            <tr>
+                <td colspan="5">
                     <input type="button" class="updateUser button" value="Update">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" class="backTodbmanager button" value="Back">
+                    <!--<input type="button" class="backTodbmanager button" value="Back">-->
                 </td>
             </tr>
         </table>
     </form>
 
-<?php endforeach; ?>
+
 
 <?php else : ?>
     <h2>No records were returned</h2>
@@ -58,7 +87,7 @@ if(isset($records)) : foreach($records as $row): ?>
 <script language="javascript" type="text/javascript">
 
     /**
-     *  File: dbmanager.php
+     *  File: edit_permissions.php
      *  Description: Update selected header by id in database
      */
     $('.updateUser').click( function() {

@@ -115,12 +115,17 @@ class Members extends CI_Controller{
     function ajax_edit_permissions()
     {
         $user = $_POST;
+        $user_records = array();
         if(!empty($user))
         {
             if($query = $this->pages_model->get_users_by_name($user['username']))
             {
-                $user_records = array();
+
                 $user_records['records'] = $query;
+                //print_r($user_records['records']);
+                //echo "<br/>sldsld,s,dl";
+                $user_records['records'][0]->id;
+                $user_records['records'][0]->username;
             }
             else
             {

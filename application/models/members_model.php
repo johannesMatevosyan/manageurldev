@@ -17,10 +17,12 @@ class Members_model extends CI_Model{
     function add_member($data)
     {
         $this->db->insert('membership', $data);
-        return;
     }
-
-
+    function update_member($name,$data)
+    {
+        $this->db->where('username', $name);
+        $this->db->update('membership', $data);
+    }
     function update_record($data, $id)
     {
         $this->db->where('id', $id);
@@ -41,5 +43,12 @@ class Members_model extends CI_Model{
         $query = $this->db->get_where('db_manager', array('header_title' => $id));
         return $query->result();
     }
+    function get_record_by_username($name)
+    {  
+        $this->db->where('username', $name);
+        $query = $this->db->get('membership');
+        return $query->result();
+    }
+
 
 }

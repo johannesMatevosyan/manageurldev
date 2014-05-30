@@ -1,20 +1,39 @@
-<?php
-    //echo $records[0]->username."itititititii<br/>";
-?>
+   <form id="editUserRoles" method="post" class="editUserRoles" action="<?php echo base_url(); ?>members/set_edit_permission">
 
-    <form id="editUserRoles" method="post" class="editUserRoles">
-        <table border="1" align="center">
+        <table align="center">
             <tr>
-                <th colspan="5"><h3>Edit User Permissions</h3></th>
+                <td colspan="3">
+            <h3>Edit User Permissions</h3>
+                </td>
             </tr>
-
             <tr>
-                <td>
-                    User Id
+                <td width="40%" style="text-align: right">
+          User name 
+               </td>
+            <td colspan="2" >
+          <input type="text"  name="username" id="username" value="<?php  echo $records[0]->username;?>">
+               </td>
+            </tr>
+             <tr>
+                  <td width="40%" style="text-align: right">
+                  Email 
+                  </td>
+                <td colspan="2" >
+                <input type="email" name="email_address"  value="<?php echo $user[0]->email_address;?>">
+                 </td>
+            </tr>
+             <tr>
+                <td width="40%" style="text-align: right">
+                Password
                 </td>
-                <td>
-                    User name
+                <td colspan="2" >
+                    <input type="password" name="password" value="">
                 </td>
+           <tr>
+                <td colspan="3">
+                    &nbsp;<br>
+                </td>
+            </tr>
                 <td>
                     Page name
                 </td>
@@ -22,56 +41,35 @@
                     User's status per page
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <div id="edit_user_id"><?php echo $records[0]->id; ?></div>
-                </td>
 
-                <td>
-                    <input type="text" size="25" name="" id="" value="<?php echo $records[0]->username;?>">
-                </td>
-                <td>
-
-                </td>
-                <td colspan="2">
-
-                </td>
-            </tr>
             <?php if(isset($records)) : foreach($records as $row): ?>
             <tr>
                 <td>
-
-                </td>
-                <td>
-
-                </td>
-                <td>
-                    <input type="text" size="30" name="header_title" id="edit_header" value="<?php echo $row->pagename; ?>">
+                    <?php echo $row->pagename; ?><input type="hidden" size="30" name="<?php echo $row->id ?>[pagename]" id="edit_header" value="<?php echo $row->pagename; ?>">
                 </td>
                 <td>
                     <?php if($row->type == 'editor'){ ?>
                         <label class="user_perm"> editor</label>
-                        <input type="radio" size="30" name="" id="" value="" checked>
+                        <input type="radio" size="30" name="<?php echo $row->id ?>[type]" id="" value="editor" checked>
                     <?php } else { ?>
                         <label class="user_perm"> editor</label>
-                        <input type="radio" size="30" name="" id="" value="">
+                        <input type="radio" size="30" name="<?php echo $row->id ?>[type]" id="" value="editor">
                     <?php } ?>
                 </td>
                 <td>
                     <?php if($row->type == 'viewer'){ ?>
                         <label class="user_perm"> viewer</label>
-                        <input type="radio" size="30" name="" id="" value="" checked>
+                        <input type="radio" size="30" name="<?php echo $row->id ?>[type]" id="" value="viewer" checked>
                     <?php } else { ?>
                         <label class="user_perm">viewer</label>
-                        <input type="radio" size="30" name="" id="" value="">
+                        <input type="radio" size="30" name="<?php echo $row->id ?>[type]" id="" value="viewer">
                     <?php } ?>
                 </td>
             </tr>
             <?php endforeach; ?>
             <tr>
-                <td colspan="5">
-                    <input type="button" class="updateUser button" value="Update">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--<input type="button" class="backTodbmanager button" value="Back">-->
+                <td colspan="3">
+                    <input type="submit" class="updateUser button" value="Update">
                 </td>
             </tr>
         </table>

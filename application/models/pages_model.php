@@ -16,6 +16,10 @@ class Pages_model extends CI_Model{
         $query = $this->db->get_where('permissions', array('username' => $name));
         return $query->result();
     }
-
+    function update_page($id,$data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('permissions', $data);
+    }
 
 }

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: johannes
- * Date: 5/29/14
- * Time: 4:37 PM
- * To change this template use File | Settings | File Templates.
- */
 
 if(isset($records)) : foreach($records as $row): ?>
 

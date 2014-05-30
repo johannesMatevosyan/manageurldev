@@ -40,7 +40,7 @@ class Members extends CI_Controller{
 
 
     function index()
-    {
+    {  
         $data = array();
 
         if($query = $this->members_model->get_members())
@@ -50,7 +50,7 @@ class Members extends CI_Controller{
             echo '<select name="manageUsers" id="manageUsers" multiple>';
             foreach($data['records'] as $key => $value)
             {
-                echo '<option class="selectUser" id='.$value->id.' value='.$value->first_name.' >'.$value->first_name.'</option>';
+                echo '<option class="selectUser" id='.$value->id.' value='.$value->username.' >'.$value->username.'</option>';
             }
             echo '</select>';
         }
@@ -115,16 +115,12 @@ class Members extends CI_Controller{
     function ajax_edit_permissions()
     {
         $user = $_POST;
-
         if(!empty($user))
         {
-            if($query = $this->pages_model->get_users_by_name($user['id']))
+            if($query = $this->pages_model->get_users_by_name($user['username']))
             {
-              //  print_r($query);
                 $user_records = array();
                 $user_records['records'] = $query;
-               // echo "Records ";
-               // print_r($user_records['records']);
             }
             else
             {
@@ -132,7 +128,6 @@ class Members extends CI_Controller{
             }
             $this->load->view('pages/edit_permissions', $user_records);
         }
-
     }//edit_headers
 
 }

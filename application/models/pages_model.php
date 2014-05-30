@@ -2,16 +2,18 @@
 
 class Pages_model extends CI_Model{
 
+    function __construct()
+    {
+         parent::__construct();
+    }
     function add_page($data)
     {
         $this->db->insert('permissions', $data);
-        return;
     }
 
-    function get_users_by_name($id)
+    function get_users_by_name($name)
     {
-        echo "ID ".$id."<br/>";
-        $query = $this->db->get_where('permissions', array('id' => $id));
+        $query = $this->db->get_where('permissions', array('username' => $name));
         return $query->result();
     }
 

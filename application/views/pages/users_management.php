@@ -154,10 +154,7 @@
     $('.editNewUser').click( function() {
 
         var id = $('#manageUsers').children(":selected").attr('id');
-        var user_name = $('#manageUsers').children(":selected").val();
-    //    alert(id);
-     //   alert(user_name);
-
+        var user_name = $('#manageUsers').val();
         $.ajax({
             type: 'POST',
             url: base_url + 'members/ajax_edit_permissions/',

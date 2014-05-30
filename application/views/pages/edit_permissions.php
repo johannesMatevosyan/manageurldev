@@ -35,10 +35,10 @@
                 </td>
             </tr>
                 <td>
-                    Page name
+                    <h4>Page name</h4>
                 </td>
                 <td colspan="2">
-                    User's status per page
+                    <h4>User's status per page</h4>
                 </td>
             </tr>
 

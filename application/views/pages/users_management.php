@@ -46,10 +46,10 @@
             <b>User Permissions</b><br/><br/>
             <div class="scrolldiv">
             <ul id="tree1">
-            <li><input type="checkbox"><label>URL CRM Pages</label>
+            <li><label>URL CRM Pages</label>
                 <ul>
                     <li>
-                        <input type="checkbox"><label>Statistics</label>
+                        <label>Statistics</label>
 
                     <ul>
                         <li><input name="statistics_perm" id="statistics_view" type="checkbox" onclick="if(this.checked) {$('#statistics_edit').prop('checked', false)}" value="viewer"><label>View</label>
@@ -58,7 +58,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <input type="checkbox"><label>Database Manager</label>
+                        <label>Database Manager</label>
 
                     <ul>
                         <li><input name="dbmanager_perm" id="dbanager_view" type="checkbox" onclick="if(this.checked) {$('#dbanager_edit').prop('checked', false)}" value="viewer"><label>View</label>
@@ -67,7 +67,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <input type="checkbox"><label>URL Preview</label>
+                        <label>URL Preview</label>
 
                     <ul>
                         <li><input name="url_preview_perm" id="url_preview_view" type="checkbox" onclick="if(this.checked) {$('#url_preview_edit').prop('checked', false)}" value="viewer"><label>View</label>
@@ -76,7 +76,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <input type="checkbox"><label>URL Upload</label>
+                        <label>URL Upload</label>
 
                     <ul>
                         <li><input name="url_upload_perm" id="url_upload_view" type="checkbox" onclick="if(this.checked) {$('#url_upload_edit').prop('checked', false)}" value="viewer"><label>View</label>
@@ -85,7 +85,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <input type="checkbox"><label>URL Download</label>
+                        <label>URL Download</label>
 
                     <ul>
                         <li><input name="url_download_perm" id="url_download_view" type="checkbox" onclick="if(this.checked) {$('#url_download_edit').prop('checked', false)}" value="viewer"><label>View</label>

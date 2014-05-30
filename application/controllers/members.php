@@ -1,12 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Created by JetBrains PhpStorm.
- * User: johannes
- * Date: 5/6/14
- * Time: 2:39 PM
- * To change this template use File | Settings | File Templates.
- */
-
 class Members extends CI_Controller{
 
     /**
@@ -60,6 +52,7 @@ class Members extends CI_Controller{
 
     function set_permission()
     {
+
         /**
          * to check if $_POST array is not empty, if so then new entry cannot be added to database
          */
@@ -120,8 +113,11 @@ class Members extends CI_Controller{
         {
             if($query = $this->pages_model->get_users_by_name($user['username']))
             {
-
                 $user_records['records'] = $query;
+            }
+            if ($query2 = $this->members_model->get_record_by_username($user['username']))
+            {   
+                $user_records['user'] = $query2;
             }
             else
             {
@@ -130,5 +126,24 @@ class Members extends CI_Controller{
             $this->load->view('pages/edit_permissions', $user_records);
         }
     }//edit_headers
+    function set_edit_permission()
+    {
+        foreach ($_POST  as $k =>$value ) {             
+            if(is_array($value)){
+            if($value['pagename']){
+            $page_data['pagename'] = $value['pagename'];
+            if($value['type']) $page_data['type'] = $value['type'];
+            $user_data['username'] = $_POST['username'];
+            $this->pages_model->update_page($k,$page_data);
+            }
+            }
+        }
+            $user_data = array();
+            $user_data['username'] = $_POST['username'];
+            $user_data['email_address'] = $_POST['email_address'];
+            $user_data['password'] = md5($_POST['password']);
+            $this->members_model->members_model->update_member($user_data['username'],$user_data);
+            redirect('?current=user_management');
+    }
 
 }

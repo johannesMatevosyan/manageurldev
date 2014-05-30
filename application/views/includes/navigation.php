@@ -17,9 +17,9 @@
         <li class="url_upload"><a href="#url_upload" title="URL Upload">URL Upload</a></li>
         <li class="url_preview"><a href="#url_preview" title="URL Preview">URL Preview</a></li>
         <li class="url_download"><a href="#url_download" title="URL Download">URL Download</a></li>
-        <?php //if($this->session->userdata('type') == 'admin'): ?>
+        <?php if($this->session->userdata('users_management') == 'editor'): ?>
             <li class="user_management"><a href="#user_management" title="User Management">User Management</a></li>
-        <?php //endif; ?>
+        <?php endif; ?>
     </ul><br/>
     <div id="blue_line"></div>
 </div>

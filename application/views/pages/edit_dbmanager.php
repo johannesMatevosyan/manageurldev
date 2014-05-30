@@ -67,11 +67,14 @@
 
 <script language="javascript" type="text/javascript">
 
+    var user_type = "<?php echo $this->session->userdata('type'); ?>";
+    var page_dbmanager = "<?php echo $this->session->userdata('dbmanager'); ?>";
+
     /**
      *  File: dbmanager.php
      *  Description: Update selected header by id in database
      */
-    $('.updateHeader').click( function() {
+    $('.page_dbmanager').click( function() {
         var id = $('#edit_header_id').html();
         var update_header = $('#edit_header').val();
         var alpha_num = $('input[name=alpha_num]:checked').val();

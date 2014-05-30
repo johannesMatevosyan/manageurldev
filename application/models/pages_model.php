@@ -22,4 +22,9 @@ class Pages_model extends CI_Model{
         $this->db->update('permissions', $data);
     }
 
+    function get_perm_type($name)
+    {
+        $query = $this->db->get_where('permissions', array('username' => $name));
+        return $query->result();
+    }
 }

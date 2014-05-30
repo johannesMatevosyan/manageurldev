@@ -16,7 +16,13 @@
     /**
      *  receive registered user type from database
      */
-    var user_type = "<?php $this->session->userdata('type'); ?>";
+    var user_type = "<?php echo $this->session->userdata('type'); ?>";
+    var page_statistics = "<?php echo $this->session->userdata('statistics'); ?>";
+    var page_dbmanager = "<?php echo $this->session->userdata('dbmanager'); ?>";
+    var page_url_preview = "<?php echo $this->session->userdata('url_preview'); ?>";
+    var page_url_upload = "<?php echo $this->session->userdata('url_upload'); ?>";
+    var page_url_download = "<?php echo $this->session->userdata('url_download'); ?>";
+
 
    function default_header(){
      $.ajax({
@@ -40,22 +46,24 @@
          *  Description: Manually add new headers from URL Upload page to database
          */
         $('#add_url_upload').click( function() {
-            if(user_type = 'viewer')
+            if(page_url_upload == 'viewer')
             {
                 document.location.href = base_url + 'block';
             }
+            else
+            {
+                var header_title = $('#header_url_upload').val();
+                var alpha_num = $('input[name=alpha_num]:checked').val();
+                var editable = $('#checkbox_url_upload').is(':checked') ? 1 : 0;
 
-            var header_title = $('#header_url_upload').val();
-            var alpha_num = $('input[name=alpha_num]:checked').val();
-            var editable = $('#checkbox_url_upload').is(':checked') ? 1 : 0;
-
-            $.ajax({
-                type: 'POST',
-                url: base_url + 'crud/ajax_set_headers',
-                data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
-                success: default_header
-            });
-            $('#header_url_upload').val('');
+                $.ajax({
+                    type: 'POST',
+                    url: base_url + 'crud/ajax_set_headers',
+                    data:  'alpha_num=' + alpha_num + '&header_title=' + header_title + '&editable_cbx=' + editable,
+                    success: default_header
+                });
+                $('#header_url_upload').val('');
+            }
         });
 
         /**
@@ -82,18 +90,20 @@
          *              Values in select tag are collected from .CSV fikle
          */
         $('#add_header_from_url').click( function() {
-            if(user_type = 'viewer')
+            if(page_url_upload == 'viewer')
             {
                 document.location.href = base_url + 'block';
             }
-
-            var header_title = $('#select_header option:selected').val();
-            $.ajax({
-                type: 'POST',
-                url: base_url + 'crud/ajax_set_headers',
-                data:  'header_title=' + header_title,
-                success: default_header
-            });
+            else
+            {
+                var header_title = $('#select_header option:selected').val();
+                $.ajax({
+                    type: 'POST',
+                    url: base_url + 'crud/ajax_set_headers',
+                    data:  'header_title=' + header_title,
+                    success: default_header
+                });
+            }
         });
     }//call_defaults
     $('#tree1').checkboxTree();
@@ -127,11 +137,12 @@
      *  Description: Add new headers into database
      */
     $('.addHeader').click( function() {
-        if(user_type = 'viewer')
+        if(page_dbmanager == 'viewer')
         {
             document.location.href = base_url + 'block';
         }
-
+        else
+        {
             var header_title = $('#header_title').val();
             var alpha_num = $('input[name=alpha_num]:checked').val();
             var editable = $('#editable_checkbox').is(':checked') ? 1 : 0;
@@ -142,7 +153,7 @@
                 success: default_header
             });
             $('#header_title').val('');
-
+        }
     });
 
     /**
@@ -150,19 +161,21 @@
      *  File: dbmanager.php
      */
     $('.deleteHeader').click( function() {
-        if(user_type = 'viewer')
+        if(page_dbmanager == 'viewer')
         {
             document.location.href = base_url + 'block';
         }
-
-        var delete_header = $('#url_db_headers').children(":selected").val();
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/delete_header',
-            data:  'delete_header=' + delete_header,
-            success: default_header
-        });
-        $('#header_title').val('');
+        else
+        {
+            var delete_header = $('#url_db_headers').children(":selected").val();
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'crud/delete_header',
+                data:  'delete_header=' + delete_header,
+                success: default_header
+            });
+            $('#header_title').val('');
+        }
     });
 
 
@@ -171,16 +184,23 @@
      *  Description: Edit selected header by id in database
      */
     $('.editHeader').click( function() {
-        var edit_header = $('#url_db_headers').children(":selected").val();
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'crud/ajax_edit_headers/',
-            data:  'header_title=' + edit_header,
-            success: function(data){
-                $('#info .db_manager').html(data);
-            }
-        });
-        $('#header_title').val('');
+        if(page_dbmanager == 'viewer')
+        {
+            document.location.href = base_url + 'block';
+        }
+        else
+        {
+            var edit_header = $('#url_db_headers').children(":selected").val();
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'crud/ajax_edit_headers/',
+                data:  'header_title=' + edit_header,
+                success: function(data){
+                    $('#info .db_manager').html(data);
+                }
+            });
+            $('#header_title').val('');
+        }
     });
 
 </script>

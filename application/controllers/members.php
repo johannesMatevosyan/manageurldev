@@ -130,12 +130,12 @@ class Members extends CI_Controller{
     {
         foreach ($_POST  as $k =>$value ) {             
             if(is_array($value)){
-            if($value['pagename']){
-            $page_data['pagename'] = $value['pagename'];
-            if($value['type']) $page_data['type'] = $value['type'];
-            $user_data['username'] = $_POST['username'];
-            $this->pages_model->update_page($k,$page_data);
-            }
+                if($value['pagename']){
+                $page_data['pagename'] = $value['pagename'];
+                if($value['type']) $page_data['type'] = $value['type'];
+                $user_data['username'] = $_POST['username'];
+                $this->pages_model->update_page($k,$page_data);
+                }
             }
         }
             $user_data = array();

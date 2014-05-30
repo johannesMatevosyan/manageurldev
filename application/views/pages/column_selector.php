@@ -135,23 +135,36 @@ if (true) {
 }
 ?>
 <script language="javascript" type="text/javascript">
+    var user_type = "<?php echo $this->session->userdata('type'); ?>";
+    var page_statistics = "<?php echo $this->session->userdata('statistics'); ?>";
+    var page_dbmanager = "<?php echo $this->session->userdata('dbmanager'); ?>";
+    var page_url_preview = "<?php echo $this->session->userdata('url_preview'); ?>";
+    var page_url_upload = "<?php echo $this->session->userdata('url_upload'); ?>";
+    var page_url_download = "<?php echo $this->session->userdata('url_download'); ?>";
 
     /**
      *  Supported file:
      *  Description: Add new headers into database (data table)
      */
     $('.upload_file').click( function() {
-        var csf_file_name = "<?php echo $imagename; ?>";
+        if(page_url_upload == 'viewer')
+        {
+            document.location.href = base_url + 'block';
+        }
+        else
+        {
+            var csf_file_name = "<?php echo $imagename; ?>";
 
-        $.ajax({
-            url: base_url + 'file/send_csv_data?file=' + csf_file_name,
-        });
-        //$.ajax({
-         //   url: base_url + 'calais=' + csf_file_name,
-        //});
-        /**
-         *  To redirect page to the statistics tab after the 'Upload' button was clicked
-         */
-        window.location.href = "statistics";
+            $.ajax({
+                url: base_url + 'file/send_csv_data?file=' + csf_file_name,
+            });
+            //$.ajax({
+             //   url: base_url + 'calais=' + csf_file_name,
+            //});
+            /**
+             *  To redirect page to the statistics tab after the 'Upload' button was clicked
+             */
+            window.location.href = "statistics";
+        }
     });
 </script>

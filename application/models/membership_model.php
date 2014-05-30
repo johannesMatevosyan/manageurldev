@@ -45,7 +45,7 @@ class Membership_model extends CI_Model{
     }
 
     function get_row($name)
-    {  echo $name; exit;
+    {
         $this->db->where('username', $name);
         $query = $this->db->get('membership');
         return $query->result();

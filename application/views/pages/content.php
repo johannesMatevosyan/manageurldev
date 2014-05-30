@@ -38,7 +38,7 @@
         </div><!--#url_download-->
         <div id="user_management" class="pages">
             <?php
-                //if($this->session->userdata('type') == 'admin')
+                if($this->session->userdata('users_management') == 'editor')
                     include 'users_management.php';  /** load URL Upload page */
             ?>
         </div><!--#user_management-->

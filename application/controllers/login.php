@@ -31,19 +31,23 @@ class Login extends CI_Controller{
         if($query)
         {
             $row[0] = array();
+            $role[] = array();
 
-            $row = $this->membership_model->get_row($this->input->post('username'));
+            //$row = $this->membership_model->get_row($this->input->post('username'));
+            $permission = $this->pages_model->get_perm_type($this->input->post('username'));
 
-            $data = array(
-                'username' => $this->input->post('username'),
-                'is_logged_in' => true,
-                //'type' => $row[0]->type,
-            );
+            foreach($permission as $value)
+            {
+                $role[$value->pagename] = $value->type;
+            }
+            $role['username'] = $permission[0]->username;
+            $role['is_logged_in'] = true;
+
 
             /**
              * take $data array and add it to the user specific session
              */
-            $this->session->set_userdata($data);
+            $this->session->set_userdata($role);
             redirect('site/statistics');
         }
         else

@@ -122,10 +122,6 @@ class Members extends CI_Controller{
             {
 
                 $user_records['records'] = $query;
-                //print_r($user_records['records']);
-                //echo "<br/>sldsld,s,dl";
-                $user_records['records'][0]->id;
-                $user_records['records'][0]->username;
             }
             else
             {

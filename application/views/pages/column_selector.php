@@ -136,11 +136,7 @@ if (true) {
 ?>
 <script language="javascript" type="text/javascript">
     var user_type = "<?php echo $this->session->userdata('type'); ?>";
-    var page_statistics = "<?php echo $this->session->userdata('statistics'); ?>";
-    var page_dbmanager = "<?php echo $this->session->userdata('dbmanager'); ?>";
-    var page_url_preview = "<?php echo $this->session->userdata('url_preview'); ?>";
     var page_url_upload = "<?php echo $this->session->userdata('url_upload'); ?>";
-    var page_url_download = "<?php echo $this->session->userdata('url_download'); ?>";
 
     /**
      *  Supported file:

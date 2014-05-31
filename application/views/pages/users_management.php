@@ -52,8 +52,8 @@
                         <label>Statistics</label>
 
                     <ul>
-                        <li><input name="statistics_perm" id="statistics_view" type="checkbox" onclick="if(this.checked) {$('#statistics_edit').prop('checked', false)}" value="viewer"><label>View</label>
-                        <li><input name="statistics_perm" id="statistics_edit" type="checkbox" onclick="if(this.checked) {$('#statistics_view').prop('checked', false)}" value="editor"><label>Edit</label>
+                        <li><input name="statistics_perm" id="statistics_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="statistics_perm" id="statistics_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -61,8 +61,8 @@
                         <label>Database Manager</label>
 
                     <ul>
-                        <li><input name="dbmanager_perm" id="dbanager_view" type="checkbox" onclick="if(this.checked) {$('#dbanager_edit').prop('checked', false)}" value="viewer"><label>View</label>
-                        <li><input name="dbmanager_perm" id="dbanager_edit" type="checkbox" onclick="if(this.checked) {$('#dbanager_view').prop('checked', false)}" value="editor"><label>Edit</label>
+                        <li><input name="dbmanager_perm" id="dbanager_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="dbmanager_perm" id="dbanager_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -70,8 +70,8 @@
                         <label>URL Preview</label>
 
                     <ul>
-                        <li><input name="url_preview_perm" id="url_preview_view" type="checkbox" onclick="if(this.checked) {$('#url_preview_edit').prop('checked', false)}" value="viewer"><label>View</label>
-                        <li><input name="url_preview_perm" id="url_preview_edit" type="checkbox" onclick="if(this.checked) {$('#url_preview_view').prop('checked', false)}" value="editor"><label>Edit</label>
+                        <li><input name="url_preview_perm" id="url_preview_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="url_preview_perm" id="url_preview_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -79,8 +79,8 @@
                         <label>URL Upload</label>
 
                     <ul>
-                        <li><input name="url_upload_perm" id="url_upload_view" type="checkbox" onclick="if(this.checked) {$('#url_upload_edit').prop('checked', false)}" value="viewer"><label>View</label>
-                        <li><input name="url_upload_perm" id="url_upload_edit" type="checkbox" onclick="if(this.checked) {$('#url_upload_view').prop('checked', false)}" value="editor"><label>Edit</label>
+                        <li><input name="url_upload_perm" id="url_upload_view" type="radio" value="viewer"><label>View</label>
+                        <li><input name="url_upload_perm" id="url_upload_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
                 <ul>
@@ -88,8 +88,8 @@
                         <label>URL Download</label>
 
                     <ul>
-                        <li><input name="url_download_perm" id="url_download_view" type="checkbox" onclick="if(this.checked) {$('#url_download_edit').prop('checked', false)}" value="viewer"><label>View</label>
-                        <li><input name="url_download_perm" id="url_download_edit" type="checkbox" onclick="if(this.checked) {$('#url_download_view').prop('checked', false)}" value="editor"><label>Edit</label>
+                        <li><input name="url_download_perm" id="url_download_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="url_download_perm" id="url_download_edit" type="radio" value="editor"><label>Edit</label>
                     </ul>
                 </ul>
             </div><!--.scrolldiv-->

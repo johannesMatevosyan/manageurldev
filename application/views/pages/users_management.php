@@ -52,7 +52,7 @@
                         <label>Statistics</label>
 
                     <ul>
-                        <li><input name="statistics_perm" id="statistics_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="statistics_perm" id="statistics_view" type="radio"  value="viewer" checked><label>View</label>
                         <li><input name="statistics_perm" id="statistics_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
@@ -61,7 +61,7 @@
                         <label>Database Manager</label>
 
                     <ul>
-                        <li><input name="dbmanager_perm" id="dbanager_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="dbmanager_perm" id="dbanager_view" type="radio"  value="viewer" checked><label>View</label>
                         <li><input name="dbmanager_perm" id="dbanager_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
@@ -70,7 +70,7 @@
                         <label>URL Preview</label>
 
                     <ul>
-                        <li><input name="url_preview_perm" id="url_preview_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="url_preview_perm" id="url_preview_view" type="radio"  value="viewer" checked><label>View</label>
                         <li><input name="url_preview_perm" id="url_preview_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
@@ -79,7 +79,7 @@
                         <label>URL Upload</label>
 
                     <ul>
-                        <li><input name="url_upload_perm" id="url_upload_view" type="radio" value="viewer"><label>View</label>
+                        <li><input name="url_upload_perm" id="url_upload_view" type="radio" value="viewer" checked><label>View</label>
                         <li><input name="url_upload_perm" id="url_upload_edit" type="radio"  value="editor"><label>Edit</label>
                     </ul>
                 </ul>
@@ -88,7 +88,7 @@
                         <label>URL Download</label>
 
                     <ul>
-                        <li><input name="url_download_perm" id="url_download_view" type="radio"  value="viewer"><label>View</label>
+                        <li><input name="url_download_perm" id="url_download_view" type="radio"  value="viewer" checked><label>View</label>
                         <li><input name="url_download_perm" id="url_download_edit" type="radio" value="editor"><label>Edit</label>
                     </ul>
                 </ul>
@@ -106,14 +106,15 @@
 <script language="javascript" type="text/javascript">
 
     var base_url = "<?php echo base_url(); ?>";
-
+function get_users(){
     $.ajax({
         url: base_url + 'members/index/',
         success: function(data){
             $('.manageUsers').html(data);
         }
     });
-
+}
+get_users();
 
     /**
      *  File: user_management.php
@@ -140,9 +141,7 @@
             type: 'POST',
             url: base_url + 'members/set_permission/',
             data: 'username=' + new_user_name + '&email_address=' + new_user_email + '&password=' + new_user_pass + '&statistics=' + statistics_perm + '&dbmanager=' + dbmanager_perm + '&url_preview=' + url_preview_perm + '&url_upload=' + url_upload_perm + '&url_download=' + url_download_perm,
-            success: function(data){
-                alert(data);
-            }
+            success: get_users
         });
     });
 

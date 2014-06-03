@@ -142,7 +142,7 @@ if (true) {
      *  Supported file:
      *  Description: Add new headers into database (data table)
      */
-    $('.upload_file').click( function() {
+    $('.upload_file').click( function() { 
         if(page_url_upload == 'viewer')
         {
             document.location.href = base_url + 'block';
@@ -150,8 +150,7 @@ if (true) {
         else
         {
             var csf_file_name = "<?php echo $imagename; ?>";
-
-            $.ajax({
+            $.ajax({ 
                 url: base_url + 'file/send_csv_data?file=' + csf_file_name,
             });
             //$.ajax({
@@ -160,7 +159,7 @@ if (true) {
             /**
              *  To redirect page to the statistics tab after the 'Upload' button was clicked
              */
-            window.location.href = "statistics";
+            //window.location.href = "statistics";
         }
     });
 </script>

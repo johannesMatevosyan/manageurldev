@@ -39,7 +39,12 @@ class File extends CI_Controller {
     }
 
     function send_csv_data(){
-
+    //calais http://www.dangrossman.info/open-calais-tags/
+    include_once  APPPATH.'libraries/simple_html_dom.php';
+    include_once  APPPATH.'libraries/opencalais.php';
+    $apikey = "mzcxpd66uyevcektzdpuruqv";
+    $oc = new OpenCalais($apikey);
+    //end calais
         $file_name = $_GET['file'];
 
         /**
@@ -79,7 +84,28 @@ class File extends CI_Controller {
                         }
                         $i++;
                     }
+                    if(!$this->file_model->get_record_by_header($csv_array['URL']))
+                    {
+                       //get content by url
+                       $domain= parse_url($csv_array['URL']);
+                       if (isset($domain['host'])) {
+                       $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
+                       //$content = strip_tags(file_get_contents('http://'.$domain['host']));
+                       $content = file_get_html('http://'.$domain['host'])->plaintext;
+                       if(strlen($content)>100000){
+                       $strArr=str_split($content,100000);
+                       $content=$strArr[0];
+                       }
+                       }
+                        //analyse content
+                        $entities = $oc->getEntities($content);
+                       foreach ($entities as $type => $values) {
+                           if($type!='URL' AND in_array($type,$d))
+                                   $csv_array[$type]=count($values);
+                       } 
+                              
                     $this->file_model->add_record($csv_array);
+                    }
                 }
 
                  $line++;

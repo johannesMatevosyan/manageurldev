@@ -4,6 +4,7 @@ class Calais extends CI_Controller {
 
 	public function index()
  	{
+include_once  APPPATH.'libraries/simple_html_dom.php';
 function simple_start($parser, $element_name, $element_atts) {
 	
 	global $simple_level;
@@ -225,16 +226,20 @@ xml_parser_free($xmlp);
 
 if($query = $this->file_model->get_records())
 {   
-            foreach($query as $v){
-               
-               $domain= parse_url($v->URL);
-               if (isset($domain['host'])) {                   
-                $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
-                $content = strip_tags(file_get_contents('http://'.$domain['host']));
-                tocalaissite($content);
-                echo $domain['host'],"<hr>";
-               }                                  
-               }
+            
+    $content = file_get_html('http://www.rubiconpersonalip.com')->plaintext;
+   tocalaissite($content);
+//    foreach($query as $v){
+//               
+//               $domain= parse_url($v->URL);
+//               if (isset($domain['host'])) {                   
+//                $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
+//                //$content = strip_tags(file_get_contents('http://'.$domain['host']));
+//                $content = file_get_html('http://'.$domain['host'])->plaintext;
+//                 if(isset($content) and !empty($content)) tocalaissite($content);
+//                echo $domain['host'],"<hr>",$content,"<hr>";
+//               }                                  
+//               }
           
 
 }

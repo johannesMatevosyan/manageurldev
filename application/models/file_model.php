@@ -19,7 +19,7 @@ class File_model extends CI_Model {
     }
     function get_record_by_header($id)
     {
-        $query = $this->db->get_where('data', array('header_title' => $id));
+        $query = $this->db->get_where('excel', array('URL' => $id));
         return $query->result();
     }
     function get_records()

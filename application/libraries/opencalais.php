@@ -17,8 +17,7 @@ class OpenCalais {
     private $api_url = 'http://api.opencalais.com/enlighten/rest/';
     private $api_key = '';
 
-    //public $contentType = 'text/html';
-    public $contentType = 'text/htmlraw';
+    public $contentType = 'text/html';
     public $outputFormat = 'text/simple';
     public $getGenericRelations = true;
     public $getSocialTags = true;

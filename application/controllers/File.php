@@ -1,4 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+set_time_limit (5000);
 /**
  * Created by JetBrains PhpStorm.
  * User: johannes
@@ -59,7 +60,7 @@ class File extends CI_Controller {
 
             $line = 0;
             $csv_array = array();
-
+            $j=0;
             while(!feof($read_csv_file)){
 
                 $data = fgetcsv($read_csv_file);
@@ -91,6 +92,8 @@ class File extends CI_Controller {
                        if (isset($domain['host'])) {
                        $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
                        //$content = strip_tags(file_get_contents('http://'.$domain['host']));
+                       $j++;
+                       echo $j.'-'.$domain['host'].'<br>';
                        $content = file_get_html('http://'.$domain['host'])->plaintext;
                        if(strlen($content)>100000){
                        $strArr=str_split($content,100000);
@@ -98,12 +101,12 @@ class File extends CI_Controller {
                        }
                        }
                         //analyse content
-                        $entities = $oc->getEntities($content);
-                       foreach ($entities as $type => $values) {
-                           if($type!='URL' AND in_array($type,$d))
-                                   $csv_array[$type]=count($values);
-                       } 
-                              
+                       if(isset($content) and !empty($content)){
+                                $entities = $oc->getEntities($content);
+                                foreach ($entities as $type => $values) {
+                                    if($type!='URL' AND in_array($type,$d)) $csv_array[$type]=count($values);
+                                } 
+                       }    
                     $this->file_model->add_record($csv_array);
                     }
                 }

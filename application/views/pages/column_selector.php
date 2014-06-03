@@ -159,7 +159,7 @@ if (true) {
             /**
              *  To redirect page to the statistics tab after the 'Upload' button was clicked
              */
-            //window.location.href = "statistics";
+            window.location.href = "statistics";
         }
     });
 </script>

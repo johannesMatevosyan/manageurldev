@@ -16,27 +16,27 @@
                 include 'statistics.php';  /** load database management page */
             ?>
         </div>
-        <div id="db_manager" class="pages">
+        <div id="db_manager" class="pages" style="display: none;">
             <?php
                 include 'dbmanager.php';  /** load database management page */
             ?>
         </div><!--db_manager-->
-        <div id="url_upload" class="pages">
+        <div id="url_upload" class="pages" style="display: none;">
             <?php
                 include 'url_upload.php';  /** load URL Upload page */
             ?>
         </div><!--#url_upload-->
-        <div id="url_preview" class="pages">
+        <div id="url_preview" class="pages" style="display: none;">
             <?php
                 include 'url_preview.php';  /** load URL Upload page */
             ?>
         </div><!--#url_preview-->
-        <div id="url_download" class="pages">
+        <div id="url_download" class="pages" style="display: none;">
             <?php
                 include 'url_download.php';  /** load URL Upload page */
             ?>
         </div><!--#url_download-->
-        <div id="user_management" class="pages">
+        <div id="user_management" class="pages" style="display: none;">
             <?php
                 if($this->session->userdata('users_management') == 'editor')
                     include 'users_management.php';  /** load URL Upload page */

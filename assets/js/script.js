@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-  $('#info>div:not(:first)').hide(); // to hide all tabs except the first one
-
   $('#info-nav li').click(function(event) {
 
   var clicked = $(this).find('a:first').attr('href');

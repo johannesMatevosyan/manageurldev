@@ -16,14 +16,10 @@ public function index()
                     echo "<b>" . $type . "</b>";
                     echo "<ul>";
                     $i=0;
-                    print_r($values);
-                    /*
                     foreach ($values as $entity) {
                             $i++;
                             echo "<li>" . $entity . "</li>";
                     }
-                     * 
-                     */
                     echo "<li> Repeated:" . $i . "</li>";
                     echo "</ul>";
 

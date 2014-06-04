@@ -61,13 +61,14 @@ class File extends CI_Controller {
             $line = 0;
             $csv_array = array();
             $j=0;
+            $columns=$this->site_model->get_columns();
             while(!feof($read_csv_file)){
 
                 $data = fgetcsv($read_csv_file);
                 if($line == 0)
                 {
                     foreach($data as $value){
-                        if(in_array($value, $this->site_model->get_columns()))
+                        if(in_array($value, $columns))
                         {               
                             $d[] = $value;
                         }else{
@@ -104,7 +105,9 @@ class File extends CI_Controller {
                        if(isset($content) and !empty($content)){
                                 $entities = $oc->getEntities($content);
                                 foreach ($entities as $type => $values) {
-                                    if($type!='URL' AND in_array($type,$d)) $csv_array[$type]=count($values);
+                                    if($type!='URL' AND in_array($type,$columns)) {
+                                        $csv_array[$type]=count($values);
+                                    }
                                 } 
                        }    
                     $this->file_model->add_record($csv_array);

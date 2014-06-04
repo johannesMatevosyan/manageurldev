@@ -124,5 +124,12 @@ class File extends CI_Controller {
         }
 
     }
+    function edit_cell(){
+        $post=$_POST;
+        $old_url=$post['old_url'];
+        unset($post['old_url']);
+        $this->file_model->update_record($old_url,$post);
+    //redirect('?current=url_preview');
+    }
 
 }

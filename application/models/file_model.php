@@ -27,4 +27,9 @@ class File_model extends CI_Model {
         $query = $this->db->get('excel');
         return $query->result();
     }
+    function update_record($url,$data)
+    {
+        $this->db->where('URL', $url);
+        $this->db->update('excel', $data);
+    }
 }

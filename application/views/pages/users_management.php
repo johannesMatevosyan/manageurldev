@@ -106,15 +106,16 @@
 <script language="javascript" type="text/javascript">
 
     var base_url = "<?php echo base_url(); ?>";
-function get_users(){
-    $.ajax({
-        url: base_url + 'members/index/',
-        success: function(data){
-            $('.manageUsers').html(data);
-        }
-    });
-}
-get_users();
+
+    function get_users(){
+        $.ajax({
+            url: base_url + 'members/index/',
+            success: function(data){
+                $('.manageUsers').html(data);
+            }
+        });
+    }
+    get_users();
 
     /**
      *  File: user_management.php

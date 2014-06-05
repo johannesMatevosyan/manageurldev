@@ -20,6 +20,8 @@ if (true) {
     $size = $_FILES['imagefile']['size'];
     $type = $_FILES["imagefile"]['type'];
 
+    $add_name = strstr($name, '.', true); //to cut off '.csv' part
+
     if (strlen($name))
     {
         $extension = substr($name, strrpos($name, '.')+1);
@@ -28,13 +30,17 @@ if (true) {
         {
             if ($size < (2048 * 1024)) // check it if it's bigger than 2 Mb or no
             {
-                $imagename = md5(uniqid() . time()) . "." . $extension;
+                $imagename = md5(uniqid() . time()) . "---".$name;
 
                 $tmp = $_FILES['imagefile']['tmp_name'];
 
+                $pure_name_plus = strstr($imagename, "---");
+                $pure_name = substr($pure_name_plus, 3);
+
+                $path = $filepath.$imagename;
+
                 if (move_uploaded_file($tmp, $filepath.$imagename))  // move to new directory
                 {
-                    $path = $filepath."/". $imagename;
 
                     $file = fopen($path,"r");
 
@@ -138,8 +144,9 @@ if (true) {
     var user_type = "<?php echo $this->session->userdata('type'); ?>";
     var page_url_upload = "<?php echo $this->session->userdata('url_upload'); ?>";
 
+
     /**
-     *  Supported file:
+     *  File: column_selector.php
      *  Description: Add new headers into database (data table)
      */
     $('.upload_file').click( function() { 
@@ -150,13 +157,21 @@ if (true) {
         else
         {
             var csf_file_name = "<?php echo $imagename; ?>";
+
             $.ajax({ 
                 url: base_url + 'file/send_csv_data?file=' + csf_file_name
             });
         /**
          *  To redirect page to the statistics tab after the 'Upload' button was clicked
          */
-            window.location.href = "statistics";
+           // window.location.href = base_url + "statistics";
         }
     });
+
+    /**
+     *  File: column_selector.php
+     *  Description: send uploaded file name to controller
+     */
+    var file_name = "<?php echo $pure_name; ?>";
+
 </script>

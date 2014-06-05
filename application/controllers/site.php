@@ -54,14 +54,12 @@ class Site extends CI_Controller{
         $data['main_content'] = 'pages/content';
         if(!empty($_GET['current'])) $data['current'] = $_GET['current'];
         $this->load->view('includes/template', $data);
-       // $this->load->view('statistics');
     }
 
     function dbmanager()
     {
         $data['main_content'] = 'pages/dbmanager';
         $this->load->view('includes/template', $data);
-        // $this->load->view('statistics');
     }
 
 }

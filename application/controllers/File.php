@@ -48,6 +48,12 @@ class File extends CI_Controller {
     //end calais
         $file_name = $_GET['file'];
 
+        $pure_name_plus = strstr($file_name, "---");
+
+        $data['file_name'] = substr($pure_name_plus, 3);
+
+        $this->download_model->add_record($data);
+
         /**
          * to check if $_POST array is not empty, if so then new entry cannot be added to database
          */
@@ -91,24 +97,24 @@ class File extends CI_Controller {
                        //get content by url
                        $domain= parse_url($csv_array['URL']);
                        if (isset($domain['host'])) {
-                       $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
-                       //$content = strip_tags(file_get_contents('http://'.$domain['host']));
-                       $j++;
-                       echo $j.'-'.$domain['host'].'<br>';
-                       $content = file_get_html('http://'.$domain['host'])->plaintext;
-                       if(strlen($content)>100000){
-                       $strArr=str_split($content,100000);
-                       $content=$strArr[0];
-                       }
+                           $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
+                           //$content = strip_tags(file_get_contents('http://'.$domain['host']));
+                           $j++;
+                           echo $j.'-'.$domain['host'].'<br>';
+                           $content = file_get_html('http://'.$domain['host'])->plaintext;
+                           if(strlen($content)>100000){
+                           $strArr=str_split($content,100000);
+                           $content=$strArr[0];
+                           }
                        }
                         //analyse content
                        if(isset($content) and !empty($content)){
-                                $entities = $oc->getEntities($content);
-                                foreach ($entities as $type => $values) {
-                                    if($type!='URL' AND in_array($type,$columns)) {
-                                        $csv_array[$type]=count($values);
-                                    }
-                                } 
+                            $entities = $oc->getEntities($content);
+                            foreach ($entities as $type => $values) {
+                                if($type!='URL' AND in_array($type,$columns)) {
+                                    $csv_array[$type]=count($values);
+                                }
+                            }
                        }    
                     $this->file_model->add_record($csv_array);
                     }

@@ -126,15 +126,16 @@ class Members extends CI_Controller{
             $this->load->view('pages/edit_permissions', $user_records);
         }
     }//edit_headers
+
     function set_edit_permission()
     {
         foreach ($_POST  as $k =>$value ) {             
             if(is_array($value)){
                 if($value['pagename']){
-                $page_data['pagename'] = $value['pagename'];
-                if($value['type']) $page_data['type'] = $value['type'];
-                $user_data['username'] = $_POST['username'];
-                $this->pages_model->update_page($k,$page_data);
+                    $page_data['pagename'] = $value['pagename'];
+                    if($value['type']) $page_data['type'] = $value['type'];
+                    $user_data['username'] = $_POST['username'];
+                    $this->pages_model->update_page($k,$page_data);
                 }
             }
         }

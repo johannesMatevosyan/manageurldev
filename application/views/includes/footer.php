@@ -119,6 +119,7 @@
             };
             $(".uploadform").ajaxForm(options).submit();
         });
+
     function get_table_datas(){
      $.ajax({
          type: 'POST',

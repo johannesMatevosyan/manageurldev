@@ -213,4 +213,5 @@ class Crud extends CI_Controller{
        $this->load->view('pages/data_table',$data);
     }//data table
 
+
 } // class Crud

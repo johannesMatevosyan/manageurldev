@@ -202,7 +202,6 @@ table th, td{
     position:relative;
 }
 #table-scroll-download {
-    background:yellow;
     height:150px;
     overflow:auto;
     margin:20px auto;

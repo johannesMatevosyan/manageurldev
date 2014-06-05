@@ -7,30 +7,63 @@
  * To change this template use File | Settings | File Templates.
  */
 ?>
+
 <h2>URL Download</h2>
 <div id="table-wrapper-download">
-    <div id="table-scroll-download ">
+    <div id="table-scroll-download">
+
         <table id="url_download_table"  border="0">
             <thead>
+
             <tr>
+                <th class="url_download_table_first"><span class="text">ID</span></th>
                 <th class="url_download_table_first"><span class="text">Date</span></th>
                 <th class="url_download_table_second"><span class="text">Name</span></th>
                 <th class="url_download_table_third"><span class="text">Download</span></th>
-                <th class="url_download_table_fourth"><span class="text">Description</span></th>
-                <th class="url_download_table_fourth"><span class="text">Description 2</span></th>
+                <th class="url_download_table_fourth"><span class="text">Description(last id)</span></th>
             </tr>
             </thead>
-            <tbody>
-            <tr> <td>25.04.2014</td> <td>Car URL's March 2014</td> <td><button>Download</button></td> <td>3, 0</td> <td>3, 1</td>  </tr>
-            <tr> <td>1, 1</td> <td>2, 1</td> <td>3, 1</td> <td>3, 1</td> <td>3, 1</td> </tr>
-            <tr> <td>2, 1</td> <td></td> <td></td> <td></td> <td></td>  </tr>
-            <tr> <td>2, 1</td> <td></td> <td></td> <td></td> <td></td>  </tr>
-            <tr> <td>2, 1</td> <td></td> <td></td> <td></td> <td></td>  </tr>
-            <tr> <td>2, 1</td> <td></td> <td></td> <td></td> <td></td>  </tr>
-            <tr> <td>2, 1</td> <td></td> <td></td> <td></td> <td></td>  </tr>
-            <tr> <td>2, 1</td> <td></td> <td></td> <td></td> <td></td> </tr>
-            <tr> <td>2, 1</td> <td></td> <td></td> <td></td> <td></td>  </tr>
+            <tbody class="show_file_data">
+
+
             </tbody>
         </table>
+
     </div>
 </div><!--#table-wrapper-download-->
+<script language="javascript" type="text/javascript">
+
+    var base_url = "<?php echo base_url(); ?>";
+
+    /**
+     *  File: column_selector.php
+     *  Description: Add new headers into database (data table)
+     */
+    $('.url_download').click( function() {
+
+        //alert();
+    /*    if(page_dbmanager == 'viewer')
+        {
+            document.location.href = base_url + 'block';
+        }
+        else
+        {
+*/          //var delete_header = $('#url_db_headers').children(":selected").val();
+
+
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'download/get_files',
+               // data:  'delete_header=' + delete_header,
+                success: function(data){
+                    $('.show_file_data').html(data);
+                }
+            });
+  //     }
+    });
+
+
+
+
+
+</script>

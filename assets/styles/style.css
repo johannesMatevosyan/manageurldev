@@ -296,6 +296,7 @@ table th, td{
 .url_preview_edit{
     height:24px;
     width:75px;
+    margin-left: 20px;
     cursor:pointer;
 }
 #urls_per_page{
@@ -484,4 +485,12 @@ table th, td{
     border: 1px solid graytext;
     text-align: center;
     color: red;
+}
+/*edit_popup_styles*/
+#for_append  input{
+    float: right;
+    margin-right: 30%;
+}
+#for_append{
+    margin-left: 30%;
 }

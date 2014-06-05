@@ -21,25 +21,13 @@ tr.selected {
             color: #FFF;
 }
 .table th {
-           background-image:url('/cdn.jsdelivr.net/tablesorter/2.17.0/css/images/black-unsorted.gif');
+           background-image:url('http://cdn.jsdelivr.net/tablesorter/2.17.0/css/images/black-unsorted.gif');
            background-repeat: no-repeat;
            background-position:70% 50%;
            padding-right: 10px;
            cursor: pointer;
 }
 </style>
-
-
-<script>
-$('.url_preview_edit').click(function() {
-    alert($('tr.selected').text());
-    $('#url_preview_table').find('tr.selected').prop('contesnteditable',true);
- });       
+<script>      
 $('#url_preview_table').find('tbody').finderSelect();
-$('#url_preview_table td').click(function() {
-        alert($(this).text());
- $(this).prop('contesnteditable',true);
-});
-
-
 </script>

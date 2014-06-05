@@ -17,13 +17,13 @@
         <button class="url_preview_buttons" id="download_csv_btn"> Download CSV</button>
     </div>
     <h2>URL Preview</h2>
-        <button class="url_preview_edit button"> Edit Cell</button>
-    <p>URL's Per Page</p>
+        <button class="url_preview_edit button" id="edit_cell"> Edit Cell</button>
+    <!--<p>URL's Per Page</p>
     <select name="urls_per_page" id="urls_per_page" class="url_preview_edit">
         <option value="">250</option>
         <option value="">150</option>
         <option value="">50</option>
-    </select>
+    </select>-->
 </div><!--url_preview_heading-->
 <div id="table-wrapper">
     <div id="table-scroll">
@@ -106,7 +106,7 @@
 
 <!--Dialog Windows-->
 <!-- Search + Filter Dialog Window-->
-<div class="dialog">
+<div class="dialog" id="search_filter">
     <div class="body">
         <span class="close">x</span>
         <h6>dialog</h6>
@@ -212,7 +212,7 @@
 </div><!--.dialog-->
 
 <!-- Download CSV Dialog Window-->
-<div class="download_csv_dialog_window" id="download_csv_dialog">
+<div class="dialog" id="download_csv_dialog">
     <div class="download_csv_dialog_body">
         <span class="close">x</span>
         <div class="download_csv_content">
@@ -233,32 +233,47 @@
         </div><!--download_csv_content-->
     </div><!--download_csv_dialog_body-->
 </div><!--download_csv_dialog_window-->
-<!--End of Dialog Window-->
+<!-- Search + Filter Dialog Window-->
+<div class="dialog" id="edit_line">
+    <div class="body">
+        <span class="close">x</span>
+        <h6>dialog</h6>
+        <div class="content">
+            <br>
+            <h2>Edit Cell</h2>
+            <form method="post" action="<?php echo base_url(); ?>file/edit_cell">
+            <div id="for_append"></div>
+                 <div style="clear:both; text-align: center;">
+                <button class="yellowButton">Apply</button>
+            </div>
+            </form>
+        </div><!--.content-->
+    </div><!--.body-->
+</div><!--.dialog-->
 <script language="javascript" type="text/javascript">
-
-    /**
-     *  Script for Dialog Windows
-     * */
-
-    /** 'Search + Filter' button */
-    function dialogopen(){
-        $(".dialog").show();
-    }
-    $( "#search_filter_btn" ).click(function() {
-        dialogopen();
-    });
     $( ".close" ).click(function() {
         $(".dialog").hide();
     });
-
-    /** 'Download CSV' button */
-    function  download_csv_dialogopen(){
-        $("#download_csv_dialog").show();
-    }
+    $( "#search_filter_btn" ).click(function() {
+         $("#search_filter").show();
+    });
     $( "#download_csv_btn" ).click(function() {
-        download_csv_dialogopen();
+        $("#download_csv_dialog").show();
     });
-    $( ".close" ).click(function() {
-        $("#download_csv_dialog").hide();
+    $('#edit_cell').click(function() { 
+    var i=0;
+    
+    if($('tr.selected').length>0){
+    var valArr = $('tr.selected').html().split('</td>');
+    $("#for_append").html('');
+    $("#table-scroll th").each( function() {
+        $("#for_append").append('<div>'+$(this).text()+': <input name="'+$(this).text()+'" value="'+valArr[i].substr(4)+'"></input></div></br>');
+        i++;
     });
+    $("#edit_line").show();
+    }
+    else{
+    alert('please choose cell');
+    }
+    }); 
 </script>

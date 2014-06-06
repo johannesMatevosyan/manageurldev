@@ -22,6 +22,11 @@ class File_model extends CI_Model {
         $query = $this->db->get_where('excel', array('URL' => $id));
         return $query->result();
     }
+    function get_record($id)
+    {
+        $query = $this->db->get_where('excel', array('id' => $id));
+        return $query->result();
+    }
     function get_records()
     {
         $query = $this->db->get('excel');

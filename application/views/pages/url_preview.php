@@ -213,25 +213,25 @@
 
 <!-- Download CSV Dialog Window-->
 <div class="dialog" id="download_csv_dialog">
-    <div class="download_csv_dialog_body">
+    <div class="body">
         <span class="close">x</span>
-        <div class="download_csv_content">
-            <div style="width: 260px; margin: 10px auto;">
-                <h2>Download CSV</h2>
-                <input type="checkbox" class="download_csv_cbx" id="download_csv_cbx_1" value="1" checked>Download All URL's<br/><br/>
-                <input type="checkbox" class="download_csv_cbx" id="download_csv_cbx_2" value="1" checked>Download Currently Selected<br/><br/>
-                <input type="checkbox" class="download_csv_cbx" id="download_csv_cbx_3" value="1" checked>Download All URL's in Filter<br/><br/>
+        <h6>dialog</h6>
+        <div class='content' > 
+            <h2>Download CSV</h2>
+            <div id='download_csv_content'>
+            <input type="radio" class="download_csv_cbx" name='down_method' id="download_csv_cbx_1" value="all" checked>Download All URL's<br/><br/>
+            <input type="radio" class="download_csv_cbx" name='down_method' id="download_csv_cbx_2" value="selection" >Download Currently Selected<br/><br/>
+            <input type="radio" class="download_csv_cbx" name='down_method' id="download_csv_cbx_3" value="1" >Download All URL's in Filter<br/><br/>
 
                 <label for="download_csv_inp_1">URL list name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="text" class="" id="download_csv_inp_1" value=""><br/><br/>
 
-                <label for="download_csv_inp_2">URL list description:</label>
-                <input type="text" class="" id="download_csv_inp_2" value=""><br/><br/><br/>
+                <!--<label for="download_csv_inp_2">URL list description:</label>
+                <input type="text" class="" id="download_csv_inp_2" value=""><br/><br/><br/>-->
 
-                <input type="button" class="yellowButton" id="send_to_download" value="Send to Download">
-            </div>
-        </div><!--download_csv_content-->
-    </div><!--download_csv_dialog_body-->
+            <input type="button" class="yellowButton" id="submit_down_csv" value="Send to Download">
+            </div></div>
+     </div><!--download_csv_dialog_body-->
 </div><!--download_csv_dialog_window-->
 <!-- Search + Filter Dialog Window-->
 <div class="dialog" id="edit_line">
@@ -258,6 +258,42 @@
         $("#search_filter").show();
     });
     $( "#download_csv_btn" ).click(function() {
+        $("#download_csv_dialog").show();
+    });
+    $( "#submit_down_csv" ).click(function() { 
+        var form = document.createElement("form");
+        form.method = "POST";
+        form.action = "<?php echo base_url(); ?>download/selectional_download";
+        var filename = $('#download_csv_inp_1').val();
+        el = document.createElement("input");
+        el.type = "hidden";
+        el.name = "filename";
+        el.value = filename;
+        form.appendChild(el);        
+        if($('input[name=down_method]:checked').val()=='selection'){
+        var selaecteds = $('tr.selected');
+         if(selaecteds.length>0)
+            {
+            selaecteds.each(function () {
+            el = document.createElement("input");
+            el.type = "hidden";
+            el.name = "id[]";
+            el.value = $(this).find('td:first').text();
+            form.appendChild(el);  
+            });
+            form.submit();
+            }
+            else alert('Please select cell');
+        }
+        else if($('input[name=down_method]:checked').val()=='all'){
+        el = document.createElement("input");
+        el.type = "hidden";
+        el.name = "id";
+        el.value = 'all';
+        form.appendChild(el);
+        form.submit();
+        }
+
         $("#download_csv_dialog").show();
     });
     $('#edit_cell').click(function() {

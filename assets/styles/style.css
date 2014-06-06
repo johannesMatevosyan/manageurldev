@@ -202,6 +202,7 @@ table th, td{
     position:relative;
 }
 #table-scroll-download {
+    background:yellow;
     height:150px;
     overflow:auto;
     margin:20px auto;
@@ -363,45 +364,8 @@ table th, td{
 /* end of dialog */
 
 /* Download CSV dialog window */
-.download_csv_dialog_window{
-    display: block;
-    position: absolute;
-    top:0px;
-    left:0px;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 90;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-.download_csv_dialog_body{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 330px;
-    height: 342px;
-    margin: 10% auto;
-    background-color: rgb(147,168,113);
-    border-radius: 10px;
-}
-.download_csv_content{
-    margin: 7px;
-    overflow:   scroll;
-    background-color: #fff;
-    height: 95%;
-    color: #000000;
-    font-size: 11px;
-}
-#download_csv_inp_1{
-    margin-left: 31px;
-}
-.download_csv_cbx{
-    margin-left: 50px;
-}
-#send_to_download{
-    margin-left: 50px;
+#download_csv_content{
+    margin-left: 30%;
 }
 /* End of Download CSV dialog window */
 

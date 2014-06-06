@@ -105,5 +105,33 @@ class Download extends CI_Controller{
 
 
     }
+    function selectional_download(){
+        $post=$_POST;
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename='.($post['filename']?: "list").'.csv');
+
+        // create a file pointer connected to the output stream
+        $output = fopen('php://output', 'w');
+
+        $headers = $this->site_model->get_columns();
+        // output the column headings
+        fputcsv($output, $headers);
+        if ($post['id']=='all') {
+        $content = $this->file_model->get_records();
+        foreach($content as $line)
+        {
+            $a=(array)$line;
+            fputcsv($output, $a);
+        }
+        } 
+        elseif (is_array($post['id'])){    
+        foreach($post['id'] as $id)
+        {            
+            $content = $this->file_model->get_record($id);
+            $a=(array)$content[0];
+            fputcsv($output, $a);
+        }   
+        }
+    }
 
 }

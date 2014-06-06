@@ -105,7 +105,12 @@ if (true) {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="4" style="text-align: center;"><input type="checkbox" class="">Update Statisstics?(update already existing URLs statistics)</td>
+                                        <td colspan="4">
+                                            <div class="upload_checkbox">
+                                                <input type="checkbox" class="">
+                                                <span class="upload_stat">Update Statistics?(update already existing URLs statistics)</span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td></td>

@@ -69,18 +69,17 @@ class Download extends CI_Controller{
         echo '<script> var file_name = "'.$value->file_name.'"; var file_id = "'.$value->id.'"</script>';
 
     }
-
-
-    function lastid()
+/*
+    function csv_last_id()
     {
         $this->download_model->get_last_id();
     }
 
-    function add_id()
+    function csv_first_id()
     {
         $this->download_model->add_max_id();
     }
-
+*/
     function plaintext() {
 
         $file = $_GET;
@@ -91,19 +90,30 @@ class Download extends CI_Controller{
         // create a file pointer connected to the output stream
         $output = fopen('php://output', 'w');
 
-        $headers = $this->site_model->get_columns();
+        $headers = $this->site_model->get_columns(); // get header names for a csv file from 'excel' table
         // output the column headings
         fputcsv($output, $headers);
 
-        $content = $this->file_model->get_records();
+        $content = $this->file_model->get_records(); // get rows for a csv file from 'excel' table
 
         foreach($content as $line)
         {
-            $a=(array)$line;
-            fputcsv($output, $a);
+
+            $csv_line = (array)$line;
+
+            if($csv_line['id'] >= $file['firstid'] && $csv_line['id'] <= $file['lastid'])
+            {
+                fputcsv($output, $csv_line);
+            }
+
         }
 
+    }//plaintext
 
+    function test()
+    {
+        //$this->download_model->get_last_row();
+        $this->download_model->get_first_id();
     }
     function selectional_download(){
         $post=$_POST;
@@ -117,21 +127,22 @@ class Download extends CI_Controller{
         // output the column headings
         fputcsv($output, $headers);
         if ($post['id']=='all') {
-        $content = $this->file_model->get_records();
-        foreach($content as $line)
-        {
-            $a=(array)$line;
-            fputcsv($output, $a);
-        }
+            $content = $this->file_model->get_records();
+            foreach($content as $line)
+            {
+                $a=(array)$line;
+                fputcsv($output, $a);
+            }
         } 
         elseif (is_array($post['id'])){    
-        foreach($post['id'] as $id)
-        {            
-            $content = $this->file_model->get_record($id);
-            $a=(array)$content[0];
-            fputcsv($output, $a);
-        }   
+            foreach($post['id'] as $id)
+            {
+                $content = $this->file_model->get_record($id);
+                $a=(array)$content[0];
+                fputcsv($output, $a);
+            }
         }
     }
+
 
 }

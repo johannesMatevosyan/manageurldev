@@ -194,6 +194,13 @@ table th, td{
     width: 265px;
     padding: 0 0 0 65px;
 }
+.upload_checkbox{
+    text-align: center;
+    margin: 10px 0;
+}
+.upload_stat{
+    margin: 0 5px;
+}
 /* end of URL Upload */
 
 /* URL download */
@@ -202,7 +209,6 @@ table th, td{
     position:relative;
 }
 #table-scroll-download {
-    background:yellow;
     height:150px;
     overflow:auto;
     margin:20px auto;

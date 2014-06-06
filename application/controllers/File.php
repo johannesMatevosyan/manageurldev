@@ -40,19 +40,57 @@ class File extends CI_Controller {
     }
 
     function send_csv_data(){
-    //calais http://www.dangrossman.info/open-calais-tags/
-    include_once  APPPATH.'libraries/simple_html_dom.php';
-    include_once  APPPATH.'libraries/opencalais.php';
-    $apikey = "mzcxpd66uyevcektzdpuruqv";
-    $oc = new OpenCalais($apikey);
-    //end calais
+        //calais http://www.dangrossman.info/open-calais-tags/
+        include_once  APPPATH.'libraries/simple_html_dom.php';
+        include_once  APPPATH.'libraries/opencalais.php';
+        $apikey = "mzcxpd66uyevcektzdpuruqv";
+        $oc = new OpenCalais($apikey);
+        //end calais
+
+        /**
+         * var @first_id: gets the last id number from 'excel' table
+         *                and puts it in 'first_id' field of a 'store_id' table
+         *                when the .csv file is uploaded
+         */
+
+        if($first_id = $this->file_model->get_last_id()) // get last id from 'excel' table
+        {
+            /**
+            *  add 1 to a value of the last number,
+             * since 'first_id' field should be bigger than 'last_id' field of previous uploaded file.
+            */
+            $data['first_id'] = $first_id + 1;
+        }
+        else
+        {
+            $data['first_id'] = 1;
+        }
+        echo $data['first_id']."<br/>"; //10
+
+        /**
+         * $data['insert_time']: gets the current time and date
+         *                       and puts it in 'insert_time' file of a table
+         *                       when the .csv file is uploaded
+         */
+
+        $data['insert_time'] = date('Y-m-d H:i:s');
+
+        /**
+         * var @file_name: gets the name of uploaded file
+         *                 and puts it in 'file_name' file of a table
+         */
+
         $file_name = $_GET['file'];
 
         $pure_name_plus = strstr($file_name, "---");
 
         $data['file_name'] = substr($pure_name_plus, 3);
 
+        /**
+         * Insert query to 'store_id' table
+         */
         $this->download_model->add_record($data);
+
 
         /**
          * to check if $_POST array is not empty, if so then new entry cannot be added to database
@@ -121,7 +159,24 @@ class File extends CI_Controller {
                 }
 
                  $line++;
-            }
+            }// while
+
+            /**
+             * var @last_id: gets the last id number from 'excel' table
+             *               and puts it in 'first_id' field of a 'store_id' table
+             *               AFTER .csv file is uploaded
+             *
+             * var @id: get the last id from 'store_id' table,
+             *          to be able to update that table
+             */
+
+            $last_id = $this->file_model->get_last_id();
+
+            $id = $this->download_model->get_last_id();
+
+            $data['last_id'] = $last_id;
+
+            $this->download_model->update_record($id, $data);
 
         }
         else

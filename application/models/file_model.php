@@ -17,6 +17,7 @@ class File_model extends CI_Model {
     {
         $this->db->insert('excel', $data);
     }
+
     function get_record_by_header($id)
     {
         $query = $this->db->get_where('excel', array('URL' => $id));
@@ -37,4 +38,17 @@ class File_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('excel', $data);
     }
+
+    /**
+     * get_last_id() function collects maximum id number in 'excel' table.
+     * In this way we define range to order downloading files
+     */
+    function get_last_id()
+    {
+        $this->db->select_max('id');
+        $query = $this->db->get('excel');
+        $max_row = $query->row_array();
+        return $max_row['id'];
+    }
+
 }

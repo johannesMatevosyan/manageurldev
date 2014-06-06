@@ -80,7 +80,6 @@ class Site_model extends CI_Model{
     function db_manager_joined_with_data()
     {
         $this->db->select('*');
-        //$this->db->from('db_manager')->where('header_title', "URL");
         $this->db->from('db_manager');
         $this->db->join('data', 'db_manager.id = data.header_id');
         return $this->db->get();

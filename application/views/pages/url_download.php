@@ -14,17 +14,15 @@
 
         <table id="url_download_table"  border="0">
             <thead>
-
             <tr>
                 <th class="url_download_table_first"><span class="text">ID</span></th>
                 <th class="url_download_table_first"><span class="text">Date</span></th>
                 <th class="url_download_table_second"><span class="text">Name</span></th>
                 <th class="url_download_table_third"><span class="text">Download</span></th>
-<!--                <th class="url_download_table_fourth"><span class="text">Description(last id)</span></th>-->
+<!--            <th class="url_download_table_fourth"><span class="text">Description(last id)</span></th>-->
             </tr>
             </thead>
             <tbody class="show_file_data">
-
 
             </tbody>
         </table>
@@ -47,7 +45,6 @@
                     $('.show_file_data').html(data);
                 }
             });
-  //     }
     });
 
 </script>

@@ -169,7 +169,7 @@ if (true) {
         /**
          *  To redirect page to the statistics tab after the 'Upload' button was clicked
          */
-           // window.location.href = base_url + "statistics";
+         window.location.href = base_url + "statistics";
         }
     });
 

@@ -120,11 +120,11 @@
     /**
      *  File: user_management.php
      *  Description: Add new user into database
-     *  var statistics_perm: get value 'statistics_perm' input field and assign role to the user;
-     *  var dbmanager_perm: get value 'dbmanager_perm' input field and assign role to the user ;
-     *  var url_preview_perm: get value 'url_preview_perm' input field and assign role to the user ;
-     *  var url_upload_perm: get value 'url_upload_perm' input field and assign role to the user;
-     *  var url_download_perm: get value 'url_download_perm' input field and assign role to the user;
+     *  var @statistics_perm: get value 'statistics_perm' input field and assign role to the user;
+     *  var @dbmanager_perm: get value 'dbmanager_perm' input field and assign role to the user ;
+     *  var @url_preview_perm: get value 'url_preview_perm' input field and assign role to the user ;
+     *  var @url_upload_perm: get value 'url_upload_perm' input field and assign role to the user;
+     *  var @url_download_perm: get value 'url_download_perm' input field and assign role to the user;
      */
 
     $('#saveUser').click( function() {

@@ -51,4 +51,11 @@ class File_model extends CI_Model {
         return $max_row['id'];
     }
 
+
+    function get_domain_sum()
+    {
+        $get_domain_sum = $this->db->count_all('excel');
+        return $get_domain_sum;
+    }
+
 }

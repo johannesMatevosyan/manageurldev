@@ -11,16 +11,24 @@
 <h2>Statistics</h2>
 <br>
 <div class="statistics_title">
-<b>Logs</b><button id="domains">Total Unique Domains 156.000</button><b>URL Database Stats</b>
-</div>
-<br>
-<br>
+    <div id="logs">
+        <b>Logs</b>
+    </div><!--#logs-->
+    <div id="unique_domains">
+        <button id="domains">Total Unique Domains <span class="total_unique_domains"></span></button>
+    </div><!--#unique_domains-->
+    <div id="db_stats">
+        <b>URL Database Stats</b>
+    </div><!--#db_stats-->
+</div><!--#statistics_title-->
+<br/>
+<br/>
 <table align="center" width="98%" border="0" >
     <tr>
         <th align="left">
-            <button>Clear Logs</button>
-            <button>Copy Logs</button>
-            <button>Save Logs</button>
+            <button id="clear_logs" class="logs">Clear Logs</button>
+            <button id="copy_logs" class="logs">Copy Logs</button>
+            <button id="save_logs" class="logs">Save Logs</button>
         </th>
         <th>
             Select data:
@@ -32,74 +40,102 @@
             </select>
         </th>
     </tr>
-    <tr>
-        <th width="50%">
-        <!-- <div id="time_indication">
-                <tr><td>2600 news domains added</td></tr>
-                <tr><td>....................................</td></tr>
-                <tr><td>2600 news domains added</td></tr>
-                <tr><td>....................................</td></tr>
-                <tr><td>2600 news domains added</td></tr>
-                <tr><td>....................................</td></tr>
-                <tr><td>2600 news domains added</td></tr>
-                <tr><td>....................................</td></tr>
-                <tr><td>2600 news domains added</td></tr>
-                <tr><td>....................................</td></tr>
-            </div>-->
-
-            <div id="time_indication">
-                <p>2600 news domains added - 4:32 PM 30.04.2014<br>
-                ------------------------------------------------------------------</p>
-                <p>1500 news domains added - 5:41 PM 30.04.2014<br>
-                   2600 news domains added - 3:34 PM 29.04.2014<br>
-                ------------------------------------------------------------------</p>
-                <p>1500 news domains added - 1:22 PM 28.04.2014<br>
-                    2600 news domains added - 4:51 PM 30.04.2014<br>
-                    ------------------------------------------------------------------</p>
-                <p>1500 news domains added - 3:42 PM 15.04.2014<br>
-                    2600 news domains added - 4:31 PM 12.04.2014<br>
-                    ------------------------------------------------------------------</p>
-                <p>1500 news domains added - 1:25 PM 27.04.2014<br>
-                    2600 news domains added - 2:17 PM 10.04.2014<br>
-                    ------------------------------------------------------------------</p>
-            </div>
-        </th>
-        <th>
-            <table id="child_table" border="0" width="100%">
-                <tr>
-                    <th>data point</th>
-                    <th>value</th>
-                </tr>
-                <tr>
-                    <td>Cars</td>
-                    <td>2164</td>
-                </tr>
-                <tr>
-                    <td>Health</td>
-                    <td>4000</td>
-                </tr>
-                <tr>
-                    <td>Music</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>Science</td>
-                    <td>33</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td></td>
-                </tr>
-            </table>
-
-        </th>
-    </tr>
 </table>
+
+<div id="stats_tables">
+<div id="stats_time">
+<table align="left" width="100%" border="0" id="time_indication">
+
+</table>
+</div><!--#stats_time-->
+<div id="stats_categories">
+<table align="right" width="100%" border="0" id="data_point">
+
+	<tr>
+		<th>Data point</th>
+		<th>value</th>
+		<th></th>	
+	</tr>		
+
+	<tr>	
+			<td>Cars</td>
+			<td>2164</td>
+			<td></td>
+	</tr>
+	<tr>
+			<td>Health</td>
+			<td>4000</td>
+			<td></td>
+	</tr>
+	<tr>
+			<td>Music</td>
+			<td>200</td>
+			<td></td>
+	</tr>
+	<tr>
+			<td>Science</td>
+			<td>33</td>
+			<td></td>
+	</tr>
+	<tr>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+	</tr>
+	<tr>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+	</tr>		
+	<tr>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+	</tr>
+
+</table>
+</div><!--#stats_categories-->
+</div><!--#stats_tables-->
+
+<script language="javascript" type="text/javascript">
+
+    var base_url = "<?php echo base_url(); ?>";
+
+    /**
+     *  File: statistics.php
+     *  Description: Get the number of rows after reloading.
+     */
+    function get_unique_domains(){
+        $.ajax({
+            url: base_url + 'file/domain_sum/',
+            success: function(data){
+                $('.total_unique_domains').html(data);
+            }
+        });
+    }
+    get_unique_domains();
+
+    /**
+     *  File: statistics.php
+     *  Description: Get the number of rows after clicking 'Total Unique Domains' button
+     */
+    $('#domains').click( function() {
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'file/domain_sum/',
+            success: get_unique_domains
+        });
+    });
+
+
+    function get_new_domains(){
+        $.ajax({
+            url: base_url + 'file/new_domains/',
+            success: function(data){
+                $('#time_indication').html(data);
+            }
+        });
+    }
+    get_new_domains();
+
+</script>

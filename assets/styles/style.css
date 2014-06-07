@@ -155,18 +155,50 @@ select[multiple]{
 .statistics_title{
     margin: 0 auto;
     width: 700px;
+    height: 30px;
     text-align: center;
 }
 /* end of Page content */
 
 /* Statistics */
+#logs{
+    float: left;
+    width: 190px;
+}
+#unique_domains{
+    float: left;
+    width: 310px;
+}
+#db_stats{
+    float: right;
+    width: 190px;
+}
+
 #domains{
-    margin: 0 25px 0 50px;
+    margin: 0 25px 0 25px;
     width: 250px;
 }
-#time_indication{
+#stats_tables{
+    margin: 10px 0 0 0;
+}
+#stats_time{
     overflow: scroll;
     height: 200px;
+    width: 370px;
+    padding: 7px 0 0 10px;
+    border: 1px solid #CCC;
+    float: left;
+}
+#stats_categories{
+    overflow: scroll;
+    height: 200px;
+}
+#data_point th{
+    height: 30px;
+    border: 1px solid #ccc;
+}
+#data_point td{
+    border: 1px solid #ccc;
 }
 #satistic>table{
     height: 50px;
@@ -182,6 +214,11 @@ table th, td{
     font-size: 12px;
     padding:1px 5px 1px 3px;
 }
+.logs{
+    margin: 1px 5px;
+}
+
+/* end of Statistics */
 
 /* URL Upload */
 #view_urlupload{

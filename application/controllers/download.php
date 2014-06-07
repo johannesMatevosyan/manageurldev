@@ -69,17 +69,15 @@ class Download extends CI_Controller{
         echo '<script> var file_name = "'.$value->file_name.'"; var file_id = "'.$value->id.'"</script>';
 
     }
-/*
+
+
+
     function csv_last_id()
     {
-        $this->download_model->get_last_id();
+        $csv_last = $this->download_model->get_last_id();
+        print_r($csv_last);
     }
 
-    function csv_first_id()
-    {
-        $this->download_model->add_max_id();
-    }
-*/
     function plaintext() {
 
         $file = $_GET;
@@ -110,13 +108,13 @@ class Download extends CI_Controller{
 
     }//plaintext
 
-    function test()
-    {
-        //$this->download_model->get_last_row();
-        $this->download_model->get_first_id();
-    }
+//    function test()
+//    {
+//        //$this->download_model->get_last_row();
+//        $this->download_model->get_first_id();
+//    }
     function selectional_download(){
-        $post=$_POST;
+        $post = $_POST;
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename='.($post['filename']?: "list").'.csv');
 

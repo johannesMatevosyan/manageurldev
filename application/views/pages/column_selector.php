@@ -107,7 +107,7 @@ if (true) {
                                     <tr>
                                         <td colspan="4">
                                             <div class="upload_checkbox">
-                                                <input type="checkbox" class="">
+                                                <input type="checkbox" id="update_urls" name="update" value="1">
                                                 <span class="upload_stat">Update Statistics?(update already existing URLs statistics)</span>
                                             </div>
                                         </td>
@@ -162,14 +162,14 @@ if (true) {
         else
         {
             var csf_file_name = "<?php echo $imagename; ?>";
-
+            var update = $("#update_urls").is(":checked");
             $.ajax({ 
-                url: base_url + 'file/send_csv_data?file=' + csf_file_name
+                url: base_url + 'file/send_csv_data?file=' + csf_file_name + '&update='+update
             });
         /**
          *  To redirect page to the statistics tab after the 'Upload' button was clicked
          */
-         window.location.href = base_url + "statistics";
+         //window.location.href = base_url;
         }
     });
 

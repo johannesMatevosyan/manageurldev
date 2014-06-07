@@ -40,6 +40,22 @@ class File extends CI_Controller {
     }
 
     function send_csv_data(){
+        function get_content($url){ 
+                       $domain= parse_url($url);
+                       if (isset($domain['host'])) {
+                           $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];                           
+                           $content = file_get_html('http://'.$domain['host'])->plaintext;                           
+                           if(strlen($content)>100000){
+                           $strArr=str_split($content,100000);
+                           $content=$strArr[0];                         
+                           }
+                           return ( isset($content) and !empty($content)) ? $content : FALSE;
+                       }
+                       else {
+                           return FALSE;                           
+                       }
+                       
+        }
         //calais http://www.dangrossman.info/open-calais-tags/
         include_once  APPPATH.'libraries/simple_html_dom.php';
         include_once  APPPATH.'libraries/opencalais.php';
@@ -57,7 +73,7 @@ class File extends CI_Controller {
         {
             /**
             *  add 1 to a value of the last number,
-            *  since 'first_id' field should be bigger than 'last_id' field of previous uploaded file.
+             * since 'first_id' field should be bigger than 'last_id' field of previous uploaded file.
             */
             $data['first_id'] = $first_id + 1;
         }
@@ -65,8 +81,6 @@ class File extends CI_Controller {
         {
             $data['first_id'] = 1;
         }
-        echo $data['first_id']."<br/>"; //10
-
         /**
          * $data['insert_time']: gets the current time and date
          *                       and puts it in 'insert_time' file of a table
@@ -86,8 +100,6 @@ class File extends CI_Controller {
 
         $data['file_name'] = substr($pure_name_plus, 3);
 
-        //print_r($data);
-
         /**
          * Insert query to 'store_id' table
          */
@@ -106,7 +118,6 @@ class File extends CI_Controller {
 
             $line = 0;
             $csv_array = array();
-            $j=0;
             $columns=$this->site_model->get_columns();
             while(!feof($read_csv_file)){
 
@@ -125,28 +136,17 @@ class File extends CI_Controller {
                 else
                 {
                     $i = 0;
-                    foreach($data as $key => $value){
+                    foreach($data as $value){
                         if($d[$i])
                         {
                         $csv_array[$d[$i]] = $value;                           
                         }
                         $i++;
                     }
-                    if(!$this->file_model->get_record_by_header($csv_array['URL']))
-                    {
+
                        //get content by url
-                       $domain= parse_url($csv_array['URL']);
-                       if (isset($domain['host'])) {
-                           $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
-                           //$content = strip_tags(file_get_contents('http://'.$domain['host']));
-                           $j++;
-                           echo $j.'-'.$domain['host'].'<br>';
-                           $content = file_get_html('http://'.$domain['host'])->plaintext;
-                           if(strlen($content)>100000){
-                           $strArr=str_split($content,100000);
-                           $content=$strArr[0];
-                           }
-                       }
+                       $content=get_content($csv_array['URL']);
+                       
                         //analyse content
                        if(isset($content) and !empty($content)){
                             $entities = $oc->getEntities($content);
@@ -155,8 +155,15 @@ class File extends CI_Controller {
                                     $csv_array[$type]=count($values);
                                 }
                             }
-                       }    
-                    $this->file_model->add_record($csv_array);
+                       }
+
+                    if(!$row = $this->file_model->get_record_by_header($csv_array['URL']) )
+                    {
+                        $this->file_model->add_record($csv_array);
+                    }
+                    elseif($_GET['update']=='true')
+                    {
+                        $_GET['update'];$this->file_model->update_record($row[0]->id,$csv_array);                       
                     }
                 }
 
@@ -176,9 +183,8 @@ class File extends CI_Controller {
 
             $id = $this->download_model->get_last_id();
 
-            $data['last_id'] = $last_id;
-           // print_r($data);
-            $this->download_model->update_record($id, $data);
+            $url_download['last_id'] = $last_id;
+            $this->download_model->update_record($id, $url_download);
 
         }
         else
@@ -187,7 +193,6 @@ class File extends CI_Controller {
         }
 
     }
-
     function edit_cell(){
         $post=$_POST;
         $id=$post['id'];
@@ -195,42 +200,5 @@ class File extends CI_Controller {
         $this->file_model->update_record($id,$post);
         redirect('?current=url_preview');
     }
-
-    /**
-     *  domain_sum() function Permits you to determine the number of
-     *  rows in a 'excel' table
-     */
-    function domain_sum()
-    {
-        $csv_last = $this->file_model->get_domain_sum();
-        echo $csv_last;
-    } //domain_sum
-
-    function new_domains()
-    {
-        if($query = $this->download_model->get_store_records())
-        {
-
-           // echo "<table align='left' width='40%' border='1'>";
-            foreach($query as $key =>$value)
-            {
-                $new_domains = $value->last_id - $value->first_id;
-
-               // echo "<p>".$new_domains." new domains added - ".$value->insert_time."<br>
-               //     ------------------------------------------------------------------</p>";
-                echo "
-                <tr><td>".$new_domains." news domains added - ".$value->insert_time."</td></tr>
-                <tr><td>------------------------------------------------------------------</td></tr>";
-            }
-           // echo "</table>";
-        }
-        else
-        {
-            echo "<h1>no query</h1>";
-        }
-
-
-    }//new_domains
-
 
 }

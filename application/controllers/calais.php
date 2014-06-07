@@ -4,79 +4,80 @@ class Calais extends CI_Controller {
 
 	public function index()
  	{
-include_once  APPPATH.'libraries/simple_html_dom.php';
-function simple_start($parser, $element_name, $element_atts) {
-	
-	global $simple_level;
-	global $simple_is_parse_err;
-	global $simple_l1_tag;
-	global $element;
+        include_once  APPPATH.'libraries/simple_html_dom.php';
 
-	if ($simple_is_parse_err)
-	{
-		return;
-	}
+        function simple_start($parser, $element_name, $element_atts) {
 
-	if ($simple_level == 0)
-	{
-		/*
-		 * Level 0 - the OpenCalaisSimple tag
-		 */
-		if ($element_name != "OpenCalaisSimple")
-		{
-			$simple_is_parse_err = true;
-			return;		
-		}
-	}
-	else if ($simple_level == 1)
-	{
-		/*
-		 * Level 2 - Description or CalaisSimpleOutputFormat
-		 */
-		if ($element_name != "Description" && 
-			$element_name != "CalaisSimpleOutputFormat")
-		{
-			$simple_is_parse_err = true;
-			return;		
-		}
-		
-		$simple_l1_tag = $element_name;
-	}
-	else if ($simple_level > 1)
-	{
-		/*
-		 * Level 2+ - Description information or semantic data
-		 */
-		if ($simple_l1_tag == "Description")
-		{
-			/*
-			 * Information under the Description element - place
-			 * in info array - not presented
-			 */
-		}
-		else if ($simple_l1_tag == "CalaisSimpleOutputFormat")
-		{
-			/*
-			 * Information under the CalaisSimpleOutputFormat - 
-			 * displayed
-			 */
-			$element = array("type" => $element_name,
-							"name" => "",
-							"repeat" => 0);
-								 
-			foreach ($element_atts as $name => $value)
-			{
-				if ($name == "count")
-				{
-					$element["repeat"] = (integer)$value; 
-				}
-			}	 
-		}
-	}
-	
-	$simple_level++;
-	
-}
+            global $simple_level;
+            global $simple_is_parse_err;
+            global $simple_l1_tag;
+            global $element;
+
+            if ($simple_is_parse_err)
+            {
+                return;
+            }
+
+            if ($simple_level == 0)
+            {
+                /**
+                 * Level 0 - the OpenCalaisSimple tag
+                 */
+                if ($element_name != "OpenCalaisSimple")
+                {
+                    $simple_is_parse_err = true;
+                    return;
+                }
+            }
+            else if ($simple_level == 1)
+            {
+                /**
+                 * Level 2 - Description or CalaisSimpleOutputFormat
+                 */
+                if ($element_name != "Description" &&
+                    $element_name != "CalaisSimpleOutputFormat")
+                {
+                    $simple_is_parse_err = true;
+                    return;
+                }
+
+                $simple_l1_tag = $element_name;
+            }
+            else if ($simple_level > 1)
+            {
+                /**
+                 * Level 2+ - Description information or semantic data
+                 */
+                if ($simple_l1_tag == "Description")
+                {
+                    /**
+                     * Information under the Description element - place
+                     * in info array - not presented
+                     */
+                }
+                else if ($simple_l1_tag == "CalaisSimpleOutputFormat")
+                {
+                    /**
+                     * Information under the CalaisSimpleOutputFormat -
+                     * displayed
+                     */
+                    $element = array("type" => $element_name,
+                                    "name" => "",
+                                    "repeat" => 0);
+
+                    foreach ($element_atts as $name => $value)
+                    {
+                        if ($name == "count")
+                        {
+                            $element["repeat"] = (integer)$value;
+                        }
+                    }
+                }
+            }
+
+            $simple_level++;
+
+} //simple_start
 
 function simple_stop($parser, $element_name) {
 
@@ -136,7 +137,7 @@ function simple_stop($parser, $element_name) {
 	}
 
 	$simple_level--;
-}
+}//simple_stop
 
 function simple_char($parser, $data) {
   
@@ -158,7 +159,7 @@ function simple_char($parser, $data) {
 		$element["name"] .= trim($data);
 	}
 
-}
+} //simple_char
 
 /*************************** My Code *********************************/
 
@@ -251,5 +252,5 @@ $content = strip_tags(file_get_contents("http://device.am"));
 tocalaissite($content);
  * 
  */	
-}
+} //index
 }

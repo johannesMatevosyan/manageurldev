@@ -73,7 +73,7 @@ class File extends CI_Controller {
         {
             /**
             *  add 1 to a value of the last number,
-             * since 'first_id' field should be bigger than 'last_id' field of previous uploaded file.
+            *  since 'first_id' field should be bigger than 'last_id' field of previous uploaded file.
             */
             $data['first_id'] = $first_id + 1;
         }
@@ -193,6 +193,7 @@ class File extends CI_Controller {
         }
 
     }
+
     function edit_cell(){
         $post=$_POST;
         $id=$post['id'];
@@ -200,5 +201,35 @@ class File extends CI_Controller {
         $this->file_model->update_record($id,$post);
         redirect('?current=url_preview');
     }
+
+    /**
+     *  domain_sum() function Permits you to determine the number of
+     *  rows in a 'excel' table
+     */
+    function domain_sum()
+    {
+        $csv_last = $this->file_model->get_domain_sum();
+        echo $csv_last;
+    } //domain_sum
+
+    function new_domains()
+    {
+        if($query = $this->download_model->get_store_records())
+        {
+            foreach($query as $key =>$value)
+            {
+                $new_domains = $value->last_id - $value->first_id;
+                echo " <tr><td>".$new_domains." news domains added - ".$value->insert_time."</td></tr>
+                       <tr><td>------------------------------------------------------------------</td></tr>";
+            }
+        }
+        else
+        {
+            echo "<h1>no query</h1>";
+        }
+
+
+    }//new_domains
+
 
 }

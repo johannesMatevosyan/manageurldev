@@ -23,78 +23,74 @@
 </div><!--#statistics_title-->
 <br/>
 <br/>
-<table align="center" width="98%" border="0" >
-    <tr>
-        <th align="left">
-            <button id="clear_logs" class="logs">Clear Logs</button>
-            <button id="copy_logs" class="logs">Copy Logs</button>
-            <button id="save_logs" class="logs">Save Logs</button>
-        </th>
-        <th>
-            Select data:
-            <select>
-                <option value="volvo">Content Analysis</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </select>
-        </th>
-    </tr>
-</table>
-
+    <table align="center" width="98%" border="0" >
+        <tr>
+            <th align="left">
+                <button id="clear_logs" class="logs">Clear Logs</button>
+                <button id="copy_logs" class="logs">Copy Logs</button>
+                <button id="save_logs" class="logs">Save Logs</button>
+            </th>
+            <th>
+                Select data:
+                <select>
+                    <option value="volvo">Content Analysis</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </th>
+        </tr>
+    </table>
 <div id="stats_tables">
-<div id="stats_time">
-<table align="left" width="100%" border="0" id="time_indication">
+    <div id="stats_time">
+        <table align="left" width="100%" border="0" id="time_indication">
 
-</table>
-</div><!--#stats_time-->
-<div id="stats_categories">
-<table align="right" width="100%" border="0" id="data_point">
-
-	<tr>
-		<th>Data point</th>
-		<th>value</th>
-		<th></th>	
-	</tr>		
-
-	<tr>	
-			<td>Cars</td>
-			<td>2164</td>
-			<td></td>
-	</tr>
-	<tr>
-			<td>Health</td>
-			<td>4000</td>
-			<td></td>
-	</tr>
-	<tr>
-			<td>Music</td>
-			<td>200</td>
-			<td></td>
-	</tr>
-	<tr>
-			<td>Science</td>
-			<td>33</td>
-			<td></td>
-	</tr>
-	<tr>
-			<td>&nbsp;</td>
-			<td></td>
-			<td></td>
-	</tr>
-	<tr>
-			<td>&nbsp;</td>
-			<td></td>
-			<td></td>
-	</tr>		
-	<tr>
-			<td>&nbsp;</td>
-			<td></td>
-			<td></td>
-	</tr>
-
-</table>
-</div><!--#stats_categories-->
+        </table>
+    </div><!--#stats_time-->
+    <div id="stats_categories">
+        <table align="right" width="100%" border="0" id="data_point">
+            <tr>
+                <th>Data point</th>
+                <th>value</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Cars</td>
+                <td>2164</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Health</td>
+                <td>4000</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Music</td>
+                <td>200</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Science</td>
+                <td>33</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div><!--#stats_categories-->
 </div><!--#stats_tables-->
 
 <script language="javascript" type="text/javascript">

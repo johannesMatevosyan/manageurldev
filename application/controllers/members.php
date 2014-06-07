@@ -1,5 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ *************************************************
+ ** File: login.php  **
+ ** Date: 03.05.2014     **
+ ** Time: 7:22 PM    **
+ ** @author Hovhannes Matevosyan **
+ ** Description: This controller is assigned for 'Users management' page and for registration.
+ **              it creates new users and gives roles and permissions for the, **
+ *************************************************
+ */
+
 class Members extends CI_Controller{
 
     /**

@@ -1,6 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
  set_time_limit (5000);
+
+/**
+*  Calais1 controller is not used in project, it is written for testing purposes.
+*/
+
 class Calais1 extends CI_Controller {
+
 public function index()
 {
     include_once  APPPATH.'libraries/simple_html_dom.php';

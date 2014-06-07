@@ -296,6 +296,7 @@
 
         $("#download_csv_dialog").show();
     });
+
     $('#edit_cell').click(function() {
         var i=0;
 

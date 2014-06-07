@@ -1,5 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ *************************************************
+ ** File: login.php  **
+ ** Date: 12.05.2014     **
+ ** Time: 12:31 PM    **
+ ** @author Hovhannes Matevosyan **
+ ** Description: Perform Create, Read, Update and Delete operations with database **
+ *************************************************
+ */
 class Crud extends CI_Controller{
 
     function __construct()
@@ -34,7 +43,7 @@ class Crud extends CI_Controller{
             $data['records'] = $query;
         }
         $this->load->view('options_view', $data);
-    }
+    }//index
 
     function edit($id = null)
     {
@@ -54,7 +63,8 @@ class Crud extends CI_Controller{
             echo "<h1>No query</h1>";
         }
         $this->load->view('edit_pages', $data);
-    }
+    }//edit
+
     function create()
     {
 
@@ -69,8 +79,8 @@ class Crud extends CI_Controller{
             $data[$key] =  $value;
         }
         $this->site_model->add_record($data);
-        //$this->index(); // redirect user to options_view
-    }
+    }//create
+
     function update($id)
     {
 
@@ -83,7 +93,8 @@ class Crud extends CI_Controller{
         $data = $_POST;
         $this->site_model->update_record($data, $id);
         $this->edit($id);
-    }
+    }//update
+
     function delete()
     {
 
@@ -94,7 +105,8 @@ class Crud extends CI_Controller{
         }
 
         $this->site_model->delete_row();
-    }
+    }//delete
+
     function ajax_get_headers()
     {
         $headers = array();
@@ -110,7 +122,7 @@ class Crud extends CI_Controller{
         }
         //echo '</select>';
 
-    }// response
+    }// ajax_get_headers
 
     function ajax_set_headers()
     {
@@ -134,8 +146,9 @@ class Crud extends CI_Controller{
                $this->site_model->add_column($post['header_title']);
                $this->create();
             }
-        }        
-    }// response
+        }
+
+    }// ajax_set_headers
 
     /**
      * accepts uploaded CSV file from URL upload, read information and returns it
@@ -156,7 +169,7 @@ class Crud extends CI_Controller{
             $this->site_model->delete_column($post['delete_header']);
             $this->site_model->delete_row_by_header_title($post['delete_header']);
         }
-    }
+    }//delete_header
 
     function ajax_edit_headers()
     {
@@ -181,7 +194,7 @@ class Crud extends CI_Controller{
             }
             $this->load->view('pages/edit_dbmanager', $d);
         }
-    }//edit_headers
+    }//ajax_edit_headers
 
     function update_header()
     {
@@ -211,7 +224,8 @@ class Crud extends CI_Controller{
         }
 
        $this->load->view('pages/data_table',$data);
-    }//data table
+
+    }//get_table_datas
 
 
 } // class Crud

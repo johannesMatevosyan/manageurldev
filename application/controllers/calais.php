@@ -1,5 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  set_time_limit (500);
+
+/**
+ *  Calais1 controller is not used in project, it is written for testing purposes.
+ */
+
 class Calais extends CI_Controller {
 
 	public function index()
@@ -99,7 +104,7 @@ function simple_stop($parser, $element_name) {
 	
 	if ($simple_level == 1)
 	{
-		/*
+		/**
 		 * Level 0 - closing the OpenCalaisSimple tag
 		 */
 		if ($element_name != "OpenCalaisSimple")
@@ -230,27 +235,8 @@ if($query = $this->file_model->get_records())
             
     $content = file_get_html('http://www.rubiconpersonalip.com')->plaintext;
    tocalaissite($content);
-//    foreach($query as $v){
-//               
-//               $domain= parse_url($v->URL);
-//               if (isset($domain['host'])) {                   
-//                $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
-//                //$content = strip_tags(file_get_contents('http://'.$domain['host']));
-//                $content = file_get_html('http://'.$domain['host'])->plaintext;
-//                 if(isset($content) and !empty($content)) tocalaissite($content);
-//                echo $domain['host'],"<hr>",$content,"<hr>";
-//               }                                  
-//               }
-          
 
 }
-/*
-$content = strip_tags(file_get_contents("http://www.ok.com"));
-tocalaissite($content);
-echo '<hr>';
-$content = strip_tags(file_get_contents("http://device.am"));
-tocalaissite($content);
- * 
- */	
+
 } //index
 }

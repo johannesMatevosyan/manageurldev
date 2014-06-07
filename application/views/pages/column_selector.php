@@ -81,7 +81,6 @@ if (true) {
                                         <select name="url_db_headers" id="url_db_headers" class="db_header_results" multiple=""></select>
                                         </td>
                                         <td>
-                                            <!--<select name="url_db_headers3" id="url_db_headers3">-->
                                             <!-- Select Header -->
                                             <select name="select_header" id="select_header" style="max-width:120px;">';
                                                 for($i = 0; $i < $number_of_csv_words; $i++)
@@ -125,24 +124,28 @@ if (true) {
                 }
                 else
                 {
-                    echo "Could not move the file.";
+                    echo "<h2><b>Could not move the file.<b></h2>
+                         <p style='text-align: center;'><a href='statistics'>Home page</a></p>";
                 }
             }
             else
             {
-                echo "Your file size is bigger than 2MB.";
+                echo "<h2><b>Your file size is bigger than 2MB.<b></h2>
+                     <p style='text-align: center;'><a href='statistics'>Home page</a></p>";
             }
         }
         else
         {
-            echo "Invalid file format.";
+            echo "<h2><b>Invalid file format.<b></h2>
+                  <p style='text-align: center;'><a href='statistics'>Home page</a></p>";
         }
     }
     else
     {
-        echo "Please select file..!";
+        echo "<h2><b>Please select file <b></h2>
+               <p style='text-align: center;'><a href='statistics'>Home page</a></p>";
     }
-    //exit();
+
 }
 ?>
 <script language="javascript" type="text/javascript">
@@ -169,7 +172,7 @@ if (true) {
         /**
          *  To redirect page to the statistics tab after the 'Upload' button was clicked
          */
-         //window.location.href = base_url;
+         window.location.href = base_url;
         }
     });
 

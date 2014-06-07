@@ -1,14 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ *************************************************
+ ** File: login.php  **
+ ** Date: 06.05.2014     **
+ ** Time: 6:08 PM    **
+ ** @author Hovhannes Matevosyan **
+ ** Description: This controller is assigned for 'URL Download' page,
+ **              it creates a csv file on a fly and provides downloading**
+ *************************************************
+ */
+
 class Download extends CI_Controller{
 
- /**
- * Created by JetBrains PhpStorm.
- * User: johannes
- * Date: 6/4/14
- * Time: 6:08 PM
- * To change this template use File | Settings | File Templates.
- */
     /**
      * Constructor checks if the user was authorized with the help of is_logged_in(),
      * otherwise access is denied
@@ -47,7 +51,7 @@ class Download extends CI_Controller{
             $data['records'] = $query;
         }
         $this->load->view('pages/url_download', $data);
-    }
+    }//index
 
     function get_files()
     {
@@ -68,7 +72,7 @@ class Download extends CI_Controller{
 
         echo '<script> var file_name = "'.$value->file_name.'"; var file_id = "'.$value->id.'"</script>';
 
-    }
+    }//get_files
 
 //
 //    function csv_last_id()
@@ -89,7 +93,7 @@ class Download extends CI_Controller{
 
         /** get header names for a csv file from 'excel' table **/
         $headers = $this->site_model->get_columns();
-        // output the column headings
+        /** output the column headings */
         fputcsv($output, $headers);
 
         /** get rows for a csv file from 'excel' table **/

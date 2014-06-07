@@ -1,11 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 /**
 *************************************************
 ** File: login.php  **
 ** Date: 03.05.2014     **
 ** Time: 12:31 PM    **
 ** @author Hovhannes Matevosyan **
-** Description: This file performs users login & registration, also validates them**
+** Description: This Controller performs users login & registration, also validates them**
 *************************************************
 */
 
@@ -54,7 +55,8 @@ class Login extends CI_Controller{
         {
             $this->index();
         }
-    }
+
+    }//validate_credentials
 
     /**
      * signup() function is used to sign up new users from registration form
@@ -63,7 +65,7 @@ class Login extends CI_Controller{
     {
         $data['main_content'] = 'signup_form';
         $this->load->view('includes/template', $data);
-    }
+    }//signup
 
     /**
      * create_member() function to perform a validation from registration form
@@ -101,7 +103,7 @@ class Login extends CI_Controller{
                 $this->load->view('signup_form');
             }
         }
-    }
+    }//create_member
 
     /**
      * function for log out
@@ -110,6 +112,6 @@ class Login extends CI_Controller{
     {
         $this->session->sess_destroy();
         $this->index();
-    }
+    }//logout
 
 }

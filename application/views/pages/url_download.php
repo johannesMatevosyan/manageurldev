@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by JetBrains PhpStorm.
- * User: johannes
- * Date: 5/7/14
- * Time: 10:31 AM
- * To change this template use File | Settings | File Templates.
- */
-?>
 
 <h2>URL Download</h2>
 <div id="table-wrapper-download">
@@ -19,7 +10,6 @@
                 <th class="url_download_table_first"><span class="text">Date</span></th>
                 <th class="url_download_table_second"><span class="text">Name</span></th>
                 <th class="url_download_table_third"><span class="text">Download</span></th>
-<!--            <th class="url_download_table_fourth"><span class="text">Description(last id)</span></th>-->
             </tr>
             </thead>
             <tbody class="show_file_data">

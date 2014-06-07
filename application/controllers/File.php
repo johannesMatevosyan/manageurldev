@@ -1,11 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 set_time_limit (5000);
+
 /**
- * Created by JetBrains PhpStorm.
- * User: johannes
- * Date: 5/21/14
- * Time: 6:56 PM
- * To change this template use File | Settings | File Templates.
+ *************************************************
+ ** File: login.php  **
+ ** Date: 21.05.2014     **
+ ** Time: 6:56 PM    **
+ ** @author Hovhannes Matevosyan **
+ ** Description: This controller is assigned for 'URL Upload' page,
+ **             it sends contents of csv file to database *
+ *************************************************
  */
 
 class File extends CI_Controller {
@@ -192,7 +197,7 @@ class File extends CI_Controller {
             echo "Empty!!";
         }
 
-    }
+    }//send_csv_data
 
     function edit_cell(){
         $post=$_POST;

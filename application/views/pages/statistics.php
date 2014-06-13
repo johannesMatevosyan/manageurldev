@@ -28,8 +28,9 @@
             <th align="left">
                 <button id="clear_logs" class="logs">Clear Logs</button>
                 <button id="copy_logs" class="logs">Copy Logs</button>
-            <!--    <button>Save Logs</button>-->
-                <input type="button" id="save_logs" class="logs" value="Save Logs">
+                <button type="button" id="save_logs" class="logs">
+                    <a href="<?php echo base_url()?>download/save_logs">Save Logs</a>
+                </button>
             </th>
             <th>
                 Select data:
@@ -140,17 +141,17 @@
      *  File: statistics.php
      *  Description: Save logs into .txt file
      */
-    $('#save_logs').click( function() {
+   /* $('#save_logs').click( function() {
 
         $.ajax({
             type: 'POST',
-            url: base_url + 'file/save_logs',
+            url: base_url + 'file/download_logs',
             success: function(data){
                 //$('#table-scroll').html(data);
-
+            //alert(data);
             }
         });
     });
-
+*/
 
 </script>

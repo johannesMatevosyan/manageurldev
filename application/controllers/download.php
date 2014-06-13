@@ -74,12 +74,6 @@ class Download extends CI_Controller{
 
     }//get_files
 
-//
-//    function csv_last_id()
-//    {
-//        $csv_last = $this->download_model->get_last_id();
-//        print_r($csv_last);
-//    }
 
     function plaintext() {
 
@@ -141,6 +135,37 @@ class Download extends CI_Controller{
             }
         }
     } //selectional_download
+
+
+    /**
+     *  save_logs() function stores the number of new domains into txt file.
+     */
+    function save_logs(){
+
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=statistics.txt');
+
+        /** create a file pointer connected to the output stream **/
+        $output = fopen('php://output', 'w');
+
+        /** get header names for a csv file from 'excel' table **/
+        // $headers = $this->site_model->get_columns();
+        // $headers = array('');
+        /** output the column headings */
+        //fwrite($output, $headers);
+
+        /** get rows for a csv file from 'excel' table **/
+        $content = $this->download_model->get_store_records();
+        $num = 1;
+        foreach($content as $key =>$value)
+        {
+            // $csv_line = (array)$value;
+            $new_domains = $value->last_id - $value->first_id;
+            $saved_lines = "\r\n".$num++.".  ".$new_domains." news domains added - ".$value->insert_time."\r\n";
+            fwrite($output, $saved_lines);
+        }
+
+    }//save_logs
 
 
 }

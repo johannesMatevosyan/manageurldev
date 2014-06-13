@@ -238,38 +238,4 @@ class File extends CI_Controller {
 
     }//new_domains
 
-
-    /**
-     *  save_logs() function stores the number of new domains into txt file.
-     */
-    function save_logs(){
-
-        $file = fopen("assets/statistics/statistics.txt","w");
-        if(!$file)
-        {
-            echo "Unable to find file";
-        }
-        else
-        {
-            if($query = $this->download_model->get_store_records())
-            {
-                $num = 1;
-                foreach($query as $key =>$value)
-                {
-                    $new_domains = $value->last_id - $value->first_id;
-                    $saved_lines = "\r\n".$num++.".  ".$new_domains." news domains added - ".$value->insert_time."\r\n";
-                    echo fwrite($file, $saved_lines);
-                }
-                fclose($file);
-            }
-            else
-            {
-                echo "<h1>no query</h1>";
-            }
-
-        }
-
-    }//save_logs
-
-
 }

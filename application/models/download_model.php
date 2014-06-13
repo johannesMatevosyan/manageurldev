@@ -30,4 +30,14 @@ class Download_model extends CI_Model{
         $this->db->where('id', $id);
         $this->db->update('store_id', $data);
     }
+
+    /**
+     *  truncate all logs from the table where they are stored.
+     */
+    function delete_records()
+    {
+        $this->db->truncate('store_id');
+    }
+
+
 }

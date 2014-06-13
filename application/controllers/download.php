@@ -167,5 +167,12 @@ class Download extends CI_Controller{
 
     }//save_logs
 
+    /**
+     *  clear_logs() function truncates all logs from the table where they are stored.
+     */
+    function clear_logs(){
+        $this->download_model->delete_records();
+    }
+
 
 }

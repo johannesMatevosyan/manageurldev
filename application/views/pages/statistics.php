@@ -26,8 +26,11 @@
     <table align="center" width="98%" border="0" >
         <tr>
             <th align="left">
-                <button id="clear_logs" class="logs">Clear Logs</button>
+                <button type="button" id="clear_logs" class="logs">
+                    <a href="<?php echo base_url()?>download/clear_logs">Clear Logs</a>
+                </button>
                 <button id="copy_logs" class="logs">Copy Logs</button>
+
                 <button type="button" id="save_logs" class="logs">
                     <a href="<?php echo base_url()?>download/save_logs">Save Logs</a>
                 </button>

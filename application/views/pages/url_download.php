@@ -2,7 +2,6 @@
 <h2>URL Download</h2>
 <div id="table-wrapper-download">
     <div id="table-scroll-download">
-
         <table id="url_download_table"  border="0">
             <thead>
             <tr>
@@ -16,7 +15,6 @@
 
             </tbody>
         </table>
-
     </div>
 </div><!--#table-wrapper-download-->
 <script language="javascript" type="text/javascript">

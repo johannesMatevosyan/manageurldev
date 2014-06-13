@@ -28,7 +28,8 @@
             <th align="left">
                 <button id="clear_logs" class="logs">Clear Logs</button>
                 <button id="copy_logs" class="logs">Copy Logs</button>
-                <button id="save_logs" class="logs">Save Logs</button>
+            <!--    <button>Save Logs</button>-->
+                <input type="button" id="save_logs" class="logs" value="Save Logs">
             </th>
             <th>
                 Select data:
@@ -133,5 +134,23 @@
         });
     }
     get_new_domains();
+
+
+    /**
+     *  File: statistics.php
+     *  Description: Save logs into .txt file
+     */
+    $('#save_logs').click( function() {
+
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'file/save_logs',
+            success: function(data){
+                //$('#table-scroll').html(data);
+
+            }
+        });
+    });
+
 
 </script>

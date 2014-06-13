@@ -208,8 +208,7 @@ class File extends CI_Controller {
     }
 
     /**
-     *  domain_sum() function Permits you to determine the number of
-     *  rows in a 'excel' table
+     *  domain_sum() function Permits you to determine the number of rows in a 'excel' table.
      */
     function domain_sum()
     {
@@ -217,6 +216,10 @@ class File extends CI_Controller {
         echo $csv_last;
     } //domain_sum
 
+
+    /**
+     *  new_domains() function calculates and shows the number of new domains added.
+     */
     function new_domains()
     {
         if($query = $this->download_model->get_store_records())
@@ -233,8 +236,40 @@ class File extends CI_Controller {
             echo "<h1>no query</h1>";
         }
 
-
     }//new_domains
+
+
+    /**
+     *  save_logs() function stores the number of new domains into txt file.
+     */
+    function save_logs(){
+
+        $file = fopen("assets/statistics/statistics.txt","w");
+        if(!$file)
+        {
+            echo "Unable to find file";
+        }
+        else
+        {
+            if($query = $this->download_model->get_store_records())
+            {
+                $num = 1;
+                foreach($query as $key =>$value)
+                {
+                    $new_domains = $value->last_id - $value->first_id;
+                    $saved_lines = "\r\n".$num++.".  ".$new_domains." news domains added - ".$value->insert_time."\r\n";
+                    echo fwrite($file, $saved_lines);
+                }
+                fclose($file);
+            }
+            else
+            {
+                echo "<h1>no query</h1>";
+            }
+
+        }
+
+    }//save_logs
 
 
 }

@@ -23,7 +23,10 @@
     var page_url_upload = "<?php echo $this->session->userdata('url_upload'); ?>";
     var page_url_download = "<?php echo $this->session->userdata('url_download'); ?>";
 
-
+    /**
+     *  File: column_selector.php & dbmanager.php
+     *  Description: Fill dropdown lists with headers from database that belong to a 'db_header_results'
+     */
    function default_header(){
      $.ajax({
          async: false,
@@ -46,7 +49,7 @@
          *  Description: Manually add new headers from URL Upload page to database
          */
         $('#add_url_upload').click( function() {
-            if(page_url_upload == 'viewer')
+            if(page_url_upload == 'viewer') // define access for the user
             {
                 document.location.href = base_url + 'block';
             }
@@ -90,7 +93,7 @@
          *              Values in select tag are collected from .CSV fikle
          */
         $('#add_header_from_url').click( function() {
-            if(page_url_upload == 'viewer')
+            if(page_url_upload == 'viewer') // define access for the user
             {
                 document.location.href = base_url + 'block';
             }
@@ -106,10 +109,12 @@
             }
         });
     }//call_defaults
+
     $('#tree1').checkboxTree();
 
     /**
      *  File: url_upload
+     *  Description: redirect uploaded file to column_selector.php page
      */
         $('#submitbtn').click(function() {
 
@@ -120,6 +125,10 @@
             $(".uploadform").ajaxForm(options).submit();
         });
 
+    /**
+     *  File: url_preview
+     *  Description: get the values for URL Preview page
+     */
     function get_table_datas(){
      $.ajax({
          type: 'POST',
@@ -138,7 +147,7 @@
      *  Description: Add new headers into database
      */
     $('.addHeader').click( function() {
-        if(page_dbmanager == 'viewer')
+        if(page_dbmanager == 'viewer') // define access for the user
         {
             document.location.href = base_url + 'block';
         }
@@ -162,7 +171,7 @@
      *  File: dbmanager.php
      */
     $('.deleteHeader').click( function() {
-        if(page_dbmanager == 'viewer')
+        if(page_dbmanager == 'viewer')  // define access for the user
         {
             document.location.href = base_url + 'block';
         }
@@ -185,7 +194,7 @@
      *  Description: Edit selected header by id in database
      */
     $('.editHeader').click( function() {
-        if(page_dbmanager == 'viewer')
+        if(page_dbmanager == 'viewer') // define access for the user
         {
             document.location.href = base_url + 'block';
         }

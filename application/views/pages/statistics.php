@@ -22,18 +22,23 @@
     </div><!--#db_stats-->
 </div><!--#statistics_title-->
 <br/>
-<br/>
+
     <table align="center" width="98%" border="0" >
         <tr>
             <th align="left">
                 <button type="button" id="clear_logs" class="logs">
                     <a href="<?php echo base_url()?>download/clear_logs">Clear Logs</a>
                 </button>
-                <button id="copy_logs" class="logs">Copy Logs</button>
+                <button type="button" id="copy_logs" class="logs">
+                    <a href="#copy" id="copy-dynamic">
+                        Copy Logs
+                    </a>
+                </button>
 
                 <button type="button" id="save_logs" class="logs">
                     <a href="<?php echo base_url()?>download/save_logs">Save Logs</a>
                 </button>
+
             </th>
             <th>
                 Select data:
@@ -128,7 +133,10 @@
         });
     });
 
-
+    /**
+     *  File: statistics.php
+     *  Description: Get the number of new added domains after file has been uploaded.
+     */
     function get_new_domains(){
         $.ajax({
             url: base_url + 'file/new_domains/',
@@ -140,21 +148,36 @@
     get_new_domains();
 
 
+//    $('#copy_logs').click( function() {
+//        $("a#copy-dynamic").zclip({
+//           // alert(),
+//            path: base_url + "assets/js/jquery-zclip-master/ZeroClipboard.swf",
+//            copy:function(){return $("#time_indication").text();}
+//        });
+//    });
+
+
+// http://www.phpgang.com/how-to-copy-text-to-clipboard-using-jquery_501.html
+//
+//    $(document).ready(function(){
+//        $("a#copy-dynamic").zclip({
+//            path:base_url + 'assets/js/jquery-zclip-master/ZeroClipboard.swf',
+//            copy:function(){return $("#stats_time #time_indication").val();}
+//        });
+//    });
+
     /**
      *  File: statistics.php
-     *  Description: Save logs into .txt file
+     *  Description: Copy logs to clipboard
      */
-   /* $('#save_logs').click( function() {
-
-        $.ajax({
-            type: 'POST',
-            url: base_url + 'file/download_logs',
-            success: function(data){
-                //$('#table-scroll').html(data);
-            //alert(data);
-            }
+    function copies(){
+       // alert('55555');
+            $("a#copy-dynamic").zclip({
+            path: base_url +  'assets/js/jquery-zclip-master/ZeroClipboard.swf',
+            copy:function(){return $("input #dynamic2").text();}
         });
-    });
-*/
+        alert('777777');
+    }
+
 
 </script>

@@ -12,6 +12,9 @@
 
 class Login extends CI_Controller{
 
+    /**
+     * load log in log in form
+     */
     function index()
     {
         $data['main_content'] = 'login_form';

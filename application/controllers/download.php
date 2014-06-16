@@ -74,8 +74,11 @@ class Download extends CI_Controller{
 
     }//get_files
 
-
-    function plaintext() {
+    /**
+     *  File: url_preview.php (Download window)
+     *  Description: generate CSV file on a fly and download it.
+     */
+    function plaintext(){
 
         $file = $_GET;
 
@@ -107,7 +110,12 @@ class Download extends CI_Controller{
 
     }//plaintext
 
+    /**
+     *  File: url_download.php (Download window)
+     *  Description: generate CSV file on a fly and download it.
+     */
     function selectional_download(){
+
         $post = $_POST;
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename='.($post['filename']?: "list").'.csv');
@@ -134,6 +142,7 @@ class Download extends CI_Controller{
                 fputcsv($output, $a);
             }
         }
+
     } //selectional_download
 
 

@@ -33,6 +33,7 @@ class File extends CI_Controller {
         /**
          * if information is not retrieved from session,
          * then user is has no permission to be in this page
+         *
          */
         if(!isset($is_logged_in) || $is_logged_in != true)
         {
@@ -47,20 +48,25 @@ class File extends CI_Controller {
     function send_csv_data(){
         function get_content($url){ 
                        $domain= parse_url($url);
-                       if (isset($domain['host'])) {
-                           $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];                           
-                           $content = file_get_html('http://'.$domain['host'])->plaintext;                           
-                           if(strlen($content)>100000){
-                           $strArr=str_split($content,100000);
-                           $content=$strArr[0];                         
+                       if (isset($domain['host']))
+                       {
+                           $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
+                           $content = file_get_html('http://'.$domain['host'])->plaintext;
+                           if(strlen($content)>100000)
+                           {
+                               $strArr=str_split($content,100000);
+                               $content=$strArr[0];
                            }
+
                            return ( isset($content) and !empty($content)) ? $content : FALSE;
                        }
-                       else {
+                       else
+                       {
                            return FALSE;                           
                        }
                        
-        }
+        }//get_content
+
         //calais http://www.dangrossman.info/open-calais-tags/
         include_once  APPPATH.'libraries/simple_html_dom.php';
         include_once  APPPATH.'libraries/opencalais.php';
@@ -123,7 +129,7 @@ class File extends CI_Controller {
 
             $line = 0;
             $csv_array = array();
-            $columns=$this->site_model->get_columns();
+            $columns = $this->site_model->get_columns();
             while(!feof($read_csv_file)){
 
                 $data = fgetcsv($read_csv_file);
@@ -180,8 +186,8 @@ class File extends CI_Controller {
              *               and puts it in 'first_id' field of a 'store_id' table
              *               AFTER .csv file is uploaded
              *
-             * var @id: get the last id from 'store_id' table,
-             *          to be able to update that table
+             * var @id:   get the last id from 'store_id' table,
+             *            to be able to update that table
              */
 
             $last_id = $this->file_model->get_last_id();
@@ -227,8 +233,16 @@ class File extends CI_Controller {
             foreach($query as $key =>$value)
             {
                 $new_domains = $value->last_id - $value->first_id;
-                echo " <tr><td>".$new_domains." news domains added - ".$value->insert_time."</td></tr>
+                echo " <tr class='new_domains'><td>".$new_domains." new domains added - ".$value->insert_time."</td></tr>
                        <tr><td>------------------------------------------------------------------</td></tr>";
+                echo '<script>
+                         $("#copy_logs").click( function() {
+                            $.ajax({
+                                success: copies
+                            });
+                        });
+                      </script>';
+
             }
         }
         else

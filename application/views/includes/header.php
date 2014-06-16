@@ -24,6 +24,8 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.form.js"></script>
     <script src="http://cdn.jsdelivr.net/tablesorter/2.17.0/js/jquery.tablesorter.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.finderselect/0.6.0/jquery.finderselect.min.js"></script>
+
+    <script src="<?php echo base_url(); ?>assets/js/jquery-zclip-master/jquery.zclip.js"></script>
  </head>
 <body>
 <header>

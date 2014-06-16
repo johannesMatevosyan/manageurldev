@@ -215,6 +215,9 @@ class Crud extends CI_Controller{
         }
     }//update_header
 
+    /**
+     *  get the values for URL Preview page
+     */
     function get_table_datas()
     {
         $data = array();

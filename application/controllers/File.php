@@ -205,6 +205,10 @@ class File extends CI_Controller {
 
     }//send_csv_data
 
+    /**
+     *  File: url_preview.php
+     *  Description: edit selected cell in the table
+     */
     function edit_cell(){
         $post=$_POST;
         $id=$post['id'];

@@ -53,6 +53,10 @@ class Download extends CI_Controller{
         $this->load->view('pages/url_download', $data);
     }//index
 
+    /**
+     *  File: url_download.php
+     *  Description: show data about table (file name, time of insert) and allow user to download
+     */
     function get_files()
     {
         $data = array();
@@ -63,7 +67,7 @@ class Download extends CI_Controller{
 
         foreach($data['records'] as $value)
         {   echo '<tr>';
-            echo '<td class="id-'.$value->id.'">'.$value->id.'</td>';
+            echo '<td  class="asaasid-'.$value->id.'">'.$value->id.'</td>';
             echo '<td>'.$value->insert_time.'</td>';
             echo '<td>'.$value->file_name.'</td>';
             echo '<td><a href="'.base_url().'download/plaintext?file='.$value->file_name.'&firstid='.$value->first_id.'&lastid='.$value->last_id.'" id="download_files" class="download_file">Download</a></td>';

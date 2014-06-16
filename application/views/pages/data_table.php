@@ -1,7 +1,7 @@
 <table class="table tablesorter" id="url_preview_table">
             <tr>
-    <?php foreach ($records[1] as $k=>$v ) {
-    echo "<th>".$k."</th>";
+    <?php foreach ($records[1] as $k=>$v ){
+        echo "<th>".$k."</th>";
     } ?>
             </tr>           
     <?php 

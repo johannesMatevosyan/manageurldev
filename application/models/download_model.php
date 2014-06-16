@@ -2,6 +2,10 @@
 
 class Download_model extends CI_Model{
 
+    /**
+     * get_store_records() function takes all record from 'store_id' table.
+     * Support Controller: file, download
+     */
     function get_store_records()
     {
         $query = $this->db->get('store_id');
@@ -20,11 +24,19 @@ class Download_model extends CI_Model{
         return $max_row['id'];
     }
 
+    /**
+     *  add_record() function adds new row in to 'store_id' table.
+     *  Support Controller: file
+     */
     function add_record($data)
     {
         $this->db->insert('store_id', $data);
     }
 
+    /**
+     *  update_record() function updates new row in to 'store_id' table.
+     *  Support Controller: file
+     */
     function update_record($id,$data)
     {
         $this->db->where('id', $id);

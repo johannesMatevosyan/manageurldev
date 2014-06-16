@@ -42,7 +42,7 @@ class Site extends CI_Controller{
     }
 
     /**
-     * to redirect successfully registered users into members_area page
+     * to redirect successfully registered users into members_area page.
      */
     function members_area()
     {
@@ -50,7 +50,7 @@ class Site extends CI_Controller{
     }
 
     /**
-     * to redirect successfully registered users into statistics page
+     * to redirect successfully registered users into statistics page.
      */
     function statistics()
     {
@@ -59,6 +59,9 @@ class Site extends CI_Controller{
         $this->load->view('includes/template', $data);
     }
 
+    /**
+     * to redirect successfully registered users into dbmanager page.
+     */
     function dbmanager()
     {
         $data['main_content'] = 'pages/dbmanager';

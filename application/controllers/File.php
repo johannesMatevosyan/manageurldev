@@ -13,6 +13,7 @@ set_time_limit (5000);
  *************************************************
  */
 
+
 class File extends CI_Controller {
 
     /**
@@ -24,6 +25,8 @@ class File extends CI_Controller {
         parent::__construct();
         $this->is_logged_in();
     }
+
+
 
     function is_logged_in()
     {
@@ -45,34 +48,12 @@ class File extends CI_Controller {
         }
     }
 
-    function send_csv_data(){
-        function get_content($url){ 
-                       $domain= parse_url($url);
-                       if (isset($domain['host']))
-                       {
-                           $domain['host']=(preg_match("/www/", $domain['host'])) ? $domain['host']:  'www.'.$domain['host'];
-                           $content = file_get_html('http://'.$domain['host'])->plaintext;
-                           if(strlen($content)>100000)
-                           {
-                               $strArr=str_split($content,100000);
-                               $content=$strArr[0];
-                           }
+    function send_csv_data()
+    {
 
-                           return ( isset($content) and !empty($content)) ? $content : FALSE;
-                       }
-                       else
-                       {
-                           return FALSE;                           
-                       }
-                       
-        }//get_content
-
-        //calais http://www.dangrossman.info/open-calais-tags/
-        include_once  APPPATH.'libraries/simple_html_dom.php';
-        include_once  APPPATH.'libraries/opencalais.php';
-        $apikey = "mzcxpd66uyevcektzdpuruqv";
-        $oc = new OpenCalais($apikey);
-        //end calais
+        $this->load->model('CategoryModel');
+        $this->load->model('AnalysResultModel');
+        require_once('/../helpers/Analizer.php');
 
         /**
          * var @first_id: gets the last id number from 'excel' table
@@ -99,16 +80,15 @@ class File extends CI_Controller {
          */
 
         $data['insert_time'] = date('Y-m-d H:i:s');
-
+//print_r($data); echo "<br/>";
         /**
          * var @file_name: gets the name of uploaded file
-         *                 and puts it in 'file_name' file of a table
+         *                 and puts it in 'file_name' field of a table
          */
-
         $file_name = $_GET['file'];
-
+   //     print_r($file_name)." +++ <br/>";
         $pure_name_plus = strstr($file_name, "---");
-
+//echo $pure_name_plus."<br/>";
         $data['file_name'] = substr($pure_name_plus, 3);
 
         /**
@@ -123,7 +103,7 @@ class File extends CI_Controller {
         if(!empty($file_name))
         {
             $d = array();
-            $path = "assets/upload/".$file_name;
+            $path = base_url()."assets/upload/".$file_name;
 
             $read_csv_file = (fopen($path, "r")); // to read only first line of a .CSV file
 
@@ -131,7 +111,6 @@ class File extends CI_Controller {
             $csv_array = array();
             $columns = $this->site_model->get_columns();
             while(!feof($read_csv_file)){
-
                 $data = fgetcsv($read_csv_file);
                 if($line == 0)
                 {
@@ -139,7 +118,7 @@ class File extends CI_Controller {
                         if(in_array($value, $columns))
                         {               
                             $d[] = $value;
-                        }else{
+                        } else {
                             $d[] = false;
                         }
                     }
@@ -147,38 +126,43 @@ class File extends CI_Controller {
                 else
                 {
                     $i = 0;
-                    foreach($data as $value){
-                        if($d[$i])
-                        {
-                        $csv_array[$d[$i]] = $value;                           
+                    foreach ($data as $value) {
+                        if ($d[$i]) {
+                            $csv_array[$d[$i]] = $value;
                         }
                         $i++;
                     }
-
                        //get content by url
-                       $content=get_content($csv_array['URL']);
-                       
-                        //analyse content
-                       if(isset($content) and !empty($content)){
+                       // $content = get_content($csv_array['URL']);
+                       // call my function to analises($content, excelID)
+                       //analyse content
+                     /*  if(isset($content) and !empty($content)){
                             $entities = $oc->getEntities($content);
                             foreach ($entities as $type => $values) {
                                 if($type!='URL' AND in_array($type,$columns)) {
                                     $csv_array[$type]=count($values);
                                 }
                             }
-                       }
+                       }*/
+
 
                     if(!$row = $this->file_model->get_record_by_header($csv_array['URL']) )
                     {
                         $this->file_model->add_record($csv_array);
                     }
-                    elseif($_GET['update']=='true')
+                    elseif(isset($_GET['update']) && $_GET['update'] == 1)
                     {
-                        $_GET['update'];$this->file_model->update_record($row[0]->id,$csv_array);                       
+                        $this->file_model->update_record($row[0]->id, $csv_array);
+                    }
+                    $website = $this->file_model->get_website_id(@$csv_array['URL']);
+                    if ($website) {
+                        Analizer::$website = $website[0];
+                        Analizer::saveAnalyses();
                     }
                 }
 
                  $line++;
+
             }// while
 
             /**

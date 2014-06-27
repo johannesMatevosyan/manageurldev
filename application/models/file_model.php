@@ -13,9 +13,31 @@ class File_model extends CI_Model {
     {
          parent::__construct();
     }
+
+    function get_filtered_website_info($condition)
+    {
+        $query = 'SELECT excel.*, analys.categoryId, analys.keywords, analys.count, analys.websiteId, categories.id AS categoryId, categories.categoryName  FROM excel
+                 JOIN analys_result analys
+                 ON (analys.websiteId = excel.id)
+                 LEFT JOIN categories
+                 ON (categories.id = analys.categoryId)
+                 
+        ';
+        $website_info = $this->db->query($query);
+        //echo 1; die;
+        echo '<pre>';
+        print_r($website_info->result_array()); die;
+    } 
+   
     function add_record($data)
     {
-        $this->db->insert('excel', $data);
+        $a = $this->db->insert('excel', $data);
+    }
+
+    function get_website_id($website_url)
+    {
+        $query = $this->db->get_where('excel', array('URL' => $website_url));
+        return $query->result_array();
     }
 
     function get_record_by_header($id)
@@ -39,6 +61,54 @@ class File_model extends CI_Model {
         $this->db->update('excel', $data);
     }
 
+    function getKeywords($categoryId, $websiteID)
+    {
+        // echo $categoryId, $websiteID; die;
+        $query  = 'SELECT a.keywords, `count` 
+                        FROM analys_result a WHERE 
+                        a.categoryId    = '.$categoryId.' 
+                        AND a.websiteId = '.$websiteID;
+        $keywords = $this->db->query($query);
+        return $keywords->result_array();
+    }
+
+    function getCategories($websiteId, $criteria)
+    {
+        $query = 'SELECT cat.* FROM categories cat 
+                        JOIN analys_result a 
+                    ON ( a.categoryId = cat.id)
+                        JOIN excel e 
+                    ON (a.websiteId = e.id)
+                    WHERE a.websiteId = '.$websiteId.'
+                    GROUP BY cat.id';
+        $categoryList = $this->db->query($query);
+        return $categoryList->result_array();
+    }
+
+    function getWebsiteList($criteria)
+    {
+        if (empty($criteria['max_pr']))
+            $criteria['max_pr'] = 10;
+        if (empty($criteria['max_da']))
+            $criteria['max_da'] = 10000000;
+        if ($criteria['email'] == 1) {
+            $condition = ' AND email <> "" AND email <> NULL'; 
+        } else {
+            $condition = '';
+        }
+                $query = 'SELECT * FROM excel e 
+                        JOIN analys_result a
+                            ON (a.websiteId = e.id)
+                WHERE 
+                    e.PR > '.$criteria['min_pr'].' 
+                    AND e.PR < '.$criteria['max_pr'].'
+                    AND e.DA > '.$criteria['min_da'].'
+                    AND e.DA < '.$criteria['max_da'].
+                    $condition.'
+                    GROUP BY URL';
+                $websiteList = $this->db->query($query);
+            return $websiteList->result_array();
+    }
     /**
      * get_last_id() function collects maximum id number in 'excel' table.
      * In this way we define range to order downloading files

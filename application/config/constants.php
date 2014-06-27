@@ -39,3 +39,6 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
+
+/* OpenCalais Web Service API KEY http://www.opencalais.com/ */
+define('CALAIS_API_KEY', 'mzcxpd66uyevcektzdpuruqv');

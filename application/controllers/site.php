@@ -41,6 +41,87 @@ class Site extends CI_Controller{
         }
     }
 
+    function websiteFilter()
+    {
+        //print_r($_POST);die;
+        $this->load->model('file_model');
+       // $this->file_model->get_filtered_website_info(1);
+       if (isset($_POST['criteria'])) {
+
+            $criteria['min_pr'] = @$_POST['criteria']['prfrom'];
+            $criteria['max_pr'] = @$_POST['criteria']['prto'];
+            $criteria['min_da'] = @$_POST['criteria']['dafrom'];
+            $criteria['max_da'] = @$_POST['criteria']['dato'];
+
+            $criteria['category'] = @$_POST['criteria']['category'];
+            $criteria['country']  = @$_POST['criteria']['country'];
+            $criteria['email']    = @$_POST['criteria']['email'];
+
+            $criteria['include']  = @$_POST['criteria']['include'];
+            $criteria['exclude']  = @$_POST['criteria']['exclude'];
+
+            $condition = array();
+            
+            $websiteList = $this->file_model->getWebsiteList($criteria);
+            
+            echo '<table border = "1px">';
+            echo '<thead>
+                    <th>Website URL</th>
+                    <th>PR</th>
+                    <th>DA</th>
+                    <th>EMAIL</th>
+                    <th>Comment</th>
+                    <th>Note</th>
+                    <th>ROOT</th>
+                </thead>
+            ';
+            foreach ($websiteList as $website) {
+                echo '<tr>';
+                    echo '<td>'.$website['URL'].'</td>';
+                    echo '<td>'.$website['DA'].'</td>';
+                    echo '<td>'.$website['PR'].'</td>';
+                    echo '<td>'.$website['email'].'</td>';
+                    echo '<td>'.$website['comment'].'</td>';
+                    echo '<td>'.$website['Note'].'</td>';
+                    echo '<td>'.$website['ROOT'].'</td>';
+                echo '</tr>';
+                    $categories = $this->file_model->getCategories($website['websiteId'], $criteria);
+                        foreach ($categories as $category) {
+                            if ($criteria['category'] != 'Select') {
+                                if ( $category['id'] != $criteria['category'])
+                                    continue;
+                            }
+                            echo '<tr>';
+                                    echo '<td colspan = "3"></td>';
+                                    echo '<td colspan = "2"><b>Keywords</b></td>';
+                                    echo '<td colspan = "2"><b>Count</b></td>';
+                                    
+                            echo '</tr>';
+                                   $keywords = $this->file_model->getKeywords($category['id'], $website['websiteId']);
+                                        $isKeywordIterationFirst = FALSE;
+                                        foreach ($keywords as $keyword) {
+                                            echo '<tr>';
+                                                echo '<td colspan = "3"><b>';
+                                            if ( !$isKeywordIterationFirst )
+                                                echo $category['categoryName']; 
+                                                echo '</b></td>';
+                                                echo '<td colspan = "2">'.$keyword['keywords'].'</td>';
+                                                echo '<td colspan = "2">'.$keyword['count'].'</td>';
+                                            echo '</tr>';
+                                            $isKeywordIterationFirst = TRUE;
+                                        }
+                            echo '</tr>';
+                        }
+                    //$keywords = $this->file_model->getKeywords($criteria, $value['id']);
+                    /*foreach ($keywords as $key => $value) {
+                        # code...
+                    }*/
+                echo '<tr>';
+            }
+            echo '</table>';
+        }
+    }
+
     /**
      * to redirect successfully registered users into members_area page.
      */
@@ -54,6 +135,8 @@ class Site extends CI_Controller{
      */
     function statistics()
     {
+        $this->load->model('CategoryModel');
+        $this->load->model('AnalysResultModel');
         $data['main_content'] = 'pages/content';
         if(!empty($_GET['current'])) $data['current'] = $_GET['current'];
         $this->load->view('includes/template', $data);
@@ -67,5 +150,4 @@ class Site extends CI_Controller{
         $data['main_content'] = 'pages/dbmanager';
         $this->load->view('includes/template', $data);
     }
-
 }

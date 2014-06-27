@@ -29,10 +29,10 @@
                 <button type="button" id="clear_logs" class="logs">
                     <a href="<?php echo base_url()?>download/clear_logs">Clear Logs</a>
                 </button>
-                <button type="button" id="copy_logs" class="logs">
-                    <a href="#copy" id="copy-dynamic">
-                        Copy Logs
-                    </a>
+                <button type="button" data-clipboard-target="time_indication" id="copy_logs" class="logs">
+                   <!--  <a href="#copy" id="copy-dynamic">
+                        
+                    </a> -->Copy Logs
                 </button>
 
                 <button type="button" id="save_logs" class="logs">
@@ -54,7 +54,9 @@
 <div id="stats_tables">
     <div id="stats_time">
         <table align="left" width="100%" border="0" id="time_indication">
-
+         <!--    <tr>
+                <td>132456789</td>
+            </tr> -->
         </table>
     </div><!--#stats_time-->
     <div id="stats_categories">
@@ -103,6 +105,7 @@
     </div><!--#stats_categories-->
 </div><!--#stats_tables-->
 
+
 <script language="javascript" type="text/javascript">
 
     var base_url = "<?php echo base_url(); ?>";
@@ -137,16 +140,18 @@
      *  File: statistics.php
      *  Description: Get the number of new added domains after file has been uploaded.
      */
-    function get_new_domains(){
+    function get_new_domains()
+    {
         $.ajax({
             url: base_url + 'file/new_domains/',
-            success: function(data){
+            success: function(data) {
                 $('#time_indication').html(data);
+                new ZeroClipboard( document.getElementById("copy_logs") );
+                
             }
         });
     }
     get_new_domains();
-
 
 //    $('#copy_logs').click( function() {
 //        $("a#copy-dynamic").zclip({
@@ -155,29 +160,13 @@
 //            copy:function(){return $("#time_indication").text();}
 //        });
 //    });
-
-
-// http://www.phpgang.com/how-to-copy-text-to-clipboard-using-jquery_501.html
-//
-//    $(document).ready(function(){
-//        $("a#copy-dynamic").zclip({
-//            path:base_url + 'assets/js/jquery-zclip-master/ZeroClipboard.swf',
-//            copy:function(){return $("#stats_time #time_indication").val();}
-//        });
-//    });
-
-    /**
-     *  File: statistics.php
-     *  Description: Copy logs to clipboard
-     */
-    function copies(){
-       // alert('55555');
-            $("a#copy-dynamic").zclip({
-            path: base_url +  'assets/js/jquery-zclip-master/ZeroClipboard.swf',
-            copy:function(){return $("input #dynamic2").text();}
+/*
+$(document).ready(function(){
+        $("#copy_logs").zclip({
+           path: base_url + "assets/js/jquery-zclip-master/ZeroClipboard.swf",
+           copy:function(){return $("#logs").text();}
         });
-        alert('777777');
-    }
-
-
+    });
+*/
 </script>
+

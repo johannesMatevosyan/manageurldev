@@ -9,6 +9,17 @@
 
 ?>
 
+<?php 
+    $category = new CategoryModel();
+    $analyses = new AnalysResultModel();
+
+    /* Get All countries */
+    $countryList  = $analyses->getCountries();
+
+    // /* Get All without country*/
+    $categoryList = $category->getCategories();
+
+?>
 <div class="url_preview_heading">
     <div class="search_filter_button">
         <button class="url_preview_buttons" id="search_filter_btn"> Search + Filter</button>
@@ -117,44 +128,52 @@
             <table border="0" cellspacing="0" cellpading="0" style="float:left; margin-left: 20px;">
                 <tr>
                     <td rowspan="2"><button class="big_button">PR</button></td>
-                    <td>&nbsp;>&nbsp;<input class="smol_input" value="0"/></td>
+                    <td>&nbsp;>&nbsp;<input class="smol_input" value="0" name = "SearchForm[pr-from]" id = "pr-from" /></td>
                 </tr>
                 <tr>
-                    <td>&nbsp;<&nbsp;<input class="smol_input" value="0"/></td>
+                    <td>&nbsp;<&nbsp;<input class="smol_input" value="0" name = "SearchForm[pr-to]"  id = "pr-to" /></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><button class="big_button">DA</button></td>
-                    <td>&nbsp;>&nbsp;<input class="smol_input" value="0"/></td>
+                    <td>&nbsp;>&nbsp;<input class="smol_input" value="0" name = "SearchForm[da-from]"  id = "da-from" /></td>
                 </tr>
                 <tr>
-                    <td>&nbsp;<&nbsp;<input class="smol_input" value="0"/></td>
+                    <td>&nbsp;<&nbsp;<input class="smol_input" value="0" name = "SearchForm[da-to]"  id = "da-to" /></td>
                 </tr>
                 <tr>
                     <td><button class="big_button">Content Analysis</button></td>
                     <td>
-                        <select name="">
-                            <option value="">Animals</option>
-                            <option value="">150</option>
-                            <option value="">50</option>
+                        <select id = "category-list" name="SearchForm[category]">
+                            <option>Select</option>  
+                            <?php 
+                                foreach ($categoryList as $category) { ?>
+                                    <option value = "<?php echo $category['id'];?>"><?php echo $category['categoryName'];?></option>
+                        <?php  }
+
+                            ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td><button class="big_button">Country</button></td>
                     <td>
-                        <select name="">
-                            <option value="">Australia</option>
-                            <option value="">150</option>
-                            <option value="">50</option>
+                        <select id = "country-list" name="SearchForm[country]"> 
+                                <option>Select</option>  
+                            <?php 
+                                foreach ($countryList as $country) { ?>
+                                    <option value = "<?php echo $country['id'];?>"><?php echo $country['keywords'];?></option>
+                        <?php   }
+
+                            ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td><button class="big_button">Email</button></td>
                     <td>
-                        <select name="">
-                            <option value="">Yes</option>
-                            <option value="">No</option>
+                        <select id = "email" name="SearchForm[email]">
+                            <option>No</option>
+                            <option value="1">Yes</option>
                         </select>
                     </td>
                 </tr>
@@ -168,18 +187,16 @@
                 </tr>
                 <tr>
                     <td width="30%">include</td>
-                    <td><input class="" value="Edite Box"/></td>
+                    <td><input class="include_box" value="Edite Box"/></td>
                 </tr>
                 <tr>
-                    <td><a href="">AND+</a></td>
-                    <td><a href="">OR+</a></td>
+                    <td><a data-condition = "AND" class = "include-button">AND+</a></td>
+                    <td><a data-condition = "OR"  class = "include-button">OR+</a></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <select multiple name="">
-                            <option value="">example OR</option>
-                            <option value="">keyword</option>
-                        </select><br>
+                        <textarea name="SearchForm[include]">
+                        </textarea><br>
                     </td>
                 </tr>
                 <tr>
@@ -187,24 +204,22 @@
                 </tr>
                 <tr>
                     <td>exclude</td>
-                    <td><input class="" value="Edite Box"/></td>
+                    <td><input class="exclude_box" value="Edite Box"/></td>
                 </tr>
                 <tr>
-                    <td><a href="">AND+</a></td>
-                    <td><a href="">OR+</a></td>
+                    <td><a data-condition = "AND" class = "exclude-button">AND+</a></td>
+                    <td><a data-condition = "OR"  class = "exclude-button">OR+</a></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <select multiple name="">
-                            <option value="">bad OR</option>
-                            <option value="">wrong</option>
-                        </select><br>
+                        <textarea name="SearchForm[exclude]">
+                        </textarea><br>
                     </td>
                 </tr>
             </table>
             <!-- end second table-->
             <div style="clear:both; text-align: center;">
-                <button class="yellowButton">Apply</button>
+                <button class="yellowButton apply-filter">Apply</button>
             </div>
 
         </div><!--.content-->
@@ -251,6 +266,75 @@
     </div><!--.body-->
 </div><!--.dialog-->
 <script language="javascript" type="text/javascript">
+    
+    $(function() {
+        $('textarea').val('');
+        $('.include-button').click(function() {
+            var includedKeywords = $('.include_box').val();
+            if ( includedKeywords.length == 0 ) {
+                alert('Fill Include Keywords Field');
+            } else {
+                var includeTextArea = $('textarea[name="SearchForm[include]"]').val();
+                if ( includeTextArea.length == 0 ) {
+                    $('textarea[name="SearchForm[include]"]').val(includedKeywords + ' ');
+                } else {
+                    var condition = $(this).attr('data-condition');
+                    $('textarea[name="SearchForm[include]"]').val($('textarea[name="SearchForm[include]"]').val() + condition +'\n' + includedKeywords + ' ');
+                }
+            }
+        })
+
+        $('.exclude-button').click(function() {
+            var excludedKeywords = $('.exclude_box').val();
+            if ( excludedKeywords.length == 0 ) {
+                alert('Fill Exclude Keywords Field');
+            } else {
+                var excludeTextArea = $('textarea[name="SearchForm[exclude]"]').val();
+                if ( excludeTextArea.length == 0 ) {
+                    $('textarea[name="SearchForm[exclude]"]').val(excludedKeywords + ' ');
+                } else {
+                    var condition = $(this).attr('data-condition');
+                    $('textarea[name="SearchForm[exclude]"]').val($('textarea[name="SearchForm[exclude]"]').val() + condition +'\n' + excludedKeywords + ' ');
+                }
+            }
+        })
+    $('.apply-filter').click(function() {
+        var criteria     = new Object();
+        if ($('#pr-from').val())
+            criteria.prfrom = $('#pr-from').val();
+        if ($('#pr-from').val())
+            criteria.prto = $('#pr-to').val();           
+        if ($('#da-from').val())
+            criteria.dafrom = $('#da-from').val();
+        if ($('#da-to').val())
+            criteria.dato = $('#da-to').val();
+        if ($('#category-list').val())
+            criteria.category = $('#category-list').val();
+        if ($('#country-list').val())
+            criteria.country = $('#country-list').val();
+        if ($('#email').val())
+            criteria.email = $('#email').val();
+        if ($('textarea[name="SearchForm[include]"]'))
+            criteria.include = $('textarea[name="SearchForm[include]"]').val();           
+        if ($('textarea[name="SearchForm[exclude]"]'))
+            criteria.exclude = $('textarea[name="SearchForm[exclude]"]').val();           
+
+        $.ajax({
+            url      : '../site/websiteFilter',
+            data     : {'criteria':criteria},
+            dataType : 'html',
+            type     : 'post',
+            success:function(data)
+            {
+                $(".dialog").hide();
+                $("#table-scroll").html(data);        
+            }
+        })
+    })
+
+
+
+    })
     $( ".close" ).click(function() {
         $(".dialog").hide();
     });

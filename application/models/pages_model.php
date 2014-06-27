@@ -6,6 +6,7 @@ class Pages_model extends CI_Model{
     {
          parent::__construct();
     }
+
     function add_page($data)
     {
         $this->db->insert('permissions', $data);

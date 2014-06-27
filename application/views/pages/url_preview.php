@@ -7,11 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-?>
-
-<?php 
-    $category = new CategoryModel();
-    $analyses = new AnalysResultModel();
+    $category = new category_model();
+    $analyses = new analys_result_model();
 
     /* Get All countries */
     $countryList  = $analyses->getCountries();
@@ -29,12 +26,6 @@
     </div>
     <h2>URL Preview</h2>
     <button class="url_preview_edit button" id="edit_cell"> Edit Cell</button>
-    <!--<p>URL's Per Page</p>
-    <select name="urls_per_page" id="urls_per_page" class="url_preview_edit">
-        <option value="">250</option>
-        <option value="">150</option>
-        <option value="">50</option>
-    </select>-->
 </div><!--url_preview_heading-->
 <div id="table-wrapper">
     <div id="table-scroll">

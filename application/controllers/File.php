@@ -51,8 +51,8 @@ class File extends CI_Controller {
     function send_csv_data()
     {
 
-        $this->load->model('CategoryModel');
-        $this->load->model('AnalysResultModel');
+        $this->load->model('category_model');
+        $this->load->model('analys_result_model');
         require_once('/../helpers/Analizer.php');
 
         /**

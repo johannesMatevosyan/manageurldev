@@ -135,8 +135,8 @@ class Site extends CI_Controller{
      */
     function statistics()
     {
-        $this->load->model('CategoryModel');
-        $this->load->model('AnalysResultModel');
+        $this->load->model('category_model');
+        $this->load->model('analys_result_model');
         $data['main_content'] = 'pages/content';
         if(!empty($_GET['current'])) $data['current'] = $_GET['current'];
         $this->load->view('includes/template', $data);

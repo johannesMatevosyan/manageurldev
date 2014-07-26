@@ -188,7 +188,6 @@
         }
     });
 
-
     /**
      *  File: dbmanager.php
      *  Description: Edit selected header by id in database
@@ -212,8 +211,6 @@
             $('#header_title').val('');
         }
     });
-
-
 </script>
 </body>
 </html>

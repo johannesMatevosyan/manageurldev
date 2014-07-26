@@ -6,7 +6,6 @@ class Category_model extends CI_Model {
 	public  $id;
 	public  $categoryName;
 
-
     function __construct()
     {
          parent::__construct();

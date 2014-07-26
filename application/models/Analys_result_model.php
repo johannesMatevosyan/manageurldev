@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class Analys_result_model extends CI_Model
 {
 
@@ -27,22 +28,10 @@ class Analys_result_model extends CI_Model
             $analyses = array(
                             'keywords'   => $this->keywords,
                             'categoryId' => $this->categoryId,
-                            'count'      => $this->count, 
+                            'count'      => $this->count,
                             'websiteId'  => $this->websiteId
                         );
             $this->db->insert(self::tableName, $analyses); 
         }
     }
-
-    // function saveCategory()
-    // {
-    //     $category = array('categoryName' => $this->categoryName);
-    //     $this->db->insert(self::tableName, $category); 
-    // }
-
-    // function getCategoryIDByCategoryName()
-    // {
-    //     $category = $this->db->get_where(self::tableName, array('categoryName' => $this->categoryName))->result_array();
-    //     return ($category[0]['id']);
-    // }
 }

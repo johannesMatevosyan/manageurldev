@@ -25,7 +25,6 @@ class Membership_model extends CI_Model{
             return true;
         }
     }
-
     /**
      * Insert query with user's info into database,
      * this function will work if the validation is passed

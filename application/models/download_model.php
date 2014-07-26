@@ -51,5 +51,4 @@ class Download_model extends CI_Model{
         $this->db->truncate('store_id');
     }
 
-
 }

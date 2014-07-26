@@ -7,13 +7,11 @@ class Members_model extends CI_Model{
         $query = $this->db->get('membership');
         return $query->result();
     }
-
     function get_record_by_id($id)
     {
         $query = $this->db->get_where('membership', array('id' => $id));
         return $query->result();
     }
-
     function add_member($data)
     {
         $this->db->insert('membership', $data);
@@ -29,13 +27,10 @@ class Members_model extends CI_Model{
         $this->db->update('db_manager', $data);
     }
 
-    function delete_row($id)
+    function delete_row($id)    /** figure out deleted id,  segment(3) = controller/method/id */
     {
-        /** figure out deleted id,
-         *  segment(3) = controller/method/id
-         */
-    $this->db->where('id', $id);
-    $this->db->delete('db_manager');
+        $this->db->where('id', $id);
+        $this->db->delete('db_manager');
     }
 
     function get_record_by_header($id)
@@ -49,6 +44,4 @@ class Members_model extends CI_Model{
         $query = $this->db->get('membership');
         return $query->result();
     }
-
-
 }

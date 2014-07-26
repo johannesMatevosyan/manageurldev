@@ -24,9 +24,8 @@ class File_model extends CI_Model {
                  
         ';
         $website_info = $this->db->query($query);
-        //echo 1; die;
-        echo '<pre>';
-        print_r($website_info->result_array()); die;
+       // echo '<pre>';
+        //print_r($website_info->result_array()); die;
     } 
    
     function add_record($data)
@@ -63,7 +62,6 @@ class File_model extends CI_Model {
 
     function getKeywords($categoryId, $websiteID)
     {
-        // echo $categoryId, $websiteID; die;
         $query  = 'SELECT a.keywords, `count` 
                         FROM analys_result a WHERE 
                         a.categoryId    = '.$categoryId.' 
@@ -120,7 +118,6 @@ class File_model extends CI_Model {
         $max_row = $query->row_array();
         return $max_row['id'];
     }
-
 
     function get_domain_sum()
     {

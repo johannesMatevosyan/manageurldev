@@ -11,9 +11,7 @@ class Site_model extends CI_Model{
 
     function add_column($name)
     {  
-        $fields = array(
-                        $name => array('type' => 'varchar(250)')
-                        );
+        $fields = array( $name => array('type' => 'varchar(250)'));
         $this->dbforge->add_column('excel', $fields);
     }
 
@@ -35,9 +33,9 @@ class Site_model extends CI_Model{
 
     function edite_column($data)
     {
-        $fields = array(
-                    $data['old_header'] => array('name' => $data['header_title'],
-                                                 'type' => 'varchar(250)', ),
+        $fields = array($data['old_header'] => array(
+                            'name' => $data['header_title'],
+                            'type' => 'varchar(250)', ),
                        );
        $this->dbforge->modify_column('excel', $fields);
     }
@@ -55,18 +53,14 @@ class Site_model extends CI_Model{
 
     function delete_row($id)
     {
-        /** figure out deleted id,
-         *  segment(3) = controller/method/id
-         */
+        /** figure out deleted id, segment(3) = controller/method/id */
         $this->db->where('id', $id);
         $this->db->delete('db_manager');
     }
 
     function delete_row_by_header_title($name)
     {
-        /** figure out deleted id,
-         *  segment(3) = controller/method/id
-         */
+        /** figure out deleted id, segment(3) = controller/method/id */
         $this->db->where('header_title', $name);
         $this->db->delete('db_manager');
     }

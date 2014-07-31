@@ -42,7 +42,6 @@ class Download extends CI_Controller{
         }
     }
 
-
     function index()
     {
         $data = array();
@@ -186,6 +185,5 @@ class Download extends CI_Controller{
     function clear_logs(){
         $this->download_model->delete_records();
     }
-
 
 }

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-set_time_limit (5000);
+//set_time_limit (5000);
 
 /**
  *************************************************
@@ -25,8 +25,6 @@ class File extends CI_Controller {
         parent::__construct();
         $this->is_logged_in();
     }
-
-
 
     function is_logged_in()
     {
@@ -53,8 +51,7 @@ class File extends CI_Controller {
 
         $this->load->model('category_model');
         $this->load->model('analys_result_model');
-        require_once('/../helpers/Analizer.php');
-
+        $this->load->helper('analizer');
         /**
          * var @first_id: gets the last id number from 'excel' table
          *                and puts it in 'first_id' field of a 'store_id' table
@@ -79,21 +76,23 @@ class File extends CI_Controller {
          *                       when the .csv file is uploaded
          */
 
-        $data['insert_time'] = date('Y-m-d H:i:s');
-//print_r($data); echo "<br/>";
+        $data['insert_time'] = 'NOW()';
+
         /**
          * var @file_name: gets the name of uploaded file
          *                 and puts it in 'file_name' field of a table
          */
+
         $file_name = $_GET['file'];
-   //     print_r($file_name)." +++ <br/>";
+
         $pure_name_plus = strstr($file_name, "---");
-//echo $pure_name_plus."<br/>";
+
         $data['file_name'] = substr($pure_name_plus, 3);
 
         /**
          * Insert query to 'store_id' table
          */
+
         $this->download_model->add_record($data);
 
 
@@ -132,19 +131,6 @@ class File extends CI_Controller {
                         }
                         $i++;
                     }
-                       //get content by url
-                       // $content = get_content($csv_array['URL']);
-                       // call my function to analises($content, excelID)
-                       //analyse content
-                     /*  if(isset($content) and !empty($content)){
-                            $entities = $oc->getEntities($content);
-                            foreach ($entities as $type => $values) {
-                                if($type!='URL' AND in_array($type,$columns)) {
-                                    $csv_array[$type]=count($values);
-                                }
-                            }
-                       }*/
-
 
                     if(!$row = $this->file_model->get_record_by_header($csv_array['URL']) )
                     {
@@ -176,11 +162,8 @@ class File extends CI_Controller {
 
             $last_id = $this->file_model->get_last_id();
 
-            $id = $this->download_model->get_last_id();
-
-            $url_download['last_id'] = $last_id;
-            $this->download_model->update_record($id, $url_download);
-
+            $updateQuery = "UPDATE `store_id` SET last_id = ".($last_id + 1)." ORDER BY `id` DESC LIMIT 1";
+            $this->db->query($updateQuery);
         }
         else
         {

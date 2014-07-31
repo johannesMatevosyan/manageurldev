@@ -7,26 +7,26 @@
                 </td>
             </tr>
             <tr>
-                <td width="40%" style="text-align: right">
-          User name 
+                <td class="editPermTd">
+                    User name
                </td>
-            <td colspan="2" >
+            <td colspan="2">
           <input type="text"  name="username" id="username" value="<?php  echo $records[0]->username;?>">
                </td>
             </tr>
              <tr>
-                  <td width="40%" style="text-align: right">
-                  Email 
+                  <td class="editPermTd">
+                    Email
                   </td>
-                <td colspan="2" >
+                <td colspan="2">
                 <input type="email" name="email_address"  value="<?php echo $user[0]->email_address;?>">
                  </td>
             </tr>
              <tr>
-                <td width="40%" style="text-align: right">
-                Password
+                <td class="editPermTd">
+                    Password
                 </td>
-                <td colspan="2" >
+                <td colspan="2">
                     <input type="password" name="password" value="">
                 </td>
            <tr>
@@ -45,7 +45,8 @@
             <?php if(isset($records)) : foreach($records as $row): ?>
             <tr>
                 <td>
-                    <?php echo $row->pagename; ?><input type="hidden" size="30" name="<?php echo $row->id ?>[pagename]" id="edit_header" value="<?php echo $row->pagename; ?>">
+                    <?php echo $row->pagename; ?>
+                        <input type="hidden" size="30" name="<?php echo $row->id ?>[pagename]" id="edit_header" value="<?php echo $row->pagename; ?>">
                 </td>
                 <td>
                     <?php if($row->type == 'editor'){ ?>
@@ -75,12 +76,9 @@
         </table>
     </form>
 
-
-
 <?php else : ?>
     <h2>No records were returned</h2>
 <?php endif; ?>
-
 
 <script language="javascript" type="text/javascript">
 

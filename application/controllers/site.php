@@ -33,7 +33,7 @@ class Site extends CI_Controller{
          */
         if(!isset($is_logged_in) || $is_logged_in != true)
         {
-            echo '<div style="width: 600px; margin: 20px auto;"> ';
+            echo '<div id="check_permission">';
             echo '<h2>You don\'t have permission to access this page</h2>';
             echo anchor('login', 'Login Now');
             echo '</div>';
@@ -112,10 +112,7 @@ class Site extends CI_Controller{
                                         }
                             echo '</tr>';
                         }
-                    //$keywords = $this->file_model->getKeywords($criteria, $value['id']);
-                    /*foreach ($keywords as $key => $value) {
-                        # code...
-                    }*/
+
                 echo '<tr>';
             }
             echo '</table>';

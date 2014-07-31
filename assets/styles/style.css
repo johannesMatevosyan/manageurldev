@@ -30,6 +30,10 @@ a {
 #login_form{
     text-align: center;
 }
+#check_permission{
+    width: 600px;
+    margin: 20px auto;
+}
 
 /* header */
 #head {
@@ -346,7 +350,15 @@ table th, td{
     height:24px;
     width:50px;
 }
-
+#url_preview_table2{
+    float:left;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+#url_preview_table3{
+    float:right;
+    margin-right: 20px;
+}
 /* Dialog Windows */
 /* Search + Filter dialog windows */
 .dialog{
@@ -366,7 +378,7 @@ table th, td{
     bottom: 0;
     left: 0;
     right: 0;
-    width: 50%;
+    width: 55%;
     margin: 10% auto;
     background-color: rgb(147,168,113);
     border-radius: 10px;
@@ -391,6 +403,16 @@ table th, td{
 }
 .body h2{
     text-align: center;
+}
+#filter_apply_btn{
+    clear:both;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+#edit_apply_btn{
+    clear:both;
+    text-align: center;
+    margin-bottom: 10px;
 }
 /* dialog content */
 .big_button{
@@ -445,6 +467,15 @@ table th, td{
 #saveUser{
     margin: 10px;
 }
+#userRolesTh1{
+    max-width:100px;
+}
+#userRolesTh2{
+    width: 30%;
+}
+#userRolesTh3{
+    width:40%;
+}
 /* end of User Management */
 
 /* Edit Permissions */
@@ -455,8 +486,10 @@ table th, td{
 .user_perm{
     width: 50px;
 }
+.editPermTd{
+    text-align: right;
+}
 /* end of Edit Permissions */
-
 /*  yellow button   */
 .yellowButton {
     background-color:#ffaa00;
@@ -500,3 +533,5 @@ table th, td{
 #for_append{
     margin-left: 30%;
 }
+
+

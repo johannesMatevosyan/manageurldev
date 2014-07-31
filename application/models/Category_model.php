@@ -2,7 +2,6 @@
 class Category_model extends CI_Model {
 
 	const tableName = 'categories';
-	
 	public  $id;
 	public  $categoryName;
 

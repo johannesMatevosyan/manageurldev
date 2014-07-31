@@ -11,9 +11,9 @@
 <form id="editUserRoles" method="post" class="editUserRoles">
 <table  align="center">
     <tr>
-        <th style="max-width:100px;">Add New User</th>
-        <th style="width: 30%;"></th>
-        <th style="width:40%;">Active Users</th>
+        <th id="userRolesTh1">Add New User</th>
+        <th id="userRolesTh2"></th>
+        <th id="userRolesTh3">Active Users</th>
     </tr>
     <tr>
         <th>&nbsp;</th>

@@ -37,7 +37,6 @@ class Login extends CI_Controller{
             $row[0] = array();
             $role[] = array();
 
-            //$row = $this->membership_model->get_row($this->input->post('username'));
             $permission = $this->pages_model->get_perm_type($this->input->post('username'));
 
             foreach($permission as $value)

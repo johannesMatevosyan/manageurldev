@@ -24,7 +24,7 @@ if (true) {
 
     if (strlen($name))
     {
-        $extension = substr($name, strrpos($name, '.')+1);
+        $extension = substr($name, strrpos($name, '.') + 1 );
 
         if (in_array($extension, $file_formats)) // check it if it's a valid format or not
         {
@@ -90,8 +90,8 @@ if (true) {
                                                 echo '</select>
                                             <br/><br/>
                                            <input type="button" class="button" style="width:90px;" id="add_header_from_url" value="Add"><br/><br/>
-                                           <input type="button" class="button" style="width:90px;" class="move_item" id="move_up" value="Up"><br/><br/>
-                                           <input type="button" class="button" style="width:90px;" class="move_item" id="move_down" value="Down"><br/><br/>
+                                           <input type="button" class="button move_item" style="width:90px;" id="move_up" value="Up"><br/><br/>
+                                           <input type="button" class="button move_item" style="width:90px;"  id="move_down" value="Down"><br/><br/>
                                         </td>
                                         <td>
                                            <input type="text" size="20" name="header_title" id="header_url_upload" placeholder="Name"><br/>
@@ -113,7 +113,8 @@ if (true) {
                                     </tr>
                                     <tr>
                                         <td></td>
-                                        <td colspan="2"><input type="button" class="yellowButton upload_file button" value="Upload"></td>
+                                        <td><input type="button" class="yellowButton upload_file button" value="Upload"></td>
+                                        <td><input type="button" class="yellowButton cancel-upload button" value="Cancel"></td>
                                         <td></td>
                                     </tr>
                                 </table>
@@ -157,24 +158,35 @@ if (true) {
      *  File: column_selector.php
      *  Description: Add new headers into database (data table)
      */
-    $('.upload_file').click( function() { 
-        if(page_url_upload == 'viewer')
-        {
-            document.location.href = base_url + 'block';
-        }
-        else
-        {
-            var csf_file_name = "<?php echo $imagename; ?>";
-            var update = $("#update_urls").is(":checked");
-            $.ajax({ 
-                url: base_url + 'file/send_csv_data?file=' + csf_file_name + '&update='+update
-            });
-        /**
-         *  To redirect page to the statistics tab after the 'Upload' button was clicked
-         */
-         window.location.href = base_url;
-        }
-    });
+     $(function(){
+         $('.upload_file').click( function() { 
+            if(page_url_upload == 'viewer')
+            {
+                document.location.href = base_url + 'block';
+            }
+            else
+            {
+                var csf_file_name = "<?php echo $imagename; ?>";
+                var update = $("#update_urls").is(":checked");
+                $.ajax({ 
+                    cache:false,
+                    data:{'file':csf_file_name, 'update':update},
+                    url: base_url + 'file/send_csv_data'
+                });
+	window.location.href = base_url;
+            /**
+             *  To redirect page to the statistics tab after the 'Upload' button was clicked
+             */
+            }
+        });
+
+        $('.cancel-upload').click(function() {
+            window.location.href = base_url + '?current=url_upload';
+        })
+
+
+     })
+   
 
     /**
      *  File: column_selector.php

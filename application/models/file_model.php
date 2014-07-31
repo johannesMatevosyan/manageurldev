@@ -21,16 +21,34 @@ class File_model extends CI_Model {
                  ON (analys.websiteId = excel.id)
                  LEFT JOIN categories
                  ON (categories.id = analys.categoryId)
-                 
         ';
         $website_info = $this->db->query($query);
-       // echo '<pre>';
-        //print_r($website_info->result_array()); die;
     } 
    
     function add_record($data)
     {
-        $a = $this->db->insert('excel', $data);
+        $query = 'Insert Into excel (';
+        $i = 0;
+        foreach ($data as $key => $value) {
+            if ($i)           
+               $query .= ', ';
+            $query .= '`'.$key.'`';
+            $i++;
+        }
+
+        $query .= ') VALUES (';
+        
+        $j = 0;
+        foreach ($data as $key => $value) {
+            if ($j)
+                $query .= ', ';
+            $query .= ' "' .$value. '" ';
+            $j++;
+        }
+        $query .= ')';
+        
+        $this->db->query($query);
+        
     }
 
     function get_website_id($website_url)

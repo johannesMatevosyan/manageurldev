@@ -1,4 +1,3 @@
-
 <?php if(isset($records)) : foreach($records as $row): ?>
 
 <form id="comment" method="post" class="db_manager">
@@ -63,7 +62,6 @@
 <?php else : ?>
     <h2>No records were returned</h2>
 <?php endif; ?>
-
 
 <script language="javascript" type="text/javascript">
 

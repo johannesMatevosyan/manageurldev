@@ -8,14 +8,8 @@
     </style>
 </head>
 <body>
-    <?php
-        echo "<pre>";
-           // print_r($_POST);
-        echo "</pre>";
-    ?>
     <h2>Create</h2>
     <?php echo form_open('crud/create'); ?>
-    <?php //echo form_open(''); ?>
         <p>
             <label for="title">Title</label>
             <input type="text" name="title" id="title">

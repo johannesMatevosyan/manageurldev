@@ -2,9 +2,6 @@
 /**
 *************************************************
 ** File: dbmanager.php  **
-** Date: 07.05.2014     **
-** Time: 9:48 AM    **
-** @author Hovhannes Matevosyan **
 ** Description: This file accepts new headers from users and sends them to database **
 *************************************************
 */

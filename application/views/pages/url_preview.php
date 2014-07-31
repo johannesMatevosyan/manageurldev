@@ -15,7 +15,6 @@
 
     // /* Get All without country*/
     $categoryList = $category->getCategories();
-
 ?>
 <div class="url_preview_heading">
     <div class="search_filter_button">
@@ -116,7 +115,7 @@
             <br>
             <h2>Search and Filter</h2>
             <!--first table-->
-            <table border="0" cellspacing="0" cellpading="0" style="float:left; margin-left: 20px;">
+            <table border="0" cellspacing="0" cellpading="0" id="url_preview_table2">
                 <tr>
                     <td rowspan="2"><button class="big_button">PR</button></td>
                     <td>&nbsp;>&nbsp;<input class="smol_input" value="0" name = "SearchForm[pr-from]" id = "pr-from" /></td>
@@ -172,9 +171,9 @@
             <!-- End first table-->
 
             <!-- start second table-->
-            <table style="float:right; margin-right: 20px;">
+            <table id="url_preview_table3">
                 <tr>
-                    <th colspan="2" >Include keywords</th>
+                    <th colspan="2">Include keywords</th>
                 </tr>
                 <tr>
                     <td width="30%">include</td>
@@ -209,7 +208,7 @@
                 </tr>
             </table>
             <!-- end second table-->
-            <div style="clear:both; text-align: center;">
+            <div id="filter_apply_btn">
                 <button class="yellowButton apply-filter">Apply</button>
             </div>
 
@@ -232,9 +231,6 @@
                 <label for="download_csv_inp_1">URL list name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="text" class="" id="download_csv_inp_1" value=""><br/><br/>
 
-                <!--<label for="download_csv_inp_2">URL list description:</label>
-                <input type="text" class="" id="download_csv_inp_2" value=""><br/><br/><br/>-->
-
             <input type="button" class="yellowButton" id="submit_down_csv" value="Send to Download">
             </div></div>
      </div><!--download_csv_dialog_body-->
@@ -249,7 +245,7 @@
             <h2>Edit Cell</h2>
             <form method="post" action="<?php echo base_url(); ?>file/edit_cell">
                 <div id="for_append"></div>
-                <div style="clear:both; text-align: center;">
+                <div id="edit_apply_btn">
                     <button class="yellowButton">Apply</button>
                 </div>
             </form>

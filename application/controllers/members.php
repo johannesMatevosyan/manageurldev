@@ -64,7 +64,6 @@ class Members extends CI_Controller{
 
     function set_permission()
     {
-
         /**
          * to check if $_POST array is not empty, if so then new entry cannot be added to database
          */
@@ -77,7 +76,6 @@ class Members extends CI_Controller{
 
             $this->members_model->members_model->add_member($user_data);
 
-
             $page_data = array();
             $page_data['username'] = $_POST['username'];
             $page_data['pagename'] = 'statistics';
@@ -85,13 +83,11 @@ class Members extends CI_Controller{
 
             $this->members_model->pages_model->add_page($page_data);
 
-
             $page_data['username'] = $_POST['username'];
             $page_data['pagename'] = 'dbmanager';
             $page_data['type'] = $_POST['dbmanager'];
 
             $this->members_model->pages_model->add_page($page_data);
-
 
             $page_data['username'] = $_POST['username'];
             $page_data['pagename'] = 'url_preview';
@@ -99,13 +95,11 @@ class Members extends CI_Controller{
 
             $this->members_model->pages_model->add_page($page_data);
 
-
             $page_data['username'] = $_POST['username'];
             $page_data['pagename'] = 'url_upload';
             $page_data['type'] = $_POST['url_upload'];
 
             $this->members_model->pages_model->add_page($page_data);
-
 
             $page_data['username'] = $_POST['username'];
             $page_data['pagename'] = 'url_download';

@@ -10,9 +10,9 @@ class Site_model extends CI_Model{
     }
 
     function add_column($name)
-    {  
-        $fields = array( $name => array('type' => 'varchar(250)'));
-        $this->dbforge->add_column('excel', $fields);
+    {
+        $query = 'Alter table `excel` ADD `'.$name.'` varchar(250) ';
+        $this->db->query($query);
     }
 
     function get_columns()
